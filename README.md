@@ -12,6 +12,21 @@ Uses the current access_token to obtain the current userinfo from the identity p
 #####getAccessToken
 Retrieves the current access_token from browser storage ready for use in API calls. 
 
+## Installation
+1. add as bower dependency
+    ```shell
+    bower install https://bitbucket.org/precorconnect/identity-service-angularjs-sdk.git --save
+    ```  
+2. include in view
+    ```html
+    <script src="bower-components/angular/angular.js"></script>
+    <script src="bower-components/angular-route/angular-route.js"></script>
+    <script src="bower-components/angular-local-storage/dist/angular-local-storage.min.js"></script>
+    <script src="bower-components/identity-service-angularjs-sdk/dist/identity-service-angularjs-sdk.js"></script>
+    ```  
+3. configure  
+    see: [Configuration](#Configuration)
+
 ## Configuration 
 ####Properties
 | Name (* denotes required) | Description |
@@ -21,7 +36,7 @@ Retrieves the current access_token from browser storage ready for use in API cal
 | samlIdpUrl* | The url of the SAML 2.0 identity providers SSO page. |
 
 #### Example
-```javascript
+```js
 angular.module(
         "app",
         [""])
