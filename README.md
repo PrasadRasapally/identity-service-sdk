@@ -40,7 +40,7 @@ see below.
 ```js
 angular.module(
         "app",
-        [""])
+        ["identityServiceModule"])
         .config(
         [
             "identityServiceConfigProvider",
