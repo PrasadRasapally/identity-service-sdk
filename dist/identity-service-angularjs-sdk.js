@@ -16,35 +16,35 @@
 
     function identityServiceConfigProvider() {
 
-        var thisProvider = {
+        var objectUnderConstruction = {
             setBaseUrl: setBaseUrl,
             setIdentityServiceBaseUrl: setIdentityServiceBaseUrl,
             setSamlIdpUrl: setSamlIdpUrl,
             $get: $get
         };
 
-        return thisProvider;
+        return objectUnderConstruction;
 
         function setBaseUrl(baseUrl) {
-            thisProvider.baseUrl = baseUrl;
-            return thisProvider;
+            objectUnderConstruction.baseUrl = baseUrl;
+            return objectUnderConstruction;
         }
 
         function setIdentityServiceBaseUrl(identityServiceBaseUrl) {
-            thisProvider.identityServiceBaseUrl = identityServiceBaseUrl;
-            return thisProvider;
+            objectUnderConstruction.identityServiceBaseUrl = identityServiceBaseUrl;
+            return objectUnderConstruction;
         }
 
         function setSamlIdpUrl(samlIdpUrl) {
-            thisProvider.samlIdpUrl = samlIdpUrl;
-            return thisProvider;
+            objectUnderConstruction.samlIdpUrl = samlIdpUrl;
+            return objectUnderConstruction;
         }
 
         function $get(){
             return {
-                baseUrl:thisProvider.baseUrl,
-                identityServiceBaseUrl:thisProvider.identityServiceBaseUrl,
-                samlIdpUrl:thisProvider.samlIdpUrl
+                baseUrl:objectUnderConstruction.baseUrl,
+                identityServiceBaseUrl:objectUnderConstruction.identityServiceBaseUrl,
+                samlIdpUrl:objectUnderConstruction.samlIdpUrl
             }
         }
     }
@@ -59,17 +59,20 @@
             '$http',
             '$q',
             'localStorageService',
+            '$location',
             identityServiceClient
         ]);
 
     function identityServiceClient(identityServiceConfig,
-                                                $http,
-                                                $q,
-                                                localStorageService) {
+                                   $http,
+                                   $q,
+                                   localStorageService) {
 
         return {
+            getSsoLoginUrl: getSsoLoginUrl,
             getUserInfo: getUserInfo,
-            setAccessToken: setAccessToken
+            setAccessToken: setAccessToken,
+            getAccessToken: getAccessToken
         };
 
         /**
@@ -82,6 +85,32 @@
          * @property {string} sapVendorNumber
          * @property {string} sapAccountNumber
          */
+
+        /**
+         * Gets a URL for initiating a SSO login flow and persists the resulting access_token to browser storage.
+         */
+        function getSsoLoginUrl() {
+            var samlIdpUrl = identityServiceConfig.samlIdpUrl;
+
+            // the url to return to after successfully logging in.
+            var relayState = $location.protocol()
+                + "://"
+                + $location.host()
+                + ":"
+                + $location.port()
+                + "/#/identity-service/redirect-endpoint";
+
+            // determine appropriate prefix for relay state parameter
+            var relayStatePrefix = "?";
+            if (1 > samlIdpUrl.indexOf('?')) {
+                relayStatePrefix = "&";
+            }
+
+            return identityServiceConfig.samlIdpUrl
+                + relayStatePrefix
+                + "RelayState="
+                + relayState.encodeURIComponent();
+        }
 
         /**
          * gets the user info of the current user
