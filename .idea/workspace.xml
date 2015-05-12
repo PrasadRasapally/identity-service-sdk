@@ -28,7 +28,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
-              <folding />
+              <folding>
+                <marker date="1431459160727" expanded="true" signature="3463:3546" placeholder="/** gets the user info of the current user ...*/" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -36,8 +38,8 @@
       <file leaf-file-name="identity-service.client.factory.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/identity-service.client.factory.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.34285715">
-              <caret line="66" column="107" selection-start-line="66" selection-start-column="107" selection-end-line="66" selection-end-column="107" />
+            <state vertical-scroll-proportion="0.6571429">
+              <caret line="86" column="56" selection-start-line="86" selection-start-column="56" selection-end-line="86" selection-end-column="56" />
               <folding />
             </state>
           </provider>
@@ -476,12 +478,12 @@
       <updated>1431382892525</updated>
       <workItem from="1431382896351" duration="437000" />
       <workItem from="1431383431468" duration="2852000" />
-      <workItem from="1431389383936" duration="8005000" />
+      <workItem from="1431389383936" duration="8206000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11294000" />
+    <option name="totallyTimeSpent" value="11495000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1288" y="-8" width="1296" height="1040" extended-state="6" />
@@ -621,7 +623,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1431459160727" expanded="true" signature="3463:3546" placeholder="/** gets the user info of the current user ...*/" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -688,7 +692,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
-          <folding />
+          <folding>
+            <marker date="1431459160727" expanded="true" signature="3463:3546" placeholder="/** gets the user info of the current user ...*/" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -710,8 +716,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/identity-service.client.factory.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34285715">
-          <caret line="66" column="107" selection-start-line="66" selection-start-column="107" selection-end-line="66" selection-end-column="107" />
+        <state vertical-scroll-proportion="0.6571429">
+          <caret line="86" column="56" selection-start-line="86" selection-start-column="56" selection-end-line="86" selection-end-column="56" />
           <folding />
         </state>
       </provider>

@@ -84,7 +84,9 @@
                 );
             }
             else {
-                return $q.defer().resolve(null).promise;
+                var deferred = $q.defer();
+                deferred.resolve(null);
+                return deferred.promise;
             }
         }
 
