@@ -38,8 +38,9 @@
 
         /**
          * Gets a URL for initiating a SSO login flow and persists the resulting access_token to browser storage.
+         * @param {string} returnPath - The angular path to route to following successful login
          */
-        function getSsoLoginUrl() {
+        function getSsoLoginUrl(returnPath) {
             var samlIdpUrl = identityServiceConfig.samlIdpUrl;
 
             // the url to return to after successfully logging in.
@@ -47,7 +48,8 @@
                 + "//"
                 + $window.location.host
                 + $window.location.pathname
-                + "#/identity-service/redirect-endpoint?access_token={access_token}";
+                + "#/identity-service/redirect-endpoint?access_token={access_token}&return_path="
+                + returnPath;
 
             // determine appropriate prefix for relay state parameter
             var relayStatePrefix = "&";
