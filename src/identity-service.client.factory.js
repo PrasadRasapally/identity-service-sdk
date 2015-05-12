@@ -51,9 +51,9 @@
                 + "/#/identity-service/redirect-endpoint";
 
             // determine appropriate prefix for relay state parameter
-            var relayStatePrefix = "?";
+            var relayStatePrefix = "&";
             if (1 > samlIdpUrl.indexOf('?')) {
-                relayStatePrefix = "&";
+                relayStatePrefix = "?";
             }
 
             return identityServiceConfig.samlIdpUrl
