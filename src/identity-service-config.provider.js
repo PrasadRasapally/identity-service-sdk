@@ -8,35 +8,35 @@
 
     function identityServiceConfigProvider() {
 
-        var thisProvider = {
+        var objectUnderConstruction = {
             setBaseUrl: setBaseUrl,
             setIdentityServiceBaseUrl: setIdentityServiceBaseUrl,
             setSamlIdpUrl: setSamlIdpUrl,
             $get: $get
         };
 
-        return thisProvider;
+        return objectUnderConstruction;
 
         function setBaseUrl(baseUrl) {
-            thisProvider.baseUrl = baseUrl;
-            return thisProvider;
+            objectUnderConstruction.baseUrl = baseUrl;
+            return objectUnderConstruction;
         }
 
         function setIdentityServiceBaseUrl(identityServiceBaseUrl) {
-            thisProvider.identityServiceBaseUrl = identityServiceBaseUrl;
-            return thisProvider;
+            objectUnderConstruction.identityServiceBaseUrl = identityServiceBaseUrl;
+            return objectUnderConstruction;
         }
 
         function setSamlIdpUrl(samlIdpUrl) {
-            thisProvider.samlIdpUrl = samlIdpUrl;
-            return thisProvider;
+            objectUnderConstruction.samlIdpUrl = samlIdpUrl;
+            return objectUnderConstruction;
         }
 
         function $get(){
             return {
-                baseUrl:thisProvider.baseUrl,
-                identityServiceBaseUrl:thisProvider.identityServiceBaseUrl,
-                samlIdpUrl:thisProvider.samlIdpUrl
+                baseUrl:objectUnderConstruction.baseUrl,
+                identityServiceBaseUrl:objectUnderConstruction.identityServiceBaseUrl,
+                samlIdpUrl:objectUnderConstruction.samlIdpUrl
             }
         }
     }
