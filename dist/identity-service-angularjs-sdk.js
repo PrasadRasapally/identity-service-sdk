@@ -59,7 +59,7 @@
             '$http',
             '$q',
             'localStorageService',
-            '$location',
+            '$window',
             identityServiceClient
         ]);
 
@@ -67,7 +67,7 @@
                                    $http,
                                    $q,
                                    localStorageService,
-                                   $location) {
+                                   $window) {
 
         return {
             getSsoLoginUrl: getSsoLoginUrl,
@@ -94,12 +94,10 @@
             var samlIdpUrl = identityServiceConfig.samlIdpUrl;
 
             // the url to return to after successfully logging in.
-            var relayState = $location.protocol()
-                + "://"
-                + $location.host()
-                + ":"
-                + $location.port()
-                + "/#/identity-service/redirect-endpoint";
+            var relayState = $window.location.protocol
+                + $window.location.host
+                + $window.location.pathname
+                + "#/identity-service/redirect-endpoint";
 
             // determine appropriate prefix for relay state parameter
             var relayStatePrefix = "&";
