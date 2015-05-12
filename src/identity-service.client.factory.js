@@ -36,11 +36,12 @@
          */
 
         /**
-         * @param {string} returnUrl - the url to return to after successfully logging in.
+         * Gets a URL for initiating a SSO login flow and persists the resulting access_token to browser storage.
          */
         function getSsoLoginUrl() {
             var samlIdpUrl = identityServiceConfig.samlIdpUrl;
 
+            // the url to return to after successfully logging in.
             var relayState = $location.protocol()
                 + "://"
                 + $location.host()
