@@ -4,13 +4,16 @@ An AngularJS Module implementing common use cases encountered when integrating A
 
 ## UseCases
 #####initiateLogin
-Initiates a SSO login flow and persists the resultant access_token to browser storage.
+Initiates a SSO login flow and persists the resulting access_token to browser storage.
 
 #####getUserInfo
 Uses the current access_token to obtain the current userinfo from the identity provider.
 
+#####setAccessToken
+Saves the provided access_token to browser storage so it may be used in proceeding API calls. 
+
 #####getAccessToken
-Retrieves the current access_token from browser storage ready for use in API calls. 
+Retrieves the current access_token from browser storage. Primarily used to build an Authorization header to make an API call to a protected resource. 
 
 ## Installation
 add as bower dependency  
@@ -54,4 +57,3 @@ angular.module(
             .setSamlIdpUrl("@@samlIdpUrl");
     }
 ```
-
