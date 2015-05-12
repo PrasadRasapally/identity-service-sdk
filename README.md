@@ -3,8 +3,8 @@ An AngularJS Module implementing common use cases encountered when integrating A
  with the precorconnect identity service.
 
 ## UseCases
-#####initiateLogin
-Initiates a SSO login flow and persists the resulting access_token to browser storage.
+#####getSsoLoginUrl
+Gets a URL for initiating a SSO login flow and persists the resulting access_token to browser storage.
 
 #####getUserInfo
 Uses the current access_token to obtain the current userinfo from the identity provider.
