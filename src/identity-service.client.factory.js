@@ -46,7 +46,7 @@
             var relayState = $window.location.protocol
                 + $window.location.host
                 + $window.location.pathname
-                + "#/identity-service/redirect-endpoint";
+                + "#/identity-service/redirect-endpoint?access_token={access_token}";
 
             // determine appropriate prefix for relay state parameter
             var relayStatePrefix = "&";
