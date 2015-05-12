@@ -68,7 +68,7 @@
          */
         function getUserInfo() {
             var accessToken = getAccessToken();
-            if(accessToken) {
+            if (accessToken) {
                 var request = $http({
                     headers: {
                         Authorization: getAccessToken()
@@ -76,16 +76,16 @@
                     method: "get",
                     url: identityServiceConfig.identityServiceBaseUrl + "/userinfo"
                 });
-            }
-            else{
 
+                return request
+                    .then(
+                    handleSuccess,
+                    handleError
+                );
             }
-
-            return request
-                .then(
-                handleSuccess,
-                handleError
-            );
+            else {
+                return $q.defer().resolve(null).promise;
+            }
         }
 
         function setAccessToken(accessToken) {

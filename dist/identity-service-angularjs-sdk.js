@@ -115,22 +115,28 @@
 
         /**
          * gets the user info of the current user
-         * @returns {UserInfo}
+         * @returns {UserInfo|null} the current users info or null if a valid access_token is not available
          */
         function getUserInfo() {
-            var request = $http({
-                headers: {
-                    Authorization: getAccessToken()
-                },
-                method: "get",
-                url: identityServiceConfig.identityServiceBaseUrl + "/userinfo"
-            });
+            var accessToken = getAccessToken();
+            if (accessToken) {
+                var request = $http({
+                    headers: {
+                        Authorization: getAccessToken()
+                    },
+                    method: "get",
+                    url: identityServiceConfig.identityServiceBaseUrl + "/userinfo"
+                });
 
-            return request
-                .then(
-                handleSuccess,
-                handleError
-            );
+                return request
+                    .then(
+                    handleSuccess,
+                    handleError
+                );
+            }
+            else {
+                return $q.defer().resolve(null).promise;
+            }
         }
 
         function setAccessToken(accessToken) {
