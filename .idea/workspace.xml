@@ -26,8 +26,8 @@
       <file leaf-file-name="identity-service-angularjs-sdk.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dist/identity-service-angularjs-sdk.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.54285717">
-              <caret line="106" column="37" selection-start-line="106" selection-start-column="37" selection-end-line="106" selection-end-column="37" />
+            <state vertical-scroll-proportion="0.51428574">
+              <caret line="105" column="16" selection-start-line="105" selection-start-column="16" selection-end-line="105" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -476,12 +476,12 @@
       <updated>1431382892525</updated>
       <workItem from="1431382896351" duration="437000" />
       <workItem from="1431383431468" duration="2852000" />
-      <workItem from="1431389383936" duration="8940000" />
+      <workItem from="1431389383936" duration="9036000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12229000" />
+    <option name="totallyTimeSpent" value="12325000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1288" y="-8" width="1296" height="1040" extended-state="6" />
@@ -710,8 +710,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dist/identity-service-angularjs-sdk.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.54285717">
-          <caret line="106" column="37" selection-start-line="106" selection-start-column="37" selection-end-line="106" selection-end-column="37" />
+        <state vertical-scroll-proportion="0.51428574">
+          <caret line="105" column="16" selection-start-line="105" selection-start-column="16" selection-end-line="105" selection-end-column="16" />
           <folding />
         </state>
       </provider>
