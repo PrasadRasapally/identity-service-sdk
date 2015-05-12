@@ -59,7 +59,7 @@
             return identityServiceConfig.samlIdpUrl
                 + relayStatePrefix
                 + "RelayState="
-                + relayState.encodeURIComponent();
+                + encodeURIComponent(relayState);
         }
 
         /**
