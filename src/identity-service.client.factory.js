@@ -15,7 +15,8 @@
     function identityServiceClient(identityServiceConfig,
                                    $http,
                                    $q,
-                                   localStorageService) {
+                                   localStorageService,
+                                   $location) {
 
         return {
             getSsoLoginUrl: getSsoLoginUrl,
