@@ -1,4 +1,12 @@
 (function () {
+    angular.module(
+        "identityServiceModule",
+        [
+            'ngRoute',
+            'LocalStorageModule'
+        ]);
+})();
+(function () {
     angular
         .module("identityServiceModule")
         .provider(
@@ -125,14 +133,6 @@
     }
 })();
 
-(function () {
-    angular.module(
-        "identityServiceModule",
-        [
-            'ngRoute',
-            'LocalStorageModule'
-        ]);
-})();
 (function () {
 
     angular
