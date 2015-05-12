@@ -95,6 +95,7 @@
 
             // the url to return to after successfully logging in.
             var relayState = $window.location.protocol
+                + "//"
                 + $window.location.host
                 + $window.location.pathname
                 + "#/identity-service/redirect-endpoint?access_token={access_token}";
