@@ -18,7 +18,6 @@
 
         var objectUnderConstruction = {
             setBaseUrl: setBaseUrl,
-            setIdentityServiceBaseUrl: setIdentityServiceBaseUrl,
             setSamlIdpUrl: setSamlIdpUrl,
             $get: $get
         };
@@ -30,11 +29,6 @@
             return objectUnderConstruction;
         }
 
-        function setIdentityServiceBaseUrl(identityServiceBaseUrl) {
-            objectUnderConstruction.identityServiceBaseUrl = identityServiceBaseUrl;
-            return objectUnderConstruction;
-        }
-
         function setSamlIdpUrl(samlIdpUrl) {
             objectUnderConstruction.samlIdpUrl = samlIdpUrl;
             return objectUnderConstruction;
@@ -43,7 +37,6 @@
         function $get(){
             return {
                 baseUrl:objectUnderConstruction.baseUrl,
-                identityServiceBaseUrl:objectUnderConstruction.identityServiceBaseUrl,
                 samlIdpUrl:objectUnderConstruction.samlIdpUrl
             }
         }
@@ -126,7 +119,7 @@
                         Authorization: getAccessToken()
                     },
                     method: "get",
-                    url: identityServiceConfig.identityServiceBaseUrl + "/userinfo"
+                    url: identityServiceConfig.baseUrl + "/userinfo"
                 });
 
                 return request

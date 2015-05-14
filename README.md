@@ -35,8 +35,7 @@ see below.
 ####Properties
 | Name (* denotes required) | Description |
 |------|-------------|
-| baseUrl* | The base url of the current webapp. |
-| identityServiceBaseUrl* | The base url of the identity service. |
+| baseUrl* | The base url of the identity service. |
 | samlIdpUrl* | The url of the SAML 2.0 identity providers SSO page. |
 
 #### Example
@@ -52,8 +51,7 @@ angular.module(
 
     function appConfig(identityServiceConfigProvider) {
         identityServiceConfigProvider
-            .setBaseUrl("@@baseUrl")
-            .setIdentityServiceBaseUrl("@@identityServiceBaseUrl")
+            .setBaseUrl("@@identityServiceBaseUrl")
             .setSamlIdpUrl("@@samlIdpUrl");
     }
 ```
