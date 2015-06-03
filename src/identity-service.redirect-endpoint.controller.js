@@ -24,7 +24,7 @@
         var returnPathParameterName = 'return_path';
         var returnPath = $location.search()[returnPathParameterName];
         $location.search(returnPathParameterName, null);
-        console.log('return_path ' + returnPath + 'parameter received');
+        console.log('return_path ' + returnPath + ' processed');
 
         // go to returnPath
         $location.path(returnPath);
