@@ -75,7 +75,7 @@
                         Authorization: getAccessToken()
                     },
                     method: "get",
-                    url: identityServiceConfig.identityServiceBaseUrl + "/userinfo"
+                    url: identityServiceConfig.baseUrl + "/userinfo"
                 });
 
                 return request
