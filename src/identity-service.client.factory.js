@@ -72,10 +72,10 @@
             if (accessToken) {
                 var request = $http({
                     headers: {
-                        Authorization: getAccessToken()
+                        Authorization: "Bearer " + getAccessToken()
                     },
                     method: "get",
-                    url: identityServiceConfig.baseUrl + "/userinfo"
+                    url: identityServiceConfig.baseUrl + "/oauth2/userinfo"
                 });
 
                 return request
