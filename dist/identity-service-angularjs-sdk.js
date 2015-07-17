@@ -114,19 +114,15 @@
         function getUserInfo() {
             var accessToken = getAccessToken();
             if (accessToken) {
-                var request = $http({
+                return $http({
                     headers: {
-                        Authorization: "Bearer " + getAccessToken()
+                        Authorization: "Bearer " + accessToken
                     },
                     method: "get",
                     url: identityServiceConfig.baseUrl + "/oauth2/userinfo"
+                }).then(function (response) {
+                    return response.data;
                 });
-
-                return request
-                    .then(
-                    handleSuccess,
-                    handleError
-                );
             }
             else {
                 var deferred = $q.defer();
@@ -141,26 +137,6 @@
 
         function getAccessToken() {
             return localStorageService.get('accessToken');
-        }
-
-        function handleError(response) {
-            if (
-                !angular.isObject(response.data) || !response.data.message
-            ) {
-
-                return ( $q.reject("An unknown error occurred.") );
-
-            }
-
-            // Otherwise, use expected error message.
-            return ( $q.reject(response.data.message) );
-
-        }
-
-        function handleSuccess(response) {
-
-            return ( response.data );
-
         }
     }
 })();
