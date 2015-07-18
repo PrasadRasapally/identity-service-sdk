@@ -82,6 +82,7 @@
          * OpenID Connect (OIDC) UserInfo for a partner rep
          * @typedef {Object} PartnerRepOidcUserInfo
          * @augments {OidcUserInfo}
+         * @property {number} sub
          * @property {(string|null)} partner_sap_account_number
          * @property {(string|null)} sap_vendor_number
          */
