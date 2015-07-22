@@ -181,7 +181,7 @@
         console.log('return_path ' + returnPath + ' processed');
 
         // redirect to returnPath & replace current browser history record
-        $location.path(returnPath).replace();
+        $location.path(returnPath).search({}).replace();
     }
 })();
 
