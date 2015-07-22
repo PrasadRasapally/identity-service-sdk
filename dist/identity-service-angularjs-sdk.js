@@ -181,7 +181,12 @@
         console.log('return_path ' + returnPath + ' processed');
 
         // redirect to returnPath & replace current browser history record
-        $location.path(returnPath).search({}).replace();
+        // note: at time of writing this but is still open: https://github.com/angular/angular.js/issues/12168
+        $location
+            .path(returnPath)
+            .search(accessTokenParameterName, null)
+            .search(returnPathParameterName, null)
+            .replace();
     }
 })();
 
