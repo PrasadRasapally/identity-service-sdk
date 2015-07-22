@@ -8,42 +8,6 @@
 })();
 (function () {
     angular
-        .module("identityServiceModule")
-        .provider(
-        'identityServiceConfig',
-        identityServiceConfigProvider
-    );
-
-    function identityServiceConfigProvider() {
-
-        var objectUnderConstruction = {
-            setBaseUrl: setBaseUrl,
-            setSamlIdpUrl: setSamlIdpUrl,
-            $get: $get
-        };
-
-        return objectUnderConstruction;
-
-        function setBaseUrl(baseUrl) {
-            objectUnderConstruction.baseUrl = baseUrl;
-            return objectUnderConstruction;
-        }
-
-        function setSamlIdpUrl(samlIdpUrl) {
-            objectUnderConstruction.samlIdpUrl = samlIdpUrl;
-            return objectUnderConstruction;
-        }
-
-        function $get(){
-            return {
-                baseUrl:objectUnderConstruction.baseUrl,
-                samlIdpUrl:objectUnderConstruction.samlIdpUrl
-            }
-        }
-    }
-})();
-(function () {
-    angular
         .module('identityServiceModule')
         .factory(
         'identityServiceClient',
@@ -155,35 +119,69 @@
 })();
 
 (function () {
+    angular
+        .module("identityServiceModule")
+        .provider(
+        'identityServiceConfig',
+        identityServiceConfigProvider
+    );
+
+    function identityServiceConfigProvider() {
+
+        var objectUnderConstruction = {
+            setBaseUrl: setBaseUrl,
+            setSamlIdpUrl: setSamlIdpUrl,
+            $get: $get
+        };
+
+        return objectUnderConstruction;
+
+        function setBaseUrl(baseUrl) {
+            objectUnderConstruction.baseUrl = baseUrl;
+            return objectUnderConstruction;
+        }
+
+        function setSamlIdpUrl(samlIdpUrl) {
+            objectUnderConstruction.samlIdpUrl = samlIdpUrl;
+            return objectUnderConstruction;
+        }
+
+        function $get(){
+            return {
+                baseUrl:objectUnderConstruction.baseUrl,
+                samlIdpUrl:objectUnderConstruction.samlIdpUrl
+            }
+        }
+    }
+})();
+(function () {
 
     angular
         .module('identityServiceModule')
         .controller(
-        'IdentityServiceRedirectEndpoint',
+        'IdentityServiceRedirectEndpointController',
         [
             'identityServiceClient',
             '$location',
-            IdentityServiceRedirectEndpoint
+            IdentityServiceRedirectEndpointController
         ]);
 
-    function IdentityServiceRedirectEndpoint(identityServiceClient,
-                                             $location) {
+    function IdentityServiceRedirectEndpointController(identityServiceClient,
+                                                       $location) {
 
         // consume access token parameter
         var accessTokenParameterName = 'access_token';
         var accessToken = $location.search()[accessTokenParameterName];
         identityServiceClient.setAccessToken(accessToken);
-        $location.search(accessTokenParameterName, null);
         console.log('access_token with signature ' + accessToken.split('.')[2] + ' processed');
 
         // consume returnPath parameter
         var returnPathParameterName = 'return_path';
         var returnPath = $location.search()[returnPathParameterName];
-        $location.search(returnPathParameterName, null);
         console.log('return_path ' + returnPath + ' processed');
 
-        // go to returnPath
-        $location.path(returnPath);
+        // redirect to returnPath & replace current browser history record
+        $location.path(returnPath).replace();
     }
 })();
 
@@ -200,7 +198,8 @@
                     '/identity-service/redirect-endpoint',
                     {
                         template: ' ',
-                        controller: 'IdentityServiceRedirectEndpoint'
+                        controller: 'IdentityServiceRedirectEndpointController',
+                        controllerAs:'controller'
                     }
                 )
             }

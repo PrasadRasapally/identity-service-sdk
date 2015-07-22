@@ -3,7 +3,7 @@ module.exports = function (grunt) {
     grunt.initConfig({
         concat:{
             dist: {
-                src: ['src/identity-service.module.js','src/*.js'],
+                src: ['src/module.js','src/*.js'],
                 dest: 'dist/identity-service-angularjs-sdk.js'
             }
         }

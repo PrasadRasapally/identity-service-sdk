@@ -11,7 +11,8 @@
                     '/identity-service/redirect-endpoint',
                     {
                         template: ' ',
-                        controller: 'IdentityServiceRedirectEndpoint'
+                        controller: 'IdentityServiceRedirectEndpointController',
+                        controllerAs:'controller'
                     }
                 )
             }
