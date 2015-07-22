@@ -16,7 +16,7 @@
         // consume access token parameter
         var accessTokenParameterName = "access_token";
         var accessToken = $location.search()[accessTokenParameterName];
-        identityServiceClient.setAccessToken(accessToken);
+        identityServiceClient.login(accessToken);
 
         // consume returnPath parameter
         var returnPathParameterName = "return_path";
