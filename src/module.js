@@ -2,7 +2,7 @@
     angular.module(
         "identityServiceModule",
         [
-            'ngRoute',
-            'LocalStorageModule'
+            "ngRoute",
+            "LocalStorageModule"
         ]);
 })();

@@ -3,16 +3,16 @@
         "identityServiceModule")
         .config(
         [
-            '$routeProvider',
+            "$routeProvider",
             function ($routeProvider) {
                 $routeProvider
                     .when
                 (
-                    '/identity-service/redirect-endpoint',
+                    "/identity-service/redirect-endpoint",
                     {
-                        template: ' ',
-                        controller: 'IdentityServiceRedirectEndpointController',
-                        controllerAs:'controller'
+                        template: " ",
+                        controller: "IdentityServiceRedirectEndpointController",
+                        controllerAs:"controller"
                     }
                 )
             }

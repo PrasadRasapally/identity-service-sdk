@@ -2,7 +2,7 @@
     angular
         .module("identityServiceModule")
         .provider(
-        'identityServiceConfig',
+        "identityServiceConfig",
         identityServiceConfigProvider
     );
 

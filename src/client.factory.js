@@ -1,14 +1,14 @@
 (function () {
     angular
-        .module('identityServiceModule')
+        .module("identityServiceModule")
         .factory(
-        'identityServiceClient',
+        "identityServiceClient",
         [
-            'identityServiceConfig',
-            '$http',
-            '$q',
-            'localStorageService',
-            '$window',
+            "identityServiceConfig",
+            "$http",
+            "$q",
+            "localStorageService",
+            "$window",
             identityServiceClient
         ]);
 
@@ -66,7 +66,7 @@
 
             // determine appropriate prefix for relay state parameter
             var relayStatePrefix = "&";
-            if (1 > samlIdpUrl.indexOf('?')) {
+            if (1 > samlIdpUrl.indexOf("?")) {
                 relayStatePrefix = "?";
             }
 
@@ -101,11 +101,11 @@
         }
 
         function setAccessToken(accessToken) {
-            localStorageService.set('accessToken', accessToken);
+            localStorageService.set("accessToken", accessToken);
         }
 
         function getAccessToken() {
-            return localStorageService.get('accessToken');
+            return localStorageService.get("accessToken");
         }
     }
 })();
