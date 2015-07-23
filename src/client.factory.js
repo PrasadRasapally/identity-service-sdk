@@ -8,13 +8,15 @@
             "$http",
             "localStorageService",
             "$window",
+            "$q",
             identityServiceClient
         ]);
 
     function identityServiceClient(identityServiceConfig,
                                    $http,
                                    localStorageService,
-                                   $window) {
+                                   $window,
+                                   $q) {
 
         /*
          fields
@@ -32,7 +34,7 @@
             logout: logout,
             subscribeToLoginEvents: subscribeToLoginEvents,
             subscribeToLogoutEvents: subscribeToLogoutEvents,
-            tryGetUserInfoWithCurrentAccessToken:tryGetUserInfoWithCurrentAccessToken
+            tryGetUserInfoWithCurrentAccessToken: tryGetUserInfoWithCurrentAccessToken
         };
 
         /*
