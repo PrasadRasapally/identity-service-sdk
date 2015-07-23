@@ -6,7 +6,6 @@
         [
             "identityServiceConfig",
             "$http",
-            "$q",
             "localStorageService",
             "$window",
             identityServiceClient
@@ -14,7 +13,6 @@
 
     function identityServiceClient(identityServiceConfig,
                                    $http,
-                                   $q,
                                    localStorageService,
                                    $window) {
 
@@ -33,7 +31,8 @@
             login: login,
             logout: logout,
             subscribeToLoginEvents: subscribeToLoginEvents,
-            subscribeToLogoutEvents: subscribeToLogoutEvents
+            subscribeToLogoutEvents: subscribeToLogoutEvents,
+            tryGetUserInfoWithCurrentAccessToken:tryGetUserInfoWithCurrentAccessToken
         };
 
         /*
@@ -77,56 +76,16 @@
         }
 
         /**
-         * OpenID Connect (OIDC) UserInfo
-         * @typedef {Object} OidcUserInfo
-         * @property {string} given_name
-         * @property {string} family_name
-         * @property {string} email
-         * @property {string} type - either "partnerRep" or "employee"
-         */
-
-        /**
-         * OpenID Connect (OIDC) UserInfo for a partner rep
-         * @typedef {Object} PartnerRepOidcUserInfo
-         * @augments {OidcUserInfo}
-         * @property {number} sub
-         * @property {(string|null)} partner_sap_account_number
-         * @property {(string|null)} sap_vendor_number
-         */
-
-        /**
-         * OpenID Connect (OIDC) UserInfo for an employee
-         * @typedef {Object} EmployeeOidcUserInfo
-         * @augments {OidcUserInfo}
-         */
-
-        /**
-         * tries to obtain OIDC (OpenId Connect) UserInfo with the provided accessToken
-         * @returns a promise of {OidcUserInfo}
-         */
-        function tryGetOidcUserInfo(accessToken) {
-            return $http({
-                headers: {
-                    Authorization: "Bearer " + accessToken
-                },
-                method: "get",
-                url: identityServiceConfig.baseUrl + "/oauth2/userinfo"
-            }).then(function (response) {
-                return response.data;
-            });
-        }
-
-        /**
          * Logs the user in with the provided accessToken and saves it to browser localStorage.
          * Executes callbacks previously passed to {@link subscribeToLoginEvents}
          * @param {string} accessToken
          */
         function login(accessToken) {
 
-            tryGetOidcUserInfo(accessToken)
-                .then(function (oidcUserInfo) {
+            localStorageService.set("accessToken", accessToken);
 
-                    localStorageService.set("accessToken", accessToken);
+            tryGetUserInfoWithCurrentAccessToken()
+                .then(function (oidcUserInfo) {
 
                     for (var i = 0; i < loginCallbacks.length; i++) {
                         loginCallbacks[i](oidcUserInfo);
@@ -166,6 +125,57 @@
          */
         function subscribeToLogoutEvents(callback) {
             logoutCallbacks.push(callback);
+        }
+
+        /**
+         * OpenID Connect (OIDC) UserInfo
+         * @typedef {Object} OidcUserInfo
+         * @property {string} given_name
+         * @property {string} family_name
+         * @property {string} email
+         * @property {string} type - either "partnerRep" or "employee"
+         */
+
+        /**
+         * OpenID Connect (OIDC) UserInfo for a partner rep
+         * @typedef {Object} PartnerRepOidcUserInfo
+         * @augments {OidcUserInfo}
+         * @property {number} sub
+         * @property {(string|null)} partner_sap_account_number
+         * @property {(string|null)} sap_vendor_number
+         */
+
+        /**
+         * OpenID Connect (OIDC) UserInfo for an employee
+         * @typedef {Object} EmployeeOidcUserInfo
+         * @augments {OidcUserInfo}
+         */
+
+        /**
+         * Tries to get userInfo with the current accessToken, otherwise returns null.
+         * Primarily used to obtain user info upon initial page load.
+         * @returns a promise of {(OidcUserInfo|null)}
+         */
+        function tryGetUserInfoWithCurrentAccessToken() {
+
+            var accessToken = getCurrentAccessToken();
+
+            if (accessToken) {
+                return $http({
+                    headers: {
+                        Authorization: "Bearer " + accessToken
+                    },
+                    method: "get",
+                    url: identityServiceConfig.baseUrl + "/oauth2/userinfo"
+                }).then(function (response) {
+                    return response.data;
+                });
+            }
+            else {
+                var deferred = $q.defer();
+                deferred.resolve(null);
+                return deferred.promise;
+            }
         }
     }
 })();

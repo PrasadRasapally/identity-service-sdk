@@ -26,6 +26,10 @@ with the logged in users info.
 Subscribes a callback to logout events. In the event of a logout for any reason the callback
 will be invoked.
 
+#####tryGetUserInfoWithCurrentAccessToken
+Tries to get userInfo with the current accessToken, otherwise returns null.
+Primarily used to obtain user info upon initial page load.
+
 ## Installation  
 
 **install required dependencies:**  
