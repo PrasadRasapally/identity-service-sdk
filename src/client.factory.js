@@ -154,7 +154,7 @@
          */
 
         /**
-         * Tries to get userInfo with the current accessToken, otherwise returns null.
+         * Attempts to get userInfo with the current accessToken.
          * Primarily used to obtain user info upon initial page load.
          * @returns a promise of {(OidcUserInfo|null)}
          */
@@ -175,7 +175,7 @@
             }
             else {
                 var deferred = $q.defer();
-                deferred.resolve(null);
+                deferred.reject("no access token exists");
                 return deferred.promise;
             }
         }
