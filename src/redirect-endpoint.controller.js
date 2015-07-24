@@ -19,13 +19,13 @@
         // consume access token parameter
         var accessTokenParameterName = "access_token";
         var accessToken = searchParams[accessTokenParameterName];
-        searchParams[accessTokenParameterName] = null;
         identityServiceClient.login(accessToken);
+        searchParams[accessTokenParameterName] = null;
 
         // consume returnPath parameter
         var returnPathParameterName = "return_path";
-        searchParams[returnPathParameterName]= null;
         var returnPath = searchParams[returnPathParameterName];
+        searchParams[returnPathParameterName]= null;
 
         // redirect to returnPath & replace current browser history record
         $location
