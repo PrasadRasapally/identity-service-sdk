@@ -2,31 +2,31 @@
 An AngularJS Module implementing common use cases encountered when integrating AngularJS apps
  with the precorconnect identity service.
 
-## UseCases
-#####getCurrentAccessToken
+## Use Cases
+#####Get Current Access Token
 Retrieves the current access_token from browser storage. Primarily used to build an 
 Authorization header to make an API call to a protected resource. 
 
-#####getSsoLoginUrl
+#####Get SSO Login URL
 Gets a URL for initiating a SSO login flow and persists the resulting access_token to browser storage.
 
-#####login
+#####Login
 Logs the user in with the provided accessToken and saves it to browser localStorage. 
 Executes callbacks previously passed to [subscribeToLoginEvents](#subscribetologinevents)
 
-#####logout
+#####Logout
 Logs out the currently logged in user and removes their accessToken from localStorage. 
 Executes callbacks previously passed to [subscribeToLogoutEvents](#subscribetologoutevents)
 
-#####subscribeToLoginEvents  
+#####Subscribe To Login Events  
 Subscribes a callback to login events. In the event of a login the callback will be invoked
 with the logged in users info.
 
-#####subscribeToLogoutEvents  
+#####Subscribe To Logout Events  
 Subscribes a callback to logout events. In the event of a logout for any reason the callback
 will be invoked.
 
-#####tryGetUserInfoWithCurrentAccessToken
+#####Try Get User Info With Current Access Token
 Attempts to get userInfo with the current accessToken.
 Primarily used to obtain user info upon initial page load.
 
