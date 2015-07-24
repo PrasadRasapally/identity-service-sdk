@@ -16,6 +16,9 @@
         // get search parameters
         var searchParams = $location.search();
 
+        // replace current browser history record
+        $location.replace();
+
         // consume access token parameter
         var accessTokenParameterName = "access_token";
         var accessToken = searchParams[accessTokenParameterName];
@@ -25,12 +28,11 @@
         // consume returnPath parameter
         var returnPathParameterName = "return_path";
         var returnPath = searchParams[returnPathParameterName];
-        searchParams[returnPathParameterName]= null;
+        searchParams[returnPathParameterName] = null;
 
         // redirect to returnPath & replace current browser history record
-        $location
-            .path(returnPath)
-            .search(searchParams)
-            .replace();
+        $location.search(searchParams);
+        $location.path(returnPath);
+
     }
 })();
