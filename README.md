@@ -60,7 +60,7 @@ see below.
 ```js
 angular.module(
         "app",
-        ["identityServiceModule"])
+        ["identityServiceSdk.module"])
         .config(
         [
             "identityServiceSdk.configProvider",
