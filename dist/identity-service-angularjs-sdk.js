@@ -195,13 +195,13 @@
         .module("identityServiceModule")
         .config([
             "$httpProvider",
-            "http401ResponseInterceptor",
+            "http401ResponseInterceptorProvider",
             config]);
 
     function config($httpProvider,
-                    http401ResponseInterceptor) {
+                    http401ResponseInterceptorProvider) {
 
-        $httpProvider.interceptors.push(http401ResponseInterceptor);
+        $httpProvider.interceptors.push(http401ResponseInterceptorProvider);
 
     }
 })();
@@ -251,23 +251,33 @@
             "identityServiceClient",
             "$location",
             "$window",
-            http401ResponseInterceptor
+            http401ResponseInterceptorProvider
         ]);
-    function http401ResponseInterceptor($q,
-                                        identityServiceClient,
-                                        $location,
-                                        $window) {
-        return {
-            responseError: function (rejection) {
-                if (rejection.status === 401) {
-                    $window.location = identityServiceClient.getSsoLoginUrl($location.path());
+    function http401ResponseInterceptorProvider($q,
+                                                identityServiceClient,
+                                                $location,
+                                                $window) {
+
+        var http401ResponseInterceptor = {
+            $get: $get
+        };
+
+        return http401ResponseInterceptor;
+
+        function $get() {
+            return {
+                responseError: function (rejection) {
+                    if (rejection.status === 401) {
+                        $window.location = identityServiceClient.getSsoLoginUrl($location.path());
+                    }
+                    return $q.reject(rejection);
                 }
-                return $q.reject(rejection);
             }
         }
 
     }
-})();
+})
+();
 
 (function () {
 
