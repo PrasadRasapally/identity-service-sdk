@@ -61,7 +61,6 @@
          * Logs out the currently logged in user by:
          * 1) removing their accessToken from localStorage
          * 2) redirecting them to the configured logoutUrl
-         * Executes callbacks previously passed to {@link subscribeToLogoutEvents}
          */
         function logout() {
 
