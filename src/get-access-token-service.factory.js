@@ -2,13 +2,13 @@
     angular
         .module("identityServiceSdk.module")
         .factory(
-        "identityServiceSdk.getAccessTokenUseCase",
+        "identityServiceSdk.getAccessTokenService",
         [
-            "identityServiceSdk.getAccessTokenService",
-            getAccessTokenUseCase
+            "localStorageService",
+            getAccessTokenService
         ]);
 
-    function getAccessTokenUseCase(getAccessTokenService) {
+    function getAccessTokenService(localStorageService) {
 
         return {
             execute: execute
@@ -20,7 +20,7 @@
          * @returns {string}
          */
         function execute() {
-            return getAccessTokenService.execute;
+            return localStorageService.get("accessToken");
         }
     }
 })();

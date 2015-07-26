@@ -82,13 +82,13 @@
     angular
         .module("identityServiceSdk.module")
         .factory(
-        "identityServiceSdk.getAccessTokenUseCase",
+        "identityServiceSdk.getAccessTokenService",
         [
             "localStorageService",
-            getAccessTokenUseCase
+            getAccessTokenService
         ]);
 
-    function getAccessTokenUseCase(localStorageService) {
+    function getAccessTokenService(localStorageService) {
 
         return {
             execute: execute
@@ -106,6 +106,33 @@
 })();
 
 (function () {
+    angular
+        .module("identityServiceSdk.module")
+        .factory(
+        "identityServiceSdk.getAccessTokenUseCase",
+        [
+            "identityServiceSdk.getAccessTokenService",
+            getAccessTokenUseCase
+        ]);
+
+    function getAccessTokenUseCase(getAccessTokenService) {
+
+        return {
+            execute: execute
+        };
+
+        /**
+         * Retrieves the current access_token from browser storage. Primarily used to build an
+         * Authorization header to make an API call to a protected resource.
+         * @returns {string}
+         */
+        function execute() {
+            return getAccessTokenService.execute;
+        }
+    }
+})();
+
+(function () {
 
     angular
         .module("identityServiceSdk.module")
@@ -114,12 +141,14 @@
         [
             "$http",
             "identityServiceSdk.config",
+            "identityServiceSdk.getAccessTokenService",
             "identityServiceSdk.loginWithSamlService",
             getUserInfoUseCase
         ]);
 
     function getUserInfoUseCase($http,
                                 config,
+                                getAccessTokenService,
                                 loginWithSamlService) {
 
         return {
@@ -158,7 +187,7 @@
 
             return $http({
                 headers: {
-                    Authorization: "Bearer " + getCurrentAccessToken()
+                    Authorization: "Bearer " + getAccessTokenService.execute()
                 },
                 method: "get",
                 url: config.baseUrl + "/oauth2/userinfo"

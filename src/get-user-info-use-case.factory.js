@@ -7,12 +7,14 @@
         [
             "$http",
             "identityServiceSdk.config",
+            "identityServiceSdk.getAccessTokenService",
             "identityServiceSdk.loginWithSamlService",
             getUserInfoUseCase
         ]);
 
     function getUserInfoUseCase($http,
                                 config,
+                                getAccessTokenService,
                                 loginWithSamlService) {
 
         return {
@@ -51,7 +53,7 @@
 
             return $http({
                 headers: {
-                    Authorization: "Bearer " + getCurrentAccessToken()
+                    Authorization: "Bearer " + getAccessTokenService.execute()
                 },
                 method: "get",
                 url: config.baseUrl + "/oauth2/userinfo"
