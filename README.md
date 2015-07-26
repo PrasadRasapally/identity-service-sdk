@@ -8,13 +8,13 @@ Retrieves the current access_token from browser storage. Primarily used to build
 Authorization header to make an API call to a protected resource.   
 
 #####Get User Info
-Gets userInfo for the current user.
+Gets userInfo for the current user. If no userInfo is retrievable, executes [Login With SAML](#login-with-saml)
 
 #####Login With SAML
 Logs a user in by:  
 1.  initiates a SAML 2.0 SP initiated Redirect POST login flow  
 2.  sets the resulting access token in browser storage such that it will be returned 
-by [Get Current Access Token](#GetCurrentAccessToken)
+by [Get Access Token](#get-access-token)
 
 #####Logout  
 Logs out the currently logged in user by:  
