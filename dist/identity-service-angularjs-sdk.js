@@ -195,6 +195,16 @@
                 .then(function onFulfilled(response) {
                     return response.data;
 
+                }, function onRejected(response) {
+
+                    // if we're on the redirect endpoint don't re-authenticate; can cause infinite loop
+                    if ($location.path() == "/identity-service/redirect-endpoint") {
+                        return response;
+                    }
+                    else if (response.status === 401) {
+                        loginWithSamlService.execute();
+                    }
+
                 });
         }
     }
