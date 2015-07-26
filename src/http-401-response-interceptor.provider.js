@@ -10,14 +10,14 @@
         return {
             $get: [
                 "$q",
-                "identityServiceClient",
+                "identityServiceConfigProvider",
                 "$location",
                 "$window",
                 $get]
         };
 
         function $get($q,
-                      identityServiceClient,
+                      identityServiceConfigProvider,
                       $location,
                       $window) {
             return {
@@ -30,7 +30,7 @@
                 responseError: function (rejection) {
                     if (rejection.status === 401) {
                         console.log("Response Error 401", rejection);
-                        $window.location = identityServiceClient.getSsoLoginUrl($location.path());
+                        $window.location = identityServiceConfigProvider.getSsoLoginUrl($location.path());
                     }
                     return $q.reject(rejection);
                 }

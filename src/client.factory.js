@@ -7,7 +7,7 @@
             "identityServiceConfig",
             "$http",
             "localStorageService",
-            "$window",
+            "identityServiceConfigProvider",
             "$q",
             identityServiceClient
         ]);
@@ -15,7 +15,7 @@
     function identityServiceClient(identityServiceConfig,
                                    $http,
                                    localStorageService,
-                                   $window,
+                                   identityServiceConfigProvider,
                                    $q) {
 
         /*
@@ -29,7 +29,7 @@
          */
         return {
             getCurrentAccessToken: getCurrentAccessToken,
-            getSsoLoginUrl: getSsoLoginUrl,
+            getSsoLoginUrl: identityServiceConfigProvider.getSsoLoginUrl,
             login: login,
             logout: logout,
             subscribeToLoginEvents: subscribeToLoginEvents,
@@ -48,33 +48,6 @@
          */
         function getCurrentAccessToken() {
             return localStorageService.get("accessToken");
-        }
-
-        /**
-         * Gets a URL for initiating a SSO login flow and persists the resulting access_token to browser storage.
-         * @param {string} returnPath - The angular path to route to following successful login
-         */
-        function getSsoLoginUrl(returnPath) {
-            var samlIdpUrl = identityServiceConfig.samlIdpUrl;
-
-            // the url to return to after successfully logging in.
-            var relayState = $window.location.protocol
-                + "//"
-                + $window.location.host
-                + $window.location.pathname
-                + "#/identity-service/redirect-endpoint?access_token={access_token}&return_path="
-                + returnPath;
-
-            // determine appropriate prefix for relay state parameter
-            var relayStatePrefix = "&";
-            if (1 > samlIdpUrl.indexOf("?")) {
-                relayStatePrefix = "?";
-            }
-
-            return identityServiceConfig.samlIdpUrl
-                + relayStatePrefix
-                + "RelayState="
-                + encodeURIComponent(relayState);
         }
 
         /**
