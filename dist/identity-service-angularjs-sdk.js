@@ -290,7 +290,7 @@
         "identityServiceSdk.logoutUseCase",
         [
             "$window",
-            "identityServiceSdk.Config",
+            "identityServiceSdk.config",
             "localStorageService",
             logoutUseCase
         ]);
