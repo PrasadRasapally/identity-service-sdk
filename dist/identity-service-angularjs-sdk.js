@@ -193,6 +193,21 @@
 (function () {
     angular
         .module("identityServiceModule")
+        .config([
+            "$httpProvider",
+            "http401ResponseInterceptor",
+            config]);
+
+    function config($httpProvider,
+                    http401ResponseInterceptor) {
+
+        $httpProvider.interceptors.push(http401ResponseInterceptor);
+
+    }
+})();
+(function () {
+    angular
+        .module("identityServiceModule")
         .provider(
         "identityServiceConfig",
         identityServiceConfigProvider
@@ -226,6 +241,34 @@
         }
     }
 })();
+(function () {
+    angular
+        .module("identityServiceModule")
+        .factory(
+        "http401ResponseInterceptor",
+        [
+            "$q",
+            "identityServiceClient",
+            "$location",
+            "$window",
+            http401ResponseInterceptor
+        ]);
+    function http401ResponseInterceptor($q,
+                                        identityServiceClient,
+                                        $location,
+                                        $window) {
+        return {
+            responseError: function (rejection) {
+                if (rejection.status === 401) {
+                    $window.location = identityServiceClient.getSsoLoginUrl($location.path());
+                }
+                return $q.reject(rejection);
+            }
+        }
+
+    }
+})();
+
 (function () {
 
     angular
