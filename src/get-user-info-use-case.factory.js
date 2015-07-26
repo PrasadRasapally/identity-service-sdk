@@ -61,12 +61,6 @@
                 .then(function onFulfilled(response) {
                     return response.data;
 
-                }, function onRejected(response) {
-
-                    /*if (response.status === 401) {
-                        loginWithSamlService.execute();
-                    }*/
-
                 });
         }
     }
