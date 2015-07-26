@@ -3,13 +3,13 @@
         .module("identityServiceModule")
         .config([
             "$httpProvider",
-            "http401ResponseInterceptorProvider",
+            "http401ResponseInterceptor",
             config]);
 
     function config($httpProvider,
-                    http401ResponseInterceptorProvider) {
+                    http401ResponseInterceptor) {
 
-        $httpProvider.interceptors.push(http401ResponseInterceptorProvider.$get);
+        $httpProvider.interceptors.push(http401ResponseInterceptor);
 
     }
 })();

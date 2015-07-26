@@ -15,7 +15,6 @@
             "identityServiceConfig",
             "$http",
             "localStorageService",
-            "identityServiceConfigProvider",
             "$q",
             identityServiceClient
         ]);
@@ -23,7 +22,6 @@
     function identityServiceClient(identityServiceConfig,
                                    $http,
                                    localStorageService,
-                                   identityServiceConfigProvider,
                                    $q) {
 
         /*
@@ -37,7 +35,7 @@
          */
         return {
             getCurrentAccessToken: getCurrentAccessToken,
-            getSsoLoginUrl: identityServiceConfigProvider.getSsoLoginUrl,
+            getSsoLoginUrl: identityServiceConfig.getSsoLoginUrl,
             login: login,
             logout: logout,
             subscribeToLoginEvents: subscribeToLoginEvents,
@@ -168,13 +166,13 @@
         .module("identityServiceModule")
         .config([
             "$httpProvider",
-            "http401ResponseInterceptorProvider",
+            "http401ResponseInterceptor",
             config]);
 
     function config($httpProvider,
-                    http401ResponseInterceptorProvider) {
+                    http401ResponseInterceptor) {
 
-        $httpProvider.interceptors.push(http401ResponseInterceptorProvider.$get);
+        $httpProvider.interceptors.push(http401ResponseInterceptor);
 
     }
 })();
@@ -253,14 +251,14 @@
         return {
             $get: [
                 "$q",
-                "identityServiceConfigProvider",
+                "identityServiceConfig",
                 "$location",
                 "$window",
                 $get]
         };
 
         function $get($q,
-                      identityServiceConfigProvider,
+                      identityServiceConfig,
                       $location,
                       $window) {
             return {
@@ -273,7 +271,7 @@
                 responseError: function (rejection) {
                     if (rejection.status === 401) {
                         console.log("Response Error 401", rejection);
-                        $window.location = identityServiceConfigProvider.getSsoLoginUrl($location.path());
+                        $window.location = identityServiceConfig.getSsoLoginUrl($location.path());
                     }
                     return $q.reject(rejection);
                 }

@@ -7,7 +7,6 @@
             "identityServiceConfig",
             "$http",
             "localStorageService",
-            "identityServiceConfigProvider",
             "$q",
             identityServiceClient
         ]);
@@ -15,7 +14,6 @@
     function identityServiceClient(identityServiceConfig,
                                    $http,
                                    localStorageService,
-                                   identityServiceConfigProvider,
                                    $q) {
 
         /*
@@ -29,7 +27,7 @@
          */
         return {
             getCurrentAccessToken: getCurrentAccessToken,
-            getSsoLoginUrl: identityServiceConfigProvider.getSsoLoginUrl,
+            getSsoLoginUrl: identityServiceConfig.getSsoLoginUrl,
             login: login,
             logout: logout,
             subscribeToLoginEvents: subscribeToLoginEvents,
