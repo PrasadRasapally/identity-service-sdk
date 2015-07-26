@@ -5,6 +5,7 @@
         .factory(
         "identityServiceSdk.getUserInfoUseCase",
         [
+            "$location",
             "$http",
             "identityServiceSdk.config",
             "identityServiceSdk.getAccessTokenService",
@@ -12,7 +13,8 @@
             getUserInfoUseCase
         ]);
 
-    function getUserInfoUseCase($http,
+    function getUserInfoUseCase($location,
+                                $http,
                                 config,
                                 getAccessTokenService,
                                 loginWithSamlService) {

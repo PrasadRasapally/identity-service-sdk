@@ -139,6 +139,7 @@
         .factory(
         "identityServiceSdk.getUserInfoUseCase",
         [
+            "$location",
             "$http",
             "identityServiceSdk.config",
             "identityServiceSdk.getAccessTokenService",
@@ -146,7 +147,8 @@
             getUserInfoUseCase
         ]);
 
-    function getUserInfoUseCase($http,
+    function getUserInfoUseCase($location,
+                                $http,
                                 config,
                                 getAccessTokenService,
                                 loginWithSamlService) {
@@ -358,12 +360,12 @@
         .controller(
         "identityServiceSdk.RedirectEndpointController",
         [
-            "identityServiceClient",
+            "identityServiceSdk.setAccessTokenService",
             "$location",
             RedirectEndpointController
         ]);
 
-    function RedirectEndpointController(identityServiceClient,
+    function RedirectEndpointController(setAccessTokenService,
                                         $location) {
 
         // get search parameters
@@ -375,7 +377,7 @@
         // consume access token parameter
         var accessTokenParameterName = "access_token";
         var accessToken = searchParams[accessTokenParameterName];
-        identityServiceClient.setCurrentAccessToken(accessToken);
+        setAccessTokenService.execute(accessToken);
         searchParams[accessTokenParameterName] = null;
 
         // consume returnPath parameter
