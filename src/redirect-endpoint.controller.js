@@ -1,17 +1,17 @@
 (function () {
 
     angular
-        .module("identityServiceModule")
+        .module("identityServiceSdk.module")
         .controller(
-        "IdentityServiceRedirectEndpointController",
+        "identityServiceSdk.RedirectEndpointController",
         [
             "identityServiceClient",
             "$location",
-            IdentityServiceRedirectEndpointController
+            RedirectEndpointController
         ]);
 
-    function IdentityServiceRedirectEndpointController(identityServiceClient,
-                                                       $location) {
+    function RedirectEndpointController(identityServiceClient,
+                                        $location) {
 
         // get search parameters
         var searchParams = $location.search();

@@ -3,20 +3,23 @@ An AngularJS Module implementing common use cases encountered when integrating A
  with the precorconnect identity service.
 
 ## Use Cases
-#####Get Current Access Token
+#####Get Access Token
 Retrieves the current access_token from browser storage. Primarily used to build an 
-Authorization header to make an API call to a protected resource. 
+Authorization header to make an API call to a protected resource.   
 
-#####Set Current Access Token
-Sets the current access_token in browser storage.
+#####Get User Info
+Gets userInfo for the current user.
+
+#####Login With SAML
+Logs a user in by:  
+1.  initiates a SAML 2.0 SP initiated Redirect POST login flow  
+2.  sets the resulting access token in browser storage such that it will be returned 
+by [Get Current Access Token](#GetCurrentAccessToken)
 
 #####Logout  
 Logs out the currently logged in user by:  
 1.  removing their accessToken from localStorage  
-2.  redirecting them to the configured logoutUrl  
-
-#####Get User Info
-Gets userInfo for the current user.
+2.  redirecting them to the configured logoutUrl
 
 ## Installation  
 

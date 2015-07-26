@@ -1,6 +1,7 @@
 (function () {
-    angular.module(
-        "identityServiceModule",
+    angular
+        .module(
+        "identityServiceSdk.module",
         [
             "ngRoute",
             "LocalStorageModule"

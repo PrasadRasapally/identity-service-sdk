@@ -1,6 +1,6 @@
 (function () {
-    angular.module(
-        "identityServiceModule")
+    angular
+        .module("identityServiceSdk.module")
         .config(
         [
             "$routeProvider",
@@ -11,8 +11,8 @@
                     "/identity-service/redirect-endpoint",
                     {
                         template: " ",
-                        controller: "IdentityServiceRedirectEndpointController",
-                        controllerAs:"controller"
+                        controller: "identityServiceSdk.RedirectEndpointController",
+                        controllerAs: "controller"
                     }
                 )
             }

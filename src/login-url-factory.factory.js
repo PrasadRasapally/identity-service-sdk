@@ -1,14 +1,15 @@
 (function () {
     angular
-        .module("identityServiceModule")
-        .service("ssoLoginUrlFactory",
+        .module("identityServiceSdk.module")
+        .service("identityServiceLoginUrlFactory",
         [
             "$window",
-            "identityServiceConfig",
-            ssoLoginUrlFactory]);
+            "identityServiceSdk.config",
+            loginUrlFactory
+        ]);
 
-    function ssoLoginUrlFactory($window,
-                                identityServiceConfig) {
+    function loginUrlFactory($window,
+                             config) {
 
         return {
             construct: construct
@@ -31,11 +32,11 @@
 
             // determine appropriate prefix for relay state parameter
             var relayStatePrefix = "&";
-            if (1 > identityServiceConfig.samlIdpUrl.indexOf("?")) {
+            if (1 > config.samlLoginUrl.indexOf("?")) {
                 relayStatePrefix = "?";
             }
 
-            return identityServiceConfig.samlIdpUrl
+            return config.samlLoginUrl
                 + relayStatePrefix
                 + "RelayState="
                 + encodeURIComponent(relayState);

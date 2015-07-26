@@ -1,16 +1,15 @@
 (function () {
     angular
-        .module("identityServiceModule")
-        .provider(
-        "identityServiceConfig",
-        identityServiceConfigProvider
+        .module("identityServiceSdk.module")
+        .provider("identityServiceSdk.config",
+        configProvider
     );
 
-    function identityServiceConfigProvider() {
+    function configProvider() {
 
         var objectUnderConstruction = {
             setBaseUrl: setBaseUrl,
-            setSamlIdpUrl: setSamlIdpUrl,
+            setSamlLoginUrl: setSamlLoginUrl,
             setLogoutUrl: setLogoutUrl,
             $get: $get
         };
@@ -22,8 +21,8 @@
             return objectUnderConstruction;
         }
 
-        function setSamlIdpUrl(samlIdpUrl) {
-            objectUnderConstruction.samlIdpUrl = samlIdpUrl;
+        function setSamlLoginUrl(samlLoginUrl) {
+            objectUnderConstruction.samlLoginUrl = samlLoginUrl;
             return objectUnderConstruction;
         }
 
@@ -35,7 +34,7 @@
         function $get() {
             return {
                 baseUrl: objectUnderConstruction.baseUrl,
-                samlIdpUrl: objectUnderConstruction.samlIdpUrl,
+                samlLoginUrl: objectUnderConstruction.samlLoginUrl,
                 logoutUrl: objectUnderConstruction.logoutUrl
             };
 
