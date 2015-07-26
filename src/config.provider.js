@@ -11,7 +11,7 @@
         var objectUnderConstruction = {
             setBaseUrl: setBaseUrl,
             setSamlIdpUrl: setSamlIdpUrl,
-            $get: ["$window", $get]
+            $get: $get
         };
 
         return objectUnderConstruction;
@@ -26,38 +26,13 @@
             return objectUnderConstruction;
         }
 
-        function $get($window) {
+        function $get() {
             return {
                 baseUrl: objectUnderConstruction.baseUrl,
-                samlIdpUrl: objectUnderConstruction.samlIdpUrl,
-                getSsoLoginUrl: getSsoLoginUrl
+                samlIdpUrl: objectUnderConstruction.samlIdpUrl
             };
 
-            /**
-             * Gets a URL for initiating a SSO login flow and persists the resulting access_token to browser storage.
-             * @param {string} returnPath - The angular path to route to following successful login
-             */
-            function getSsoLoginUrl(returnPath) {
 
-                // the url to return to after successfully logging in.
-                var relayState = $window.location.protocol
-                    + "//"
-                    + $window.location.host
-                    + $window.location.pathname
-                    + "#/identity-service/redirect-endpoint?access_token={access_token}&return_path="
-                    + returnPath;
-
-                // determine appropriate prefix for relay state parameter
-                var relayStatePrefix = "&";
-                if (1 > objectUnderConstruction.samlIdpUrl.indexOf("?")) {
-                    relayStatePrefix = "?";
-                }
-
-                return objectUnderConstruction.samlIdpUrl
-                    + relayStatePrefix
-                    + "RelayState="
-                    + encodeURIComponent(relayState);
-            }
         }
     }
 })();

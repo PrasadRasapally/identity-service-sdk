@@ -15,6 +15,7 @@
             "identityServiceConfig",
             "$http",
             "localStorageService",
+            "$window",
             "$q",
             identityServiceClient
         ]);
@@ -22,6 +23,7 @@
     function identityServiceClient(identityServiceConfig,
                                    $http,
                                    localStorageService,
+                                   $window,
                                    $q) {
 
         /*
@@ -35,7 +37,7 @@
          */
         return {
             getCurrentAccessToken: getCurrentAccessToken,
-            getSsoLoginUrl: identityServiceConfig.getSsoLoginUrl,
+            getSsoLoginUrl: getSsoLoginUrl,
             login: login,
             logout: logout,
             subscribeToLoginEvents: subscribeToLoginEvents,
@@ -54,6 +56,33 @@
          */
         function getCurrentAccessToken() {
             return localStorageService.get("accessToken");
+        }
+
+        /**
+         * Gets a URL for initiating a SSO login flow and persists the resulting access_token to browser storage.
+         * @param {string} returnPath - The angular path to route to following successful login
+         */
+        function getSsoLoginUrl(returnPath) {
+            var samlIdpUrl = identityServiceConfig.samlIdpUrl;
+
+            // the url to return to after successfully logging in.
+            var relayState = $window.location.protocol
+                + "//"
+                + $window.location.host
+                + $window.location.pathname
+                + "#/identity-service/redirect-endpoint?access_token={access_token}&return_path="
+                + returnPath;
+
+            // determine appropriate prefix for relay state parameter
+            var relayStatePrefix = "&";
+            if (1 > samlIdpUrl.indexOf("?")) {
+                relayStatePrefix = "?";
+            }
+
+            return identityServiceConfig.samlIdpUrl
+                + relayStatePrefix
+                + "RelayState="
+                + encodeURIComponent(relayState);
         }
 
         /**
@@ -189,7 +218,7 @@
         var objectUnderConstruction = {
             setBaseUrl: setBaseUrl,
             setSamlIdpUrl: setSamlIdpUrl,
-            $get: ["$window", $get]
+            $get: $get
         };
 
         return objectUnderConstruction;
@@ -204,38 +233,13 @@
             return objectUnderConstruction;
         }
 
-        function $get($window) {
+        function $get() {
             return {
                 baseUrl: objectUnderConstruction.baseUrl,
-                samlIdpUrl: objectUnderConstruction.samlIdpUrl,
-                getSsoLoginUrl: getSsoLoginUrl
+                samlIdpUrl: objectUnderConstruction.samlIdpUrl
             };
 
-            /**
-             * Gets a URL for initiating a SSO login flow and persists the resulting access_token to browser storage.
-             * @param {string} returnPath - The angular path to route to following successful login
-             */
-            function getSsoLoginUrl(returnPath) {
 
-                // the url to return to after successfully logging in.
-                var relayState = $window.location.protocol
-                    + "//"
-                    + $window.location.host
-                    + $window.location.pathname
-                    + "#/identity-service/redirect-endpoint?access_token={access_token}&return_path="
-                    + returnPath;
-
-                // determine appropriate prefix for relay state parameter
-                var relayStatePrefix = "&";
-                if (1 > objectUnderConstruction.samlIdpUrl.indexOf("?")) {
-                    relayStatePrefix = "?";
-                }
-
-                return objectUnderConstruction.samlIdpUrl
-                    + relayStatePrefix
-                    + "RelayState="
-                    + encodeURIComponent(relayState);
-            }
         }
     }
 })();
@@ -251,27 +255,20 @@
         return {
             $get: [
                 "$q",
-                "identityServiceConfig",
+                "identityServiceClient",
                 "$location",
                 "$window",
                 $get]
         };
 
         function $get($q,
-                      identityServiceConfig,
+                      identityServiceClient,
                       $location,
                       $window) {
             return {
-                response: function (response) {
-                    if (response.status === 401) {
-                        console.log("Response 401");
-                    }
-                    return response || $q.when(response);
-                },
                 responseError: function (rejection) {
                     if (rejection.status === 401) {
-                        console.log("Response Error 401", rejection);
-                        $window.location = identityServiceConfig.getSsoLoginUrl($location.path());
+                        $window.location = identityServiceClient.getSsoLoginUrl($location.path());
                     }
                     return $q.reject(rejection);
                 }
