@@ -7,34 +7,21 @@
             "identityServiceConfig",
             "$http",
             "localStorageService",
-            "ssoLoginUrlFactory",
-            "$q",
             identityServiceClient
         ]);
 
     function identityServiceClient(identityServiceConfig,
                                    $http,
-                                   localStorageService,
-                                   ssoLoginUrlFactory,
-                                   $q) {
-
-        /*
-         fields
-         */
-        var loginCallbacks = [];
-        var logoutCallbacks = [];
+                                   localStorageService) {
 
         /*
          API
          */
         return {
             getCurrentAccessToken: getCurrentAccessToken,
-            getSsoLoginUrl: ssoLoginUrlFactory.construct,
-            login: login,
+            setCurrentAccessToken: setCurrentAccessToken,
             logout: logout,
-            subscribeToLoginEvents: subscribeToLoginEvents,
-            subscribeToLogoutEvents: subscribeToLogoutEvents,
-            tryGetUserInfoWithCurrentAccessToken: tryGetUserInfoWithCurrentAccessToken
+            getUserInfo: getUserInfo
         };
 
         /*
@@ -51,55 +38,28 @@
         }
 
         /**
-         * Logs the user in with the provided accessToken and saves it to browser localStorage.
-         * Executes callbacks previously passed to {@link subscribeToLoginEvents}
+         * Sets the current access_token in browser storage.
          * @param {string} accessToken
          */
-        function login(accessToken) {
+        function setCurrentAccessToken(accessToken) {
 
             localStorageService.set("accessToken", accessToken);
-
-            tryGetUserInfoWithCurrentAccessToken()
-                .then(function (oidcUserInfo) {
-
-                    for (var i = 0; i < loginCallbacks.length; i++) {
-                        loginCallbacks[i](oidcUserInfo);
-                    }
-
-                });
 
         }
 
         /**
-         * Logs out the currently logged in user and removes their accessToken from localStorage.
+         * Logs out the currently logged in user by:
+         * 1) removing their accessToken from localStorage
+         * 2) redirecting them to the configured logoutUrl
          * Executes callbacks previously passed to {@link subscribeToLogoutEvents}
          */
         function logout() {
 
             localStorageService.remove("accessToken");
 
-            for (var i = 0; i < logoutCallbacks.length; i++) {
-                logoutCallbacks[i]();
-            }
+            // redirect to logoutUrl
+            $window.location = identityServiceConfig.logoutUrl;
 
-        }
-
-        /**
-         * Subscribes a callback to login events. In the event of a login the callback will be invoked
-         * with the logged in users info.
-         * @param {function} callback
-         */
-        function subscribeToLoginEvents(callback) {
-            loginCallbacks.push(callback);
-        }
-
-        /**
-         * Subscribes a callback to logout events. In the event of a logout for any reason the callback
-         * will be invoked.
-         * @param {function} callback
-         */
-        function subscribeToLogoutEvents(callback) {
-            logoutCallbacks.push(callback);
         }
 
         /**
@@ -127,30 +87,20 @@
          */
 
         /**
-         * Attempts to get userInfo with the current accessToken.
-         * Primarily used to obtain user info upon initial page load.
-         * @returns a promise of {(OidcUserInfo|null)}
+         * Gets userInfo for the current user.
+         * @returns a promise of {OidcUserInfo}
          */
-        function tryGetUserInfoWithCurrentAccessToken() {
+        function getUserInfo() {
 
-            var accessToken = getCurrentAccessToken();
-
-            if (accessToken) {
-                return $http({
-                    headers: {
-                        Authorization: "Bearer " + accessToken
-                    },
-                    method: "get",
-                    url: identityServiceConfig.baseUrl + "/oauth2/userinfo"
-                }).then(function (response) {
-                    return response.data;
-                });
-            }
-            else {
-                var deferred = $q.defer();
-                deferred.reject("no access token exists");
-                return deferred.promise;
-            }
+            return $http({
+                headers: {
+                    Authorization: "Bearer " + getCurrentAccessToken()
+                },
+                method: "get",
+                url: identityServiceConfig.baseUrl + "/oauth2/userinfo"
+            }).then(function (response) {
+                return response.data;
+            });
         }
     }
 })();

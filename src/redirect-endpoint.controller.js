@@ -22,7 +22,7 @@
         // consume access token parameter
         var accessTokenParameterName = "access_token";
         var accessToken = searchParams[accessTokenParameterName];
-        identityServiceClient.login(accessToken);
+        identityServiceClient.setCurrentAccessToken(accessToken);
         searchParams[accessTokenParameterName] = null;
 
         // consume returnPath parameter

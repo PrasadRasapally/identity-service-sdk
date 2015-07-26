@@ -7,28 +7,16 @@ An AngularJS Module implementing common use cases encountered when integrating A
 Retrieves the current access_token from browser storage. Primarily used to build an 
 Authorization header to make an API call to a protected resource. 
 
-#####Get SSO Login URL
-Gets a URL for initiating a SSO login flow and persists the resulting access_token to browser storage.
+#####Set Current Access Token
+Sets the current access_token in browser storage.
 
-#####Login
-Logs the user in with the provided accessToken and saves it to browser localStorage. 
-Executes callbacks previously passed to [subscribeToLoginEvents](#subscribetologinevents)
+#####Logout  
+Logs out the currently logged in user by:  
+1.  removing their accessToken from localStorage  
+2.  redirecting them to the configured logoutUrl  
 
-#####Logout
-Logs out the currently logged in user and removes their accessToken from localStorage. 
-Executes callbacks previously passed to [subscribeToLogoutEvents](#subscribetologoutevents)
-
-#####Subscribe To Login Events  
-Subscribes a callback to login events. In the event of a login the callback will be invoked
-with the logged in users info.
-
-#####Subscribe To Logout Events  
-Subscribes a callback to logout events. In the event of a logout for any reason the callback
-will be invoked.
-
-#####Try Get User Info With Current Access Token
-Attempts to get userInfo with the current accessToken.
-Primarily used to obtain user info upon initial page load.
+#####Get User Info
+Gets userInfo for the current user.
 
 ## Installation  
 

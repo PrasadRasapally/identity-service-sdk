@@ -11,6 +11,7 @@
         var objectUnderConstruction = {
             setBaseUrl: setBaseUrl,
             setSamlIdpUrl: setSamlIdpUrl,
+            setLogoutUrl: setLogoutUrl,
             $get: $get
         };
 
@@ -26,12 +27,17 @@
             return objectUnderConstruction;
         }
 
+        function setLogoutUrl(logoutUrl) {
+            objectUnderConstruction.logoutUrl = logoutUrl;
+            return objectUnderConstruction;
+        }
+
         function $get() {
             return {
                 baseUrl: objectUnderConstruction.baseUrl,
-                samlIdpUrl: objectUnderConstruction.samlIdpUrl
+                samlIdpUrl: objectUnderConstruction.samlIdpUrl,
+                logoutUrl: objectUnderConstruction.logoutUrl
             };
-
 
         }
     }
