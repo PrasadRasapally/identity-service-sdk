@@ -64,7 +64,7 @@
                 }, function onRejected(response) {
 
                     if (response.status === 401) {
-                        loginWithSamlService.loginWithSaml();
+                        loginWithSamlService.execute();
                     }
 
                 });
