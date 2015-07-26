@@ -27,16 +27,16 @@
     <leaf>
       <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.39929327">
-              <caret line="58" column="12" selection-start-line="58" selection-start-column="12" selection-end-line="58" selection-end-column="12" />
+          <provider editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="62" column="38" selection-start-line="62" selection-start-column="38" selection-end-line="62" selection-end-column="38" />
               <folding />
             </state>
           </provider>
           <provider editor-type-id="MarkdownPreviewEditor">
             <state />
           </provider>
-          <provider editor-type-id="Gfm">
+          <provider selected="true" editor-type-id="Gfm">
             <state />
           </provider>
         </entry>
@@ -180,13 +180,13 @@
         <option value="$PROJECT_DIR$/src/config.provider.js" />
         <option value="$PROJECT_DIR$/src/factory.js" />
         <option value="$PROJECT_DIR$/src/login-url-factory.factory.js" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/logout-use-case.factory.js" />
         <option value="$PROJECT_DIR$/src/get-access-token-service.factory.js" />
         <option value="$PROJECT_DIR$/src/get-access-token-use-case.factory.js" />
         <option value="$PROJECT_DIR$/src/redirect-endpoint.controller.js" />
         <option value="$PROJECT_DIR$/src/get-user-info-use-case.factory.js" />
         <option value="$PROJECT_DIR$/src/redirect-endpoint.html" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -269,7 +269,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../partner-rep-service" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="FullScreen" value="false" />
@@ -636,16 +636,16 @@
       <workItem from="1437704952194" duration="260000" />
       <workItem from="1437761935688" duration="777000" />
       <workItem from="1437763985203" duration="219000" />
-      <workItem from="1437886483571" duration="24079000" />
+      <workItem from="1437886483571" duration="24704000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50731000" />
+    <option name="totallyTimeSpent" value="51356000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-659" y="1016" width="1296" height="1040" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1092,16 +1092,16 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39929327">
-          <caret line="58" column="12" selection-start-line="58" selection-start-column="12" selection-end-line="58" selection-end-column="12" />
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="62" column="38" selection-start-line="62" selection-start-column="38" selection-end-line="62" selection-end-column="38" />
           <folding />
         </state>
       </provider>
       <provider editor-type-id="MarkdownPreviewEditor">
         <state />
       </provider>
-      <provider editor-type-id="Gfm">
+      <provider selected="true" editor-type-id="Gfm">
         <state />
       </provider>
     </entry>
