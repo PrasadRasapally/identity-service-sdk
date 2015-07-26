@@ -201,7 +201,7 @@
     function config($httpProvider,
                     http401ResponseInterceptorProvider) {
 
-        $httpProvider.interceptors.push(http401ResponseInterceptorProvider.$get);
+        $httpProvider.interceptors.push(http401ResponseInterceptorProvider);
 
     }
 })();
@@ -244,7 +244,7 @@
 (function () {
     angular
         .module("identityServiceModule")
-        .factory(
+        .provider(
         "http401ResponseInterceptor",
         http401ResponseInterceptorProvider);
 

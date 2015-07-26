@@ -1,7 +1,7 @@
 (function () {
     angular
         .module("identityServiceModule")
-        .factory(
+        .provider(
         "http401ResponseInterceptor",
         http401ResponseInterceptorProvider);
 
