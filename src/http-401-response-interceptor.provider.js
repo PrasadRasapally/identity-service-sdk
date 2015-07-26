@@ -3,25 +3,25 @@
         .module("identityServiceModule")
         .factory(
         "http401ResponseInterceptor",
-        [
-            "$q",
-            "identityServiceClient",
-            "$location",
-            "$window",
-            http401ResponseInterceptorProvider
-        ]);
-    function http401ResponseInterceptorProvider($q,
-                                                identityServiceClient,
-                                                $location,
-                                                $window) {
+        http401ResponseInterceptorProvider);
+
+    function http401ResponseInterceptorProvider() {
 
         var http401ResponseInterceptor = {
-            $get: $get
+            $get: [
+                "$q",
+                "identityServiceClient",
+                "$location",
+                "$window",
+                $get]
         };
 
         return http401ResponseInterceptor;
 
-        function $get() {
+        function $get($q,
+                      identityServiceClient,
+                      $location,
+                      $window) {
             return {
                 responseError: function (rejection) {
                     if (rejection.status === 401) {
