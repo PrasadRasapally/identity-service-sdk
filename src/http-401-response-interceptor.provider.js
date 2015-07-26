@@ -10,20 +10,20 @@
         return {
             $get: [
                 "$q",
-                "identityServiceClient",
+                "ssoLoginUrlFactory",
                 "$location",
                 "$window",
                 $get]
         };
 
         function $get($q,
-                      identityServiceClient,
+                      ssoLoginUrlFactory,
                       $location,
                       $window) {
             return {
                 responseError: function (rejection) {
                     if (rejection.status === 401) {
-                        $window.location = identityServiceClient.getSsoLoginUrl($location.path());
+                        $window.location = ssoLoginUrlFactory.construct($location.path());
                     }
                     return $q.reject(rejection);
                 }
