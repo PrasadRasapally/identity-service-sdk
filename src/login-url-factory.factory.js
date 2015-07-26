@@ -1,7 +1,7 @@
 (function () {
     angular
         .module("identityServiceSdk.module")
-        .service("identityServiceLoginUrlFactory",
+        .service("identityServiceSdk.loginUrlFactory",
         [
             "$window",
             "identityServiceSdk.config",
