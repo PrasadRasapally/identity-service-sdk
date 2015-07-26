@@ -43,7 +43,7 @@ bower install https://bitbucket.org/precorconnect/identity-service-angularjs-sdk
 ```js
 angular.module(
         "app",
-        ["identityServiceModule"]);
+        ["identityServiceSdk.module"]);
 ```
 configure  
 see below.
@@ -53,7 +53,8 @@ see below.
 | Name (* denotes required) | Description |
 |------|-------------|
 | baseUrl* | The base url of the identity service. |
-| samlIdpUrl* | The url of the SAML 2.0 identity providers SSO page. |
+| samlLoginUrl* | The url of the SAML 2.0 identity providers SSO page. |
+| logoutUrl* | The url to redirect to upon logout. |
 
 #### Example
 ```js
@@ -62,13 +63,14 @@ angular.module(
         ["identityServiceModule"])
         .config(
         [
-            "identityServiceConfigProvider",
+            "identityServiceSdk.configProvider",
             appConfig
         ]);
 
-    function appConfig(identityServiceConfigProvider) {
-        identityServiceConfigProvider
+    function appConfig(identityServiceSdk_configProvider) {
+        identityServiceSdk_configProvider
             .setBaseUrl("@@identityServiceBaseUrl")
-            .setSamlIdpUrl("@@samlIdpUrl");
+            .setSamlLoginUrl("@@samlLoginUrl")
+            .setLogoutUrl("@@logoutUrl");
     }
 ```
