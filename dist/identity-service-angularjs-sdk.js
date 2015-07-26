@@ -15,12 +15,14 @@
             "identityServiceConfig",
             "$http",
             "localStorageService",
+            "$window",
             identityServiceClient
         ]);
 
     function identityServiceClient(identityServiceConfig,
                                    $http,
-                                   localStorageService) {
+                                   localStorageService,
+                                   $window) {
 
         /*
          API

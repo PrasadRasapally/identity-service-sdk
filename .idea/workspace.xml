@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="96a98c41-a976-414d-820b-0ced51925156" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client.factory.js" afterPath="$PROJECT_DIR$/src/client.factory.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/config.provider.js" afterPath="$PROJECT_DIR$/src/config.provider.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="96a98c41-a976-414d-820b-0ced51925156" name="Default" comment="" />
     <ignored path="identity-service-angularjs-sdk.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -28,11 +23,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.48056537">
-              <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
+            <state vertical-scroll-proportion="-5.862069">
+              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -48,7 +43,7 @@
         <entry file="file://$PROJECT_DIR$/src/client.factory.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="72" column="11" selection-start-line="72" selection-start-column="11" selection-end-line="74" selection-end-column="58" />
+              <caret line="28" column="11" selection-start-line="28" selection-start-column="11" selection-end-line="28" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -84,11 +79,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config.provider.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/config.provider.js">
+      <file leaf-file-name="redirect-endpoint.controller.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/redirect-endpoint.controller.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+              <caret line="24" column="51" selection-start-line="24" selection-start-column="51" selection-end-line="24" selection-end-column="51" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.provider.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/config.provider.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.114285715">
+              <caret line="13" column="24" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -130,15 +135,15 @@
         <option value="$PROJECT_DIR$/src/module.js" />
         <option value="$PROJECT_DIR$/src/routes.js" />
         <option value="$PROJECT_DIR$/Gruntfile.js" />
-        <option value="$PROJECT_DIR$/src/redirect-endpoint.controller.js" />
         <option value="$PROJECT_DIR$/src/http-401-response-interceptor.js" />
         <option value="$PROJECT_DIR$/../angularjs-header/src/config.js" />
         <option value="$PROJECT_DIR$/src/config.js" />
         <option value="$PROJECT_DIR$/src/sso-login-url-factory.service.js" />
         <option value="$PROJECT_DIR$/src/http-401-response-interceptor.provider.js" />
         <option value="$PROJECT_DIR$/src/config.provider.js" />
-        <option value="$PROJECT_DIR$/src/client.factory.js" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/redirect-endpoint.controller.js" />
+        <option value="$PROJECT_DIR$/src/client.factory.js" />
       </list>
     </option>
   </component>
@@ -601,12 +606,12 @@
       <workItem from="1437704952194" duration="260000" />
       <workItem from="1437761935688" duration="777000" />
       <workItem from="1437763985203" duration="219000" />
-      <workItem from="1437886483571" duration="7835000" />
+      <workItem from="1437886483571" duration="8583000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34487000" />
+    <option name="totallyTimeSpent" value="35235000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-659" y="1016" width="1296" height="1040" extended-state="6" />
@@ -998,14 +1003,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/redirect-endpoint.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.74285716">
-          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Gruntfile.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2857143">
@@ -1062,26 +1059,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/config.provider.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client.factory.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="72" column="11" selection-start-line="72" selection-start-column="11" selection-end-line="74" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.48056537">
-          <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
+        <state vertical-scroll-proportion="-5.862069">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="49" />
           <folding />
         </state>
       </provider>
@@ -1090,6 +1071,30 @@
       </provider>
       <provider editor-type-id="Gfm">
         <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/redirect-endpoint.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="24" column="51" selection-start-line="24" selection-start-column="51" selection-end-line="24" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client.factory.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="28" column="11" selection-start-line="28" selection-start-column="11" selection-end-line="28" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/config.provider.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.114285715">
+          <caret line="13" column="24" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="24" />
+          <folding />
+        </state>
       </provider>
     </entry>
   </component>
