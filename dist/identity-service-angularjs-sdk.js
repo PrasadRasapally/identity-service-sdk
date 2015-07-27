@@ -127,7 +127,7 @@
          * @returns {string}
          */
         function execute() {
-            return getAccessTokenService.execute;
+            return getAccessTokenService.execute();
         }
     }
 })();
