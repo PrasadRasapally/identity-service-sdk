@@ -5,12 +5,14 @@
         .factory(
         "identityServiceSdk.refreshAccessTokenUseCase",
         [
+            "$httpParamSerializer",
             "$http",
             "identityServiceSdk.config",
             refreshAccessTokenUseCase
         ]);
 
-    function refreshAccessTokenUseCase($http,
+    function refreshAccessTokenUseCase($httpParamSerializer,
+                                       $http,
                                        config) {
 
         return {
@@ -30,10 +32,10 @@
                     method: "post",
                     url: config.baseUrl + "/oauth2/token",
                     headers: {"Content-Type": "application/x-www-form-urlencoded"},
-                    data: {
+                    data: $httpParamSerializer({
                         grant_type: "urn:ietf:params:oauth:grant-type:jwt-bearer",
                         assertion: accessToken
-                    }
+                    })
                 })
                 .then(function (response) {
                     return response.data;
