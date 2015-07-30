@@ -115,10 +115,17 @@
                     method: "get",
                     url: config.baseUrl + "/oauth2/userinfo"
                 })
-                .then(function (response) {
+                .then(
+                function (response) {
 
                     return response.data;
 
+                },
+                /*
+                 passthru $http rejection
+                 */
+                function (response) {
+                    return response;
                 });
         }
     }
@@ -164,8 +171,15 @@
                         assertion: accessToken
                     })
                 })
-                .then(function (response) {
+                .then(
+                function (response) {
                     return response.data;
+                },
+                /*
+                passthru $http rejection
+                 */
+                function (response) {
+                    return response;
                 }
             );
         }
