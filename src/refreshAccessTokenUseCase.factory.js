@@ -34,10 +34,10 @@
                         grant_type: "urn:ietf:params:oauth:grant-type:jwt-bearer",
                         assertion: accessToken
                     }
+                })
+                .then(function (response) {
+                    return response.data;
                 }
-                    .then(function (response) {
-                        return response.data;
-                    })
             );
         }
     }

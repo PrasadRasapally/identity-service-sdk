@@ -24,13 +24,14 @@
          */
         function execute(accessToken) {
 
-            return $http({
-                headers: {
-                    Authorization: "Bearer " + accessToken
-                },
-                method: "get",
-                url: config.baseUrl + "/oauth2/userinfo"
-            })
+            return $http(
+                {
+                    headers: {
+                        Authorization: "Bearer " + accessToken
+                    },
+                    method: "get",
+                    url: config.baseUrl + "/oauth2/userinfo"
+                })
                 .then(function (response) {
 
                     return response.data;
