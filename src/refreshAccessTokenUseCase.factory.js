@@ -41,7 +41,7 @@
                 })
                 .then(
                 function (response) {
-                    return response.data;
+                    return response.data.access_token;
                 },
                 /*
                  passthru $http rejection since we can't handle it here
