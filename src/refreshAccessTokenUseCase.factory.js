@@ -5,13 +5,15 @@
         .factory(
         "identityServiceSdk.refreshAccessTokenUseCase",
         [
+            "$q",
             "$httpParamSerializer",
             "$http",
             "identityServiceSdk.config",
             refreshAccessTokenUseCase
         ]);
 
-    function refreshAccessTokenUseCase($httpParamSerializer,
+    function refreshAccessTokenUseCase($q,
+                                       $httpParamSerializer,
                                        $http,
                                        config) {
 
@@ -42,12 +44,11 @@
                     return response.data;
                 },
                 /*
-                passthru $http rejection
+                 passthru $http rejection since we can't handle it here
                  */
                 function (response) {
-                    return response;
-                }
-            );
+                    return $q.reject(response);
+                });
         }
     }
 

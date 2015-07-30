@@ -5,12 +5,14 @@
         .factory(
         "identityServiceSdk.getUserInfoUseCase",
         [
+            "$q",
             "$http",
             "identityServiceSdk.config",
             getUserInfoUseCase
         ]);
 
-    function getUserInfoUseCase($http,
+    function getUserInfoUseCase($q,
+                                $http,
                                 config) {
 
         return {
@@ -39,10 +41,10 @@
 
                 },
                 /*
-                 passthru $http rejection
+                 passthru $http rejection since we can't handle it here
                  */
                 function (response) {
-                    return response;
+                    return $q.reject(response);
                 });
         }
     }
