@@ -155,11 +155,15 @@
                 {
                     method: "post",
                     url: config.baseUrl + "/oauth2/token",
+                    headers: {"Content-Type": "application/x-www-form-urlencoded"},
                     data: {
                         grant_type: "urn:ietf:params:oauth:grant-type:jwt-bearer",
                         assertion: accessToken
                     }
                 }
+                    .then(function (response) {
+                        return response.data;
+                    })
             );
         }
     }
