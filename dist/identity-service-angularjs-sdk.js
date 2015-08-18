@@ -2,10 +2,7 @@
     angular
         .module(
         "identityServiceSdk.module",
-        [
-            "ngRoute",
-            "LocalStorageModule"
-        ]);
+        []);
 })();
 /**
  * OpenID Connect (OIDC) UserInfo

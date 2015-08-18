@@ -8,6 +8,15 @@
     "grunt-cli": "^0.1.13",
     "grunt-contrib-concat": "^0.5.1"
   },
+  "dependencies":{
+    "angular": "github:angular/bower-angular@^1.4.4"
+  },
+  "directories": {
+    "lib": "dist"
+  },
+  "main": [
+    "identity-service-angularjs-sdk.js"
+  ],
   "scripts": {
     "postinstall": "bower install --force-latest"
   }
