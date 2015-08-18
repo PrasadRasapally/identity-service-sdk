@@ -1,5 +1,6 @@
 {
   "name": "identity-service-angularjs-sdk",
+  "description": "An AngularJS Module implementing common use cases encountered when integrating AngularJS apps with the precorconnect identity service.",
   "private": true,
   "version": "0.0.0",
   "repository": "bitbucket:precorconnect/identity-service-angularjs-sdk",
@@ -11,12 +12,14 @@
   "directories": {
     "lib": "dist"
   },
+  "main": "identity-service-angularjs-sdk.js",
+  "scripts": {
+    "preversion": "grunt",
+    "postversion": "git push --tags"
+  },
   "jspm": {
     "dependencies": {
       "angular": "github:angular/bower-angular@^1.4.4"
     }
-  },
-  "main": [
-    "identity-service-angularjs-sdk.js"
-  ]
+  }
 }
