@@ -17,7 +17,7 @@
   "scripts": {
     "preversion": "grunt",
     "version": "git add -A",
-    "postversion": "git push origin && git push origin --tags"
+    "postversion": "git push -u && git push origin --tags"
   },
   "jspm": {
     "dependencies": {
