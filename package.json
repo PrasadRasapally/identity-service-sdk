@@ -14,7 +14,7 @@
   },
   "main": "identity-service-angularjs-sdk.js",
   "scripts": {
-    "preversion": "./node_modules/.bin/grunt",
+    "preversion": "grunt",
     "postversion": "git push origin --tags"
   },
   "jspm": {
