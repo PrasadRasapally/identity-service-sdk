@@ -13,7 +13,7 @@
   "directories": {
     "lib": "dist"
   },
-  "main": "identity-service-angularjs-sdk.js",
+  "main": "identity-service-angularjs-sdk",
   "scripts": {
     "preversion": "grunt",
     "version": "git add -A",

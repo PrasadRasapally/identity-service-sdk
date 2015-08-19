@@ -13,19 +13,10 @@ purposes of maintaining an active session without redirecting the client browser
 
 ## Installation  
 
-**install required dependencies:**  
--  [angular](https://angularjs.org/)  
-
-**add bower dependency**  
-
+**add jspm package dependency**  
 ```shell
-bower install https://bitbucket.org/precorconnect/identity-service-angularjs-sdk.git --save
-```  
-
-**include in view**  
-```html
-<script src="bower_components/identity-service-angularjs-sdk/dist/identity-service-angularjs-sdk.js"></script>
-```  
+jspm install bitbucket:precorconnect/identity-service-angularjs-sdk
+``` 
 
 **add to angular dependencies**
 ```js
