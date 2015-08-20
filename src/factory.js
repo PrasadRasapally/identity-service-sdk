@@ -1,21 +1,18 @@
-(function () {
-    angular
-        .module("identityServiceSdk.module")
-        .factory(
-        "identityServiceSdk",
-        [
-            "identityServiceSdk.getUserInfoUseCase",
-            "identityServiceSdk.refreshAccessTokenUseCase",
-            identityServiceSdk
-        ]);
+class IdentityServiceSdk {
 
-    function identityServiceSdk(getUserInfoUseCase,
-                                refreshAccessTokenUseCase) {
+    constructor(getUserInfoUseCase,
+                refreshAccessTokenUseCase) {
 
-        return {
-            getUserInfo: getUserInfoUseCase.execute,
-            refreshAccessToken: refreshAccessTokenUseCase.execute
-        }
+        this.getUserInfoUseCase = getUserInfoUseCase.execute;
+        this.refreshAccessTokenUseCase = refreshAccessTokenUseCase.execute;
 
     }
-})();
+
+}
+
+IdentityServiceSdk.$inject = [
+    "identityServiceSdk.getUserInfoUseCase",
+    "identityServiceSdk.refreshAccessTokenUseCase"
+];
+
+export default IdentityServiceSdk

@@ -1,29 +1,23 @@
-(function () {
-    angular
-        .module("identityServiceSdk.module")
-        .provider("identityServiceSdk.config",
-        configProvider
-    );
+function configProvider() {
 
-    function configProvider() {
+    var objectUnderConstruction = {
+        setBaseUrl: setBaseUrl,
+        $get: $get
+    };
 
-        var objectUnderConstruction = {
-            setBaseUrl: setBaseUrl,
-            $get: $get
+    return objectUnderConstruction;
+
+    function setBaseUrl(baseUrl) {
+        objectUnderConstruction.baseUrl = baseUrl;
+        return objectUnderConstruction;
+    }
+
+    function $get() {
+        return {
+            baseUrl: objectUnderConstruction.baseUrl
         };
 
-        return objectUnderConstruction;
-
-        function setBaseUrl(baseUrl) {
-            objectUnderConstruction.baseUrl = baseUrl;
-            return objectUnderConstruction;
-        }
-
-        function $get() {
-            return {
-                baseUrl: objectUnderConstruction.baseUrl
-            };
-
-        }
     }
-})();
+}
+
+export default configProvider;

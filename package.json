@@ -9,18 +9,14 @@
     "url": "bitbucket:precorconnect/identity-service-angularjs-sdk"
   },
   "devDependencies": {
-    "grunt": "^0.4.5",
-    "grunt-cli": "^0.1.13",
-    "grunt-contrib-concat": "^0.5.1",
     "jspm": "^0.16.0",
     "jspm-git": "^0.3.3"
   },
   "directories": {
-    "lib": "dist"
+    "lib": "src"
   },
-  "main": "identity-service-angularjs-sdk",
+  "main": "module",
   "scripts": {
-    "preversion": "grunt",
     "version": "git add -A",
     "postversion": "git push && git push --tags"
   },
