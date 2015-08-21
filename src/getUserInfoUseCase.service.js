@@ -26,7 +26,7 @@ class GetUserInfoUseCase {
                 url: `${this._config.baseUrl}/oauth2/userinfo`
             })
             .then(
-            function (response) {
+            (response) => {
 
                 return response.data;
 
@@ -34,7 +34,7 @@ class GetUserInfoUseCase {
             /*
              passthru $http rejection since we can't handle it here
              */
-            function (response) {
+            (response) => {
                 return this._$q.reject(response);
             });
     }

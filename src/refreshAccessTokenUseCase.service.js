@@ -31,13 +31,13 @@ class RefreshAccessTokenUseCase {
                 })
             })
             .then(
-            function (response) {
+            (response) => {
                 return response.data.access_token;
             },
             /*
              passthru $http rejection since we can't handle it here
              */
-            function (response) {
+            (response) => {
                 return this._$q.reject(response);
             });
     }
