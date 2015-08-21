@@ -21,6 +21,7 @@
     "postversion": "git push && git push --tags"
   },
   "jspm": {
+    "format": "es6",
     "dependencies": {
       "angular": "github:angular/bower-angular@^1.4.4"
     },
