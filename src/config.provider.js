@@ -1,23 +1,18 @@
-function configProvider() {
+class ConfigProvider {
 
-    var objectUnderConstruction = {
-        setBaseUrl: setBaseUrl,
-        $get: $get
-    };
-
-    return objectUnderConstruction;
-
-    function setBaseUrl(baseUrl) {
-        objectUnderConstruction.baseUrl = baseUrl;
-        return objectUnderConstruction;
+    constructor() {
+        this._baseUrl = null;
     }
 
-    function $get() {
-        return {
-            baseUrl: objectUnderConstruction.baseUrl
-        };
+    set baseUrl(value) {
+        this._baseUrl = value;
+    }
 
+    $get() {
+        return {
+            baseUrl: this._baseUrl
+        };
     }
 }
 
-export default configProvider;
+export default ConfigProvider;
