@@ -30,16 +30,8 @@ class RefreshAccessTokenUseCase {
                     assertion: accessToken
                 })
             })
-            .then(
-            (response) => {
-                return response.data.access_token;
-            },
-            /*
-             passthru $http rejection since we can't handle it here
-             */
-            (response) => {
-                return this._$q.reject(response);
-            });
+            .then((response) =>
+                (response.data.access_token));
     }
 
 }

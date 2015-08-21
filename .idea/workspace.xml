@@ -25,11 +25,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="getUserInfoUseCase.service.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="getUserInfoUseCase.service.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/getUserInfoUseCase.service.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.5518454">
+              <caret line="38" column="15" selection-start-line="38" selection-start-column="15" selection-end-line="38" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -57,7 +57,7 @@
             <state vertical-scroll-proportion="-10.461538">
               <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
               <folding>
-                <marker date="1440150797335" expanded="true" signature="0:956" placeholder="{&quot;name&quot;: &quot;identity-service-angularjs-sdk&quot;...}" />
+                <marker date="1440182287013" expanded="true" signature="0:956" placeholder="{&quot;name&quot;: &quot;identity-service-angularjs-sdk&quot;...}" />
               </folding>
             </state>
           </provider>
@@ -107,16 +107,16 @@
         <entry file="file://$PROJECT_DIR$/src/refreshAccessTokenUseCase.service.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="22" column="27" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
+              <caret line="39" column="27" selection-start-line="39" selection-start-column="27" selection-end-line="39" selection-end-column="27" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="service.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="service.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/service.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5377856">
+            <state vertical-scroll-proportion="0.0">
               <caret line="18" column="1" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
               <folding />
             </state>
@@ -199,12 +199,12 @@
         <option value="$PROJECT_DIR$/src/factory.js" />
         <option value="$PROJECT_DIR$/src/config.provider.js" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/src/getUserInfoUseCase.service.js" />
-        <option value="$PROJECT_DIR$/src/refreshAccessTokenUseCase.service.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/module.js" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/service.js" />
+        <option value="$PROJECT_DIR$/src/getUserInfoUseCase.service.js" />
+        <option value="$PROJECT_DIR$/src/refreshAccessTokenUseCase.service.js" />
       </list>
     </option>
   </component>
@@ -668,12 +668,12 @@
       <workItem from="1440105870914" duration="11578000" />
       <workItem from="1440144659178" duration="22000" />
       <workItem from="1440145676560" duration="59000" />
-      <workItem from="1440149708010" duration="1522000" />
+      <workItem from="1440149708010" duration="3088000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="103021000" />
+    <option name="totallyTimeSpent" value="104587000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-1032" width="1296" height="1000" extended-state="6" />
@@ -793,7 +793,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1440150797335" expanded="true" signature="0:956" placeholder="{&quot;name&quot;: &quot;identity-service-angularjs-sdk&quot;...}" />
+            <marker date="1440182287013" expanded="true" signature="0:956" placeholder="{&quot;name&quot;: &quot;identity-service-angularjs-sdk&quot;...}" />
           </folding>
         </state>
       </provider>
@@ -803,7 +803,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1440150797335" expanded="true" signature="0:956" placeholder="{&quot;name&quot;: &quot;identity-service-angularjs-sdk&quot;...}" />
+            <marker date="1440182287013" expanded="true" signature="0:956" placeholder="{&quot;name&quot;: &quot;identity-service-angularjs-sdk&quot;...}" />
           </folding>
         </state>
       </provider>
@@ -1146,31 +1146,31 @@
         <state vertical-scroll-proportion="-10.461538">
           <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
           <folding>
-            <marker date="1440150797335" expanded="true" signature="0:956" placeholder="{&quot;name&quot;: &quot;identity-service-angularjs-sdk&quot;...}" />
+            <marker date="1440182287013" expanded="true" signature="0:956" placeholder="{&quot;name&quot;: &quot;identity-service-angularjs-sdk&quot;...}" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/getUserInfoUseCase.service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/refreshAccessTokenUseCase.service.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="22" column="27" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
+          <caret line="39" column="27" selection-start-line="39" selection-start-column="27" selection-end-line="39" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/service.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5377856">
+        <state vertical-scroll-proportion="0.0">
           <caret line="18" column="1" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/getUserInfoUseCase.service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5518454">
+          <caret line="38" column="15" selection-start-line="38" selection-start-column="15" selection-end-line="38" selection-end-column="15" />
           <folding />
         </state>
       </provider>
