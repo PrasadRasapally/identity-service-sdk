@@ -1,6 +1,6 @@
 import angular from "angular";
 import configProvider from "./config.provider";
-import factory from "./factory";
+import service from "./service";
 import getUserInfoUseCaseFactory from "./getUserInfoUseCase.service.js";
 import refreshAccessTokenUseCaseFactory from "./refreshAccessTokenUseCase.service.js";
 
@@ -9,6 +9,6 @@ angular
     "identityServiceSdk.module",
     [])
     .provider("identityServiceSdk.config", configProvider)
-    .factory("identityServiceSdk", factory)
+    .service("identityServiceSdk", service)
     .service("identityServiceSdk.getUserInfoUseCase", getUserInfoUseCaseFactory)
     .service("identityServiceSdk.refreshAccessTokenUseCase", refreshAccessTokenUseCaseFactory);
