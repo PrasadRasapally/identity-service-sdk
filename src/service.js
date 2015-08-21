@@ -3,9 +3,17 @@ class IdentityServiceSdk {
     constructor(getUserInfoUseCase,
                 refreshAccessTokenUseCase) {
 
-        this.getUserInfo = getUserInfoUseCase.execute;
-        this.refreshAccessToken = refreshAccessTokenUseCase.execute;
+        this._getUserInfoUseCase = getUserInfoUseCase;
+        this._refreshAccessTokenUseCase = refreshAccessTokenUseCase;
 
+    }
+
+    getUserInfo(accessToken) {
+        return this._getUserInfoUseCase.execute(accessToken);
+    }
+
+    refreshAccessToken(accessToken) {
+        return this._refreshAccessTokenUseCase.execute(accessToken);
     }
 
 }
