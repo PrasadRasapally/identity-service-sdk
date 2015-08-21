@@ -49,3 +49,9 @@ angular.module(
             .setBaseUrl("@@identityServiceBaseUrl");
     }
 ```
+
+## Development
+#### Style Guide
+see [here](https://github.com/airbnb/javascript)
+#### Documentation
+external facing use cases are documented in this README

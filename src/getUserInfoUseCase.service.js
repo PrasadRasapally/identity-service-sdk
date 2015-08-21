@@ -4,9 +4,9 @@ class GetUserInfoUseCase {
                 $http,
                 config) {
 
-        this.$q = $q;
-        this.$http = $http;
-        this.config = config;
+        this._$q = $q;
+        this._$http = $http;
+        this._config = config;
 
     }
 
@@ -17,13 +17,13 @@ class GetUserInfoUseCase {
      */
     execute(accessToken) {
 
-        return $http(
+        return this._$http(
             {
                 headers: {
-                    Authorization: "Bearer " + accessToken
+                    Authorization: `Bearer ${accessToken}`
                 },
-                method: "get",
-                url: config.baseUrl + "/oauth2/userinfo"
+                method: 'get',
+                url: `${this._config.baseUrl}/oauth2/userinfo`
             })
             .then(
             function (response) {
@@ -35,16 +35,16 @@ class GetUserInfoUseCase {
              passthru $http rejection since we can't handle it here
              */
             function (response) {
-                return $q.reject(response);
+                return this._$q.reject(response);
             });
     }
 
 }
 
 GetUserInfoUseCase.$inject = [
-    "$q",
-    "$http",
-    "identityServiceSdk.config"
+    '$q',
+    '$http',
+    'identityServiceSdk.config'
 ];
 
 export default GetUserInfoUseCase;

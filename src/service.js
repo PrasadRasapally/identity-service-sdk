@@ -11,8 +11,8 @@ class IdentityServiceSdk {
 }
 
 IdentityServiceSdk.$inject = [
-    "identityServiceSdk.getUserInfoUseCase",
-    "identityServiceSdk.refreshAccessTokenUseCase"
+    'identityServiceSdk.getUserInfoUseCase',
+    'identityServiceSdk.refreshAccessTokenUseCase'
 ];
 
 export default IdentityServiceSdk
