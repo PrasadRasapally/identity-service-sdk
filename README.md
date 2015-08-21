@@ -54,4 +54,4 @@ angular.module(
 #### Style Guide
 see [here](https://github.com/airbnb/javascript)
 #### Documentation
-external facing use cases are documented in this README
+update this README
