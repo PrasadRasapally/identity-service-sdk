@@ -1,3 +1,4 @@
+import angular from "angular";
 import configProvider from "./config.provider";
 import factory from "./factory";
 import getUserInfoUseCaseFactory from "./getUserInfoUseCase.service.js";
