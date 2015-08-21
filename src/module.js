@@ -1,8 +1,8 @@
 import angular from 'angular';
 import configProvider from './config.provider';
 import service from './service';
-import getUserInfoUseCaseFactory from './getUserInfoUseCase.service.js';
-import refreshAccessTokenUseCaseFactory from './refreshAccessTokenUseCase.service.js';
+import getUserInfoUseCaseFactory from './getUserInfoUseCase.service';
+import refreshAccessTokenUseCaseFactory from './refreshAccessTokenUseCase.service';
 
 const identityServiceSdk =
     angular
