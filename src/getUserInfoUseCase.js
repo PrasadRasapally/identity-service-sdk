@@ -2,7 +2,9 @@ import {inject} from 'aurelia-dependency-injection';
 import {HttpClient} from 'aurelia-http-client';
 import IdentityServiceSdkConfig from './identityServiceSdkConfig';
 
-@inject(HttpClient, IdentityServiceSdkConfig) class GetUserInfoUseCase {
+export default
+@inject(HttpClient, IdentityServiceSdkConfig)
+class GetUserInfoUseCase {
 
     constructor(httpClient,
                 config) {
@@ -30,5 +32,3 @@ import IdentityServiceSdkConfig from './identityServiceSdkConfig';
     }
 
 }
-
-export default GetUserInfoUseCase;

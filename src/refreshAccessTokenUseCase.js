@@ -2,7 +2,9 @@ import {inject} from 'aurelia-dependency-injection';
 import {HttpClient} from 'aurelia-http-client';
 import IdentityServiceSdkConfig from './identityServiceSdkConfig';
 
-@inject(HttpClient, IdentityServiceSdkConfig) class RefreshAccessTokenUseCase {
+export default
+@inject(HttpClient, IdentityServiceSdkConfig)
+class RefreshAccessTokenUseCase {
 
     constructor(httpClient,
                 config) {
@@ -20,10 +22,6 @@ import IdentityServiceSdkConfig from './identityServiceSdkConfig';
      */
     execute(accessToken) {
 
-        const content = new FormData();
-        content.append('grant_type', 'urn:ietf:params:oauth:grant-type:jwt-bearer');
-        content.append('assertion', accessToken);
-
         return this._httpClient
             .createRequest('oauth2/token')
             .asPost()
@@ -35,8 +33,7 @@ import IdentityServiceSdkConfig from './identityServiceSdkConfig';
             })
             .send()
             .then((response) => (response.content.access_token));
+
     }
 
 }
-
-export default RefreshAccessTokenUseCase;
