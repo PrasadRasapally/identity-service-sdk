@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/identity-service-angularjs-sdk.iml" filepath="$PROJECT_DIR$/identity-service-angularjs-sdk.iml" />
+      <module fileurl="file://$PROJECT_DIR$/identity-service-javascript-sdk.iml" filepath="$PROJECT_DIR$/identity-service-javascript-sdk.iml" />
     </modules>
   </component>
 </project>
