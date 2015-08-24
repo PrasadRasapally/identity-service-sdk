@@ -24,7 +24,7 @@
   },
   "scripts": {
     "test": "karma start",
-    "preVersion": "npm test",
+    "preversion": "npm test",
     "version": "git add -A",
     "postversion": "git push && git push --tags"
   },
