@@ -1,3 +1,7 @@
+/**
+ * @class IdentityServiceSdkConfig
+ * @constructor
+ */
 export default class IdentityServiceSdkConfig {
 
     constructor(baseUrl) {

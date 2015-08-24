@@ -4,6 +4,10 @@ import {HttpClient} from 'aurelia-http-client';
 import GetUserInfoUseCase from './getUserInfoUseCase';
 import RefreshAccessTokenUseCase from './refreshAccessTokenUseCase';
 
+/**
+ * @class DiContainerFactory
+ * @constructor
+ */
 export default class DiContainerFactory {
 
     constructor(config) {

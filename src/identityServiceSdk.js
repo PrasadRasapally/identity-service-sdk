@@ -2,6 +2,10 @@ import DiContainerFactory from "./diContainerFactory";
 import GetUserInfoUseCase from "./getUserInfoUseCase";
 import RefreshAccessTokenUseCase from "./refreshAccessTokenUseCase";
 
+/**
+ * @class IdentityServiceSdk
+ * @constructor
+ */
 export default class IdentityServiceSdk {
 
     /**
