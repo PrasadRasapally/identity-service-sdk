@@ -4,4 +4,7 @@ node_modules
 #jspm
 jspm_packages
 
+#junit
+test-reports
+
 
