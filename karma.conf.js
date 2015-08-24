@@ -6,7 +6,7 @@ module.exports = function (config) {
                 loadFiles: ['test/**/*.js'],
                 serveFiles: ['src/**/*.js']
             },
-            browsers: ['PhantomJS'],
+            browsers: ['Chrome'],
             singleRun: true
         }
     );
