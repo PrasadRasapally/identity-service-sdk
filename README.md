@@ -1,6 +1,5 @@
 ## Description
-An AngularJS Module implementing common use cases encountered when integrating AngularJS apps
- with the precorconnect identity service.
+The precorconnect identity service javascript SDK.
 
 ## Use Cases
 
@@ -15,43 +14,18 @@ purposes of maintaining an active session without redirecting the client browser
 
 **add jspm package dependency**  
 ```shell
-jspm install bitbucket:precorconnect/identity-service-angularjs-sdk
+jspm install identity-service-sdk=bitbucket:precorconnect/identity-service-javascript-sdk
 ``` 
 
-**add to angular dependencies**
+**import**
 ```js
-angular.module(
-        "app",
-        ["identityServiceSdk.module"]);
-```
-configure  
-see below.
+import IdentityServiceSdkConfig from 'identity-service-sdk/IdentityServiceSdkConfig';
+import IdentityServiceSdk from 'identity-service-sdk';
 
-## Configuration 
-####Properties
-| Name (* denotes required) | Description |
-|------|-------------|
-| baseUrl* | The base url of the identity service. |
-
-#### Example
-```js
-angular.module(
-        "app",
-        ["identityServiceSdk.module"])
-        .config(
-        [
-            "identityServiceSdk.configProvider",
-            appConfig
-        ]);
-
-    function appConfig(identityServiceSdk_configProvider) {
-        identityServiceSdk_configProvider
-            .setBaseUrl("@@identityServiceBaseUrl");
-    }
+const identityServiceSdkConfig = new IdentityServiceSdkConfig("https://identity-service-dev.precorconnect.com");
+const identityServiceSdk = new IdentityServiceSdk(identityServiceSdkConfig);
 ```
 
-## Development
-#### Style Guide
-see [here](https://github.com/airbnb/javascript)
-#### Documentation
-update this README
+## Platform Support
+
+This library can be used in the **browser**.

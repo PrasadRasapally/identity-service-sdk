@@ -10,8 +10,7 @@ export default class IdentityServiceSdk {
      */
     constructor(config) {
 
-        this._diContainer =
-            DiContainerFactory.construct(config);
+        this._diContainer = new DiContainerFactory(config).construct();
 
     }
 

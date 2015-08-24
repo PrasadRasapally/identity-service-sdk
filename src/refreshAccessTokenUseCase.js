@@ -1,10 +1,9 @@
-import {HttpClient} from 'aurelia-fetch-client';
+import {inject} from 'aurelia-dependency-injection';
+import {HttpClient} from 'aurelia-http-client';
 import IdentityServiceSdkConfig from './identityServiceSdkConfig';
 
-export default class RefreshAccessTokenUseCase {
+@inject(HttpClient, IdentityServiceSdkConfig) class RefreshAccessTokenUseCase {
 
-    //noinspection ES6Validation
-    @inject(HttpClient, IdentityServiceSdkConfig)
     constructor(httpClient,
                 config) {
 
@@ -21,19 +20,20 @@ export default class RefreshAccessTokenUseCase {
      */
     execute(accessToken) {
 
-        const requestBody = new FormData();
-        requestBody.append('grant_type', 'urn:ietf:params:oauth:grant-type:jwt-bearer');
-        requestBody.append('assertion', accessToken);
+        const content = new FormData();
+        content.append('grant_type', 'urn:ietf:params:oauth:grant-type:jwt-bearer');
+        content.append('assertion', accessToken);
 
-        const request = new Request();
-        request.method = 'POST';
-        request.url = `${this._config.baseUrl}/oauth2/token`;
-        request.body = requestBody;
-
-        return this
-            ._httpClient
-            .fetch(request)
-            .then((response) => (response.data.access_token));
+        return this._httpClient
+            .createRequest('oauth2/token')
+            .asPost()
+            .withBaseUrl(this._config.baseUrl)
+            .withHeader('Authorization', `Bearer ${accessToken}`)
+            .withContent(content)
+            .send()
+            .then((response) => (response.content.access_token));
     }
 
 }
+
+export default RefreshAccessTokenUseCase;

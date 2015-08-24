@@ -1,10 +1,9 @@
-import {HttpClient} from 'aurelia-fetch-client';
+import {inject} from 'aurelia-dependency-injection';
+import {HttpClient} from 'aurelia-http-client';
 import IdentityServiceSdkConfig from './identityServiceSdkConfig';
 
-export default class GetUserInfoUseCase {
+@inject(HttpClient, IdentityServiceSdkConfig) class GetUserInfoUseCase {
 
-    //noinspection ES6Validation
-    @inject(HttpClient, IdentityServiceSdkConfig)
     constructor(httpClient,
                 config) {
 
@@ -20,17 +19,16 @@ export default class GetUserInfoUseCase {
      */
     execute(accessToken) {
 
-        // construct request
-        const request = new Request();
-        request.method = 'GET';
-        request.headers.set('Authorization', `Bearer ${accessToken}`);
-        request.url = `${this._config.baseUrl}/oauth2/userinfo`;
-
-        return this
-            ._httpClient
-            .fetch(request)
-            .then((response) => (response.data));
+        return this._httpClient
+            .createRequest('oauth2/userinfo')
+            .asGet()
+            .withBaseUrl(this._config.baseUrl)
+            .withHeader('Authorization', `Bearer ${accessToken}`)
+            .send()
+            .then((response) => (response.content));
 
     }
 
 }
+
+export default GetUserInfoUseCase;

@@ -1,34 +1,34 @@
 import {Container} from 'aurelia-dependency-injection';
 import IdentityServiceSdkConfig from './identityServiceSdkConfig';
-import fetch from 'fetch';
-import HttpClient from 'aurelia-fetch-client';
+import {HttpClient} from 'aurelia-http-client';
 import GetUserInfoUseCase from './getUserInfoUseCase';
 import RefreshAccessTokenUseCase from './refreshAccessTokenUseCase';
 
-class DiContainerFactory {
+export default class DiContainerFactory {
 
     constructor(config) {
 
         if (!config) {
             throw 'config required';
         }
-        this._config = new Container();
+        this._config = config;
 
     }
 
     /**
      *
-     * @param {IdentityServiceSdkConfig} config
      * @returns {Container} dependency injection container
      */
-    static construct(config) {
+    construct() {
 
         const container = new Container();
 
-        container.registerInstance(IdentityServiceSdkConfig, config);
+        container.registerInstance(IdentityServiceSdkConfig, this._config);
         container.autoRegister(HttpClient);
 
         DiContainerFactory._registerUseCases(container);
+
+        return container;
 
     }
 
