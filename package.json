@@ -22,7 +22,7 @@
     "lib": "src"
   },
   "scripts": {
-    "test": "karma start --singleRun",
+    "test": "karma start",
     "preVersion": "npm test",
     "version": "git add -A",
     "postversion": "git push && git push --tags"
