@@ -45,7 +45,7 @@ describe('identity service sdk', () => {
             /*
              act
              */
-            let actualUserInfoPromise = objectUnderTest.getUserInfo(accessTokenValidTill5138);
+            const actualUserInfoPromise = objectUnderTest.getUserInfo(accessTokenValidTill5138);
 
             /*
              assert
@@ -62,5 +62,39 @@ describe('identity service sdk', () => {
                 });
 
         })
-    })
+    });
+
+    describe('refresh access token', () => {
+        it('should return access token', (done) => {
+
+            /*
+             arrange
+             */
+
+            const objectUnderTest =
+                new IdentityServiceSdk(identityServiceSdkConfig);
+
+
+            /*
+             act
+             */
+            const accessTokenPromise = objectUnderTest.refreshAccessToken(accessTokenValidTill5138);
+
+            /*
+             assert
+             */
+
+            accessTokenPromise
+                .then((accessToken) => {
+                    expect(accessToken).not.toBeNull();
+                    done();
+                })
+                .catch((error)=> {
+                    expect(error).toBeUndefined();
+                    done();
+                });
+
+        })
+    });
+
 });

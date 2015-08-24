@@ -28,8 +28,11 @@ import IdentityServiceSdkConfig from './identityServiceSdkConfig';
             .createRequest('oauth2/token')
             .asPost()
             .withBaseUrl(this._config.baseUrl)
-            .withHeader('Authorization', `Bearer ${accessToken}`)
-            .withContent(content)
+            .withHeader('Content-Type', 'application/x-www-form-urlencoded')
+            .withParams({
+                grant_type: 'urn:ietf:params:oauth:grant-type:jwt-bearer',
+                assertion: accessToken
+            })
             .send()
             .then((response) => (response.content.access_token));
     }
