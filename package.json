@@ -3,7 +3,7 @@
   "description": "The precorconnect identity service javascript SDK.",
   "homepage": "https://bitbucket.org/precorconnect/identity-service-angularjs-sdk",
   "private": true,
-  "version": "0.0.58",
+  "version": "0.0.59",
   "repository": {
     "type": "git",
     "url": "bitbucket:precorconnect/identity-service-angularjs-sdk"
