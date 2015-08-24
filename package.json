@@ -33,8 +33,11 @@
     "postversion": "git push && git push --tags"
   },
   "jspm": {
+    "main": "identityServiceSdk",
     "format": "es6",
-    "main":"identityServiceSdk",
+    "directories": {
+      "lib": "src"
+    },
     "dependencies": {
       "aurelia-dependency-injection": "github:aurelia/dependency-injection@^0.9.2",
       "aurelia-http-client": "github:aurelia/http-client@^0.10.3"
