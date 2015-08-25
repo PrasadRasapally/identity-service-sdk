@@ -2,11 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96a98c41-a976-414d-820b-0ced51925156" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/diContainerFactory.js" afterPath="$PROJECT_DIR$/src/diContainerFactory.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/getUserInfoUseCase.js" afterPath="$PROJECT_DIR$/src/getUserInfoUseCase.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/identityServiceSdk.js" afterPath="$PROJECT_DIR$/src/identityServiceSdk.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/identityServiceSdkConfig.js" afterPath="$PROJECT_DIR$/src/identityServiceSdkConfig.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/refreshAccessTokenUseCase.js" afterPath="$PROJECT_DIR$/src/refreshAccessTokenUseCase.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="identity-service-angularjs-sdk.iws" />
@@ -60,21 +55,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="refreshAccessTokenUseCase.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="refreshAccessTokenUseCase.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/refreshAccessTokenUseCase.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.18378378">
+            <state vertical-scroll-proportion="0.0">
               <caret line="6" column="15" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="identityServiceSdk.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="identityServiceSdk.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/identityServiceSdk.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="6" column="15" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
+            <state vertical-scroll-proportion="0.5207207">
+              <caret line="20" column="30" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -677,16 +672,16 @@
       <workItem from="1440149708010" duration="34994000" />
       <workItem from="1440388371569" duration="174000" />
       <workItem from="1440388685887" duration="12401000" />
-      <workItem from="1440402754469" duration="18466000" />
+      <workItem from="1440402754469" duration="22091000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="167534000" />
+    <option name="totallyTimeSpent" value="171159000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1167,14 +1162,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/identityServiceSdk.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="15" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/identityServiceSdkConfig.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1185,8 +1172,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/refreshAccessTokenUseCase.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.18378378">
+        <state vertical-scroll-proportion="0.0">
           <caret line="6" column="15" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/identityServiceSdk.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5207207">
+          <caret line="20" column="30" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
           <folding />
         </state>
       </provider>

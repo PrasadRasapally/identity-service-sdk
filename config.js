@@ -14,10 +14,8 @@ System.config({
   },
 
   map: {
-    "angular": "github:angular/bower-angular@1.4.4",
     "aurelia-dependency-injection": "github:aurelia/dependency-injection@0.9.2",
     "aurelia-http-client": "github:aurelia/http-client@0.10.3",
-    "axios": "github:mzabriskie/axios@0.5.4",
     "babel": "npm:babel-core@5.8.22",
     "babel-runtime": "npm:babel-runtime@5.8.20",
     "core-js": "npm:core-js@1.1.1",
