@@ -23,7 +23,7 @@ System.register([], function(exports_1) {
                 });
                 return IdentityServiceSdkConfig;
             })();
-            exports_1("default", IdentityServiceSdkConfig);
+            exports_1("IdentityServiceSdkConfig", IdentityServiceSdkConfig);
         }
     }
 });

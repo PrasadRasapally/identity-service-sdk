@@ -30,8 +30,7 @@
     "postversion": "git push && git push --tags"
   },
   "jspm": {
-    "main": "identityServiceSdk.ts",
-    "format": "esm",
+    "main": "index.ts",
     "directories": {
       "lib": "src"
     },

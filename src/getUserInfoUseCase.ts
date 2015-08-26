@@ -1,6 +1,6 @@
 import {autoinject} from 'aurelia-dependency-injection';
 import {HttpClient} from 'aurelia-http-client';
-import IdentityServiceSdkConfig from './identityServiceSdkConfig';
+import {IdentityServiceSdkConfig} from './identityServiceSdkConfig';
 
 /**
  * @class GetUserInfoUseCase
@@ -15,12 +15,12 @@ class GetUserInfoUseCase {
     constructor(httpClient:HttpClient,
                 config:IdentityServiceSdkConfig) {
 
-        if(!httpClient){
+        if (!httpClient) {
             throw 'httpClient required';
         }
         this._httpClient = httpClient;
 
-        if(!config){
+        if (!config) {
             throw 'config required';
         }
         this._config = config;

@@ -2,7 +2,7 @@
  * @class IdentityServiceSdkConfig
  * @constructor
  */
-export default class IdentityServiceSdkConfig {
+export class IdentityServiceSdkConfig {
 
     private _baseUrl:String;
 

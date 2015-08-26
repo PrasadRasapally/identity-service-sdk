@@ -1,6 +1,6 @@
 import {autoinject} from 'aurelia-dependency-injection';
 import {HttpClient} from 'aurelia-http-client';
-import IdentityServiceSdkConfig from './identityServiceSdkConfig';
+import {IdentityServiceSdkConfig} from './identityServiceSdkConfig';
 
 /**
  * @class RefreshAccessTokenUseCase
