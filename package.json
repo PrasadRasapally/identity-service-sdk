@@ -30,7 +30,6 @@
     "postversion": "git push && git push --tags"
   },
   "jspm": {
-    "main": "index.ts",
     "directories": {
       "lib": "src"
     },
