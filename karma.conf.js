@@ -7,7 +7,7 @@ module.exports = function (config) {
             },
             jspm: {
                 loadFiles: ['test/**/*.js'],
-                serveFiles: ['src/**/*.js']
+                serveFiles: ['src/**/*.ts']
             },
             browsers: ['PhantomJS'],
             singleRun: true

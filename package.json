@@ -19,7 +19,8 @@
     "karma-junit-reporter": "^0.3.3",
     "karma-phantomjs-launcher": "^0.2.1",
     "karma-phantomjs-shim": "^1.1.1",
-    "karma-spec-reporter": "0.0.20"
+    "karma-spec-reporter": "0.0.20",
+    "phantomjs": "^1.9.18"
   },
   "directories": {
     "lib": "src"
@@ -43,9 +44,8 @@
       "aurelia-http-client": "github:aurelia/http-client@^0.10.3"
     },
     "devDependencies": {
-      "babel": "npm:babel-core@^5.8.22",
-      "babel-runtime": "npm:babel-runtime@^5.8.20",
-      "core-js": "npm:core-js@^1.1.0"
+      "core-js": "npm:core-js@^1.1.0",
+      "typescript": "npm:typescript@^1.5.3"
     }
   }
 }

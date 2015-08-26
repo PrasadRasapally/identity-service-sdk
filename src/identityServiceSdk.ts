@@ -1,6 +1,7 @@
-import DiContainerFactory from "./diContainerFactory";
-import GetUserInfoUseCase from "./getUserInfoUseCase";
-import RefreshAccessTokenUseCase from "./refreshAccessTokenUseCase";
+import {Container} from 'aurelia-dependency-injection';
+import DiContainerFactory from './diContainerFactory';
+import GetUserInfoUseCase from './getUserInfoUseCase';
+import RefreshAccessTokenUseCase from './refreshAccessTokenUseCase';
 
 /**
  * @class IdentityServiceSdk
@@ -8,11 +9,13 @@ import RefreshAccessTokenUseCase from "./refreshAccessTokenUseCase";
  */
 export default class IdentityServiceSdk {
 
+    private _diContainer:Container;
+
     /**
      *
      * @param {IdentityServiceSdkConfig} config
      */
-    constructor(config) {
+    constructor(config:IdentityServiceSdkConfig) {
 
         this._diContainer = new DiContainerFactory(config).construct();
 

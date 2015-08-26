@@ -1,20 +1,30 @@
-/**
- * @class IdentityServiceSdkConfig
- * @constructor
- */
-export default class IdentityServiceSdkConfig {
-
-    constructor(baseUrl) {
-
-        if (!baseUrl) {
-            throw 'baseUrl required';
+System.register([], function(exports_1) {
+    var IdentityServiceSdkConfig;
+    return {
+        setters:[],
+        execute: function() {
+            /**
+             * @class IdentityServiceSdkConfig
+             * @constructor
+             */
+            IdentityServiceSdkConfig = (function () {
+                function IdentityServiceSdkConfig(baseUrl) {
+                    if (!baseUrl) {
+                        throw 'baseUrl required';
+                    }
+                    this._baseUrl = baseUrl;
+                }
+                Object.defineProperty(IdentityServiceSdkConfig.prototype, "baseUrl", {
+                    get: function () {
+                        return this._baseUrl;
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                return IdentityServiceSdkConfig;
+            })();
+            exports_1("default", IdentityServiceSdkConfig);
         }
-        this._baseUrl = baseUrl;
-
     }
-
-    get baseUrl() {
-        return this._baseUrl;
-    }
-
-}
+});
+//# sourceMappingURL=identityServiceSdkConfig.js.map

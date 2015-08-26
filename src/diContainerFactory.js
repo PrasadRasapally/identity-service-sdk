@@ -1,46 +1,35 @@
-import {Container} from 'aurelia-dependency-injection';
-import IdentityServiceSdkConfig from './identityServiceSdkConfig';
-import {HttpClient} from 'aurelia-http-client';
-import GetUserInfoUseCase from './getUserInfoUseCase';
-import RefreshAccessTokenUseCase from './refreshAccessTokenUseCase';
-
+var aurelia_dependency_injection_1 = require('aurelia-dependency-injection');
+var identityServiceSdkConfig_1 = require('./identityServiceSdkConfig');
+var aurelia_http_client_1 = require('aurelia-http-client');
+var getUserInfoUseCase_1 = require('./getUserInfoUseCase');
+var refreshAccessTokenUseCase_1 = require('./refreshAccessTokenUseCase');
 /**
  * @class DiContainerFactory
  * @constructor
  */
-export default class DiContainerFactory {
-
-    constructor(config) {
-
+var DiContainerFactory = (function () {
+    function DiContainerFactory(config) {
         if (!config) {
             throw 'config required';
         }
         this._config = config;
-
     }
-
     /**
      *
      * @returns {Container} dependency injection container
      */
-    construct() {
-
-        const container = new Container();
-
-        container.registerInstance(IdentityServiceSdkConfig, this._config);
-        container.autoRegister(HttpClient);
-
+    DiContainerFactory.prototype.construct = function () {
+        var container = new aurelia_dependency_injection_1.Container();
+        container.registerInstance(identityServiceSdkConfig_1["default"], this._config);
+        container.autoRegister(aurelia_http_client_1.HttpClient);
         DiContainerFactory._registerUseCases(container);
-
         return container;
-
-    }
-
-    static _registerUseCases(container) {
-
-        container.autoRegister(GetUserInfoUseCase);
-        container.autoRegister(RefreshAccessTokenUseCase);
-
-    }
-
-}
+    };
+    DiContainerFactory._registerUseCases = function (container) {
+        container.autoRegister(getUserInfoUseCase_1["default"]);
+        container.autoRegister(refreshAccessTokenUseCase_1["default"]);
+    };
+    return DiContainerFactory;
+})();
+exports["default"] = DiContainerFactory;
+//# sourceMappingURL=diContainerFactory.js.map
