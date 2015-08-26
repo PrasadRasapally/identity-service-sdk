@@ -1,12 +1,12 @@
 System.config({
     defaultJSExtensions: true,
     transpiler: "typescript",
+    typescriptOptions: {
+        "emitDecoratorMetadata": true
+    },
     paths: {
         "github:*": "jspm_packages/github/*",
         "npm:*": "jspm_packages/npm/*"
-    },
-    typescriptOptions: {
-        emitDecoratorMetadata: true
     },
     packages: {
         "src": {
@@ -16,8 +16,7 @@ System.config({
     map: {
         "aurelia-dependency-injection": "github:aurelia/dependency-injection@0.9.2",
         "aurelia-http-client": "github:aurelia/http-client@0.10.3",
-        "core-js": "npm:core-js@1.1.1",
-        "typescript": "npm:typescript@1.5.3",
+        "typescript": "npm:typescript@1.6.0-dev.20150825",
         "github:aurelia/dependency-injection@0.9.2": {
             "aurelia-logging": "github:aurelia/logging@0.6.4",
             "aurelia-metadata": "github:aurelia/metadata@0.7.3",
@@ -52,18 +51,13 @@ System.config({
             "process": "github:jspm/nodelibs-process@0.1.1",
             "systemjs-json": "github:systemjs/plugin-json@0.1.0"
         },
-        "npm:core-js@1.1.1": {
-            "fs": "github:jspm/nodelibs-fs@0.1.2",
-            "process": "github:jspm/nodelibs-process@0.1.1",
-            "systemjs-json": "github:systemjs/plugin-json@0.1.0"
-        },
         "npm:os-browserify@0.1.2": {
             "os": "github:jspm/nodelibs-os@0.1.0"
         },
         "npm:path-browserify@0.0.0": {
             "process": "github:jspm/nodelibs-process@0.1.1"
         },
-        "npm:typescript@1.5.3": {
+        "npm:typescript@1.6.0-dev.20150825": {
             "buffer": "github:jspm/nodelibs-buffer@0.1.0",
             "child_process": "github:jspm/nodelibs-child_process@0.1.0",
             "fs": "github:jspm/nodelibs-fs@0.1.2",

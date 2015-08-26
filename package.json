@@ -23,7 +23,8 @@
     "phantomjs": "^1.9.18"
   },
   "directories": {
-    "lib": "src"
+    "lib": "src",
+    "packages": "jspm_packages"
   },
   "main": "src/identityServiceSdk.js",
   "scripts": {
@@ -35,7 +36,7 @@
   },
   "jspm": {
     "main": "identityServiceSdk",
-    "format": "es6",
+    "format": "esm",
     "directories": {
       "lib": "src"
     },
@@ -44,8 +45,7 @@
       "aurelia-http-client": "github:aurelia/http-client@^0.10.3"
     },
     "devDependencies": {
-      "core-js": "npm:core-js@^1.1.0",
-      "typescript": "npm:typescript@^1.5.3"
+      "typescript": "npm:typescript@^1.6.0-dev.20150818"
     }
   }
 }
