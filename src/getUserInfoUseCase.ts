@@ -1,6 +1,8 @@
+/// <reference path="../typings/es6-promise/es6-promise.d.ts" />
 import {autoinject} from 'aurelia-dependency-injection';
 import {HttpClient} from 'aurelia-http-client';
 import {IdentityServiceSdkConfig} from './identityServiceSdkConfig';
+import OidcUserInfo from './oidcUserInfo';
 
 /**
  * @class GetUserInfoUseCase
@@ -30,9 +32,13 @@ class GetUserInfoUseCase {
     /**
      * Gets userInfo via the provided access token.
      * @param {String} accessToken
-     * @returns a promise of {OidcUserInfo}
+     * @returns {Promise<OidcUserInfo>}
      */
-    execute(accessToken) {
+    execute(accessToken:String):Promise<OidcUserInfo> {
+
+        if (!accessToken) {
+            throw 'accessToken required';
+        }
 
         return this._httpClient
             .createRequest('oauth2/userinfo')

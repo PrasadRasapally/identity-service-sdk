@@ -1,3 +1,4 @@
+/// <reference path="../typings/es6-promise/es6-promise.d.ts" />
 import {autoinject} from 'aurelia-dependency-injection';
 import {HttpClient} from 'aurelia-http-client';
 import {IdentityServiceSdkConfig} from './identityServiceSdkConfig';
@@ -15,12 +16,12 @@ class RefreshAccessTokenUseCase {
     constructor(httpClient:HttpClient,
                 config:IdentityServiceSdkConfig) {
 
-        if(!httpClient){
+        if (!httpClient) {
             throw 'httpClient required';
         }
         this._httpClient = httpClient;
 
-        if(!config){
+        if (!config) {
             throw 'config required';
         }
         this._config = config;
@@ -31,9 +32,13 @@ class RefreshAccessTokenUseCase {
      * Refreshes the provided access token. Primarily used to refresh an access token for the
      * purposes of maintaining an active session without redirecting the client browser to re-authenticate.
      * @param {String} accessToken
-     * @returns a promise of {String}
+     * @returns {Promise<String>}
      */
-    execute(accessToken) {
+    execute(accessToken:String):Promise<String> {
+
+        if (!accessToken) {
+            throw 'accessToken required';
+        }
 
         return this._httpClient
             .createRequest('oauth2/token')

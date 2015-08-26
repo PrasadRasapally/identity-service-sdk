@@ -3,6 +3,7 @@ import DiContainerFactory from './diContainerFactory';
 import GetUserInfoUseCase from './getUserInfoUseCase';
 import RefreshAccessTokenUseCase from './refreshAccessTokenUseCase';
 import {IdentityServiceSdkConfig} from './identityServiceSdkConfig';
+import OidcUserInfo from './oidcUserInfo';
 
 /**
  * @class IdentityServiceSdk
@@ -22,7 +23,7 @@ export class IdentityServiceSdk {
 
     }
 
-    getUserInfo(accessToken) {
+    getUserInfo(accessToken:String):Promise<OidcUserInfo> {
 
         return this
             ._diContainer
@@ -31,7 +32,7 @@ export class IdentityServiceSdk {
 
     }
 
-    refreshAccessToken(accessToken) {
+    refreshAccessToken(accessToken:String):Promise<String> {
 
         return this
             ._diContainer
