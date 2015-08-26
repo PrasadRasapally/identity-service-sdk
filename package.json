@@ -22,11 +22,6 @@
     "karma-spec-reporter": "0.0.20",
     "phantomjs": "^1.9.18"
   },
-  "directories": {
-    "lib": "src",
-    "packages": "jspm_packages"
-  },
-  "main": "src/identityServiceSdk.js",
   "scripts": {
     "install": "jspm install",
     "test": "karma start",
@@ -35,8 +30,8 @@
     "postversion": "git push && git push --tags"
   },
   "jspm": {
-    "main": "identityServiceSdk",
     "format": "esm",
+    "main": "identityServiceSdk.ts",
     "directories": {
       "lib": "src"
     },
