@@ -83,4 +83,3 @@ System.register(['../../src/index'], function(exports_1) {
         }
     }
 });
-//# sourceMappingURL=index.spec.js.map

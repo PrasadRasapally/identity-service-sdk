@@ -1,3 +1,5 @@
+/// <reference path="../jspm_packages/github/aurelia/dependency-injection@0.9.2/aurelia-dependency-injection.d.ts" />
+/// <reference path="../jspm_packages/github/aurelia/http-client@0.10.3/aurelia-http-client.d.ts" />
 import {Container} from 'aurelia-dependency-injection';
 import {IdentityServiceSdkConfig} from './identityServiceSdkConfig';
 import {HttpClient} from 'aurelia-http-client';

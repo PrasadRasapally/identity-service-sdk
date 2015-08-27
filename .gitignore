@@ -9,6 +9,8 @@ test-reports
 
 #typescript
 src/**/*.js*
+src/**/*.d.ts
 test/**/*.js*
+test/**/*.d.ts
 
 

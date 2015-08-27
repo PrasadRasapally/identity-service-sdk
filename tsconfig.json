@@ -1,0 +1,52 @@
+{
+    "compilerOptions": {
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "target": "es5",
+        "module": "system"
+    },
+    "filesGlob": [
+        "./**/*.ts",
+        "!./node_modules/**/*.ts"
+    ],
+    "files": [
+        "./jspm_packages/github/aurelia/dependency-injection@0.9.2/aurelia-dependency-injection.d.ts",
+        "./jspm_packages/github/aurelia/http-client@0.10.3/aurelia-http-client.d.ts",
+        "./jspm_packages/github/aurelia/logging@0.6.4/aurelia-logging.d.ts",
+        "./jspm_packages/github/aurelia/metadata@0.7.3/aurelia-metadata.d.ts",
+        "./jspm_packages/github/aurelia/path@0.8.1/aurelia-path.d.ts",
+        "./jspm_packages/npm/typescript@1.6.0-dev.20150825/lib/lib.core.d.ts",
+        "./jspm_packages/npm/typescript@1.6.0-dev.20150825/lib/lib.core.es6.d.ts",
+        "./jspm_packages/npm/typescript@1.6.0-dev.20150825/lib/lib.d.ts",
+        "./jspm_packages/npm/typescript@1.6.0-dev.20150825/lib/lib.dom.d.ts",
+        "./jspm_packages/npm/typescript@1.6.0-dev.20150825/lib/lib.es6.d.ts",
+        "./jspm_packages/npm/typescript@1.6.0-dev.20150825/lib/lib.scriptHost.d.ts",
+        "./jspm_packages/npm/typescript@1.6.0-dev.20150825/lib/lib.webworker.d.ts",
+        "./jspm_packages/npm/typescript@1.6.0-dev.20150825/lib/typescript.d.ts",
+        "./jspm_packages/npm/typescript@1.6.0-dev.20150825/lib/typescriptServices.d.ts",
+        "./src/diContainerFactory.d.ts",
+        "./src/diContainerFactory.ts",
+        "./src/employeeOidcUserInfo.d.ts",
+        "./src/employeeOidcUserInfo.ts",
+        "./src/getUserInfoUseCase.d.ts",
+        "./src/getUserInfoUseCase.ts",
+        "./src/identityServiceSdk.d.ts",
+        "./src/identityServiceSdk.ts",
+        "./src/identityServiceSdkConfig.d.ts",
+        "./src/identityServiceSdkConfig.ts",
+        "./src/index.d.ts",
+        "./src/index.ts",
+        "./src/oidcUserInfo.d.ts",
+        "./src/oidcUserInfo.ts",
+        "./src/partnerRepOidcUserInfo.d.ts",
+        "./src/partnerRepOidcUserInfo.ts",
+        "./src/refreshAccessTokenUseCase.d.ts",
+        "./src/refreshAccessTokenUseCase.ts",
+        "./test/e2e/index.spec.d.ts",
+        "./test/e2e/index.spec.ts",
+        "./typings/aurelia-http-client.d.ts",
+        "./typings/es6-promise/es6-promise.d.ts",
+        "./typings/jasmine/jasmine.d.ts",
+        "./typings/tsd.d.ts"
+    ]
+}
