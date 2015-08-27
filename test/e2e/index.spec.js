@@ -3,8 +3,8 @@ System.register(['../../src/index'], function(exports_1) {
     var identityServiceSdkConfig, accessTokenValidTill5138;
     return {
         setters:[
-            function (_index_1) {
-                index_1 = _index_1;
+            function (index_1_1) {
+                index_1 = index_1_1;
             }],
         execute: function() {
             identityServiceSdkConfig = new index_1.IdentityServiceSdkConfig('https://identity-service-dev.precorconnect.com');

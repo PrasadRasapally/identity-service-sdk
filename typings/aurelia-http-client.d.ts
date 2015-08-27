@@ -1,4 +1,3 @@
-/// <reference path="es6-promise/es6-promise.d.ts" />
 declare module 'aurelia-http-client/request-builder' {
     /**
      * A builder class allowing fluent composition of HTTP requests.

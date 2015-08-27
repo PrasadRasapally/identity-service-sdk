@@ -6,7 +6,7 @@ module.exports = function (config) {
                 outputDir:'test-reports'
             },
             jspm: {
-                loadFiles: ['src/**/*.ts','test/**/*.ts']
+                loadFiles: ['src/**/*.js','test/**/*.js']
             },
             browsers: ['PhantomJS'],
             singleRun: true

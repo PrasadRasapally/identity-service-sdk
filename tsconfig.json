@@ -2,6 +2,8 @@
     "compilerOptions": {
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true,
+        "noLib": true,
+        "declaration": true,
         "target": "es5",
         "module": "system"
     },
@@ -15,15 +17,6 @@
         "./jspm_packages/github/aurelia/logging@0.6.4/aurelia-logging.d.ts",
         "./jspm_packages/github/aurelia/metadata@0.7.3/aurelia-metadata.d.ts",
         "./jspm_packages/github/aurelia/path@0.8.1/aurelia-path.d.ts",
-        "./jspm_packages/npm/typescript@1.6.0-dev.20150825/lib/lib.core.d.ts",
-        "./jspm_packages/npm/typescript@1.6.0-dev.20150825/lib/lib.core.es6.d.ts",
-        "./jspm_packages/npm/typescript@1.6.0-dev.20150825/lib/lib.d.ts",
-        "./jspm_packages/npm/typescript@1.6.0-dev.20150825/lib/lib.dom.d.ts",
-        "./jspm_packages/npm/typescript@1.6.0-dev.20150825/lib/lib.es6.d.ts",
-        "./jspm_packages/npm/typescript@1.6.0-dev.20150825/lib/lib.scriptHost.d.ts",
-        "./jspm_packages/npm/typescript@1.6.0-dev.20150825/lib/lib.webworker.d.ts",
-        "./jspm_packages/npm/typescript@1.6.0-dev.20150825/lib/typescript.d.ts",
-        "./jspm_packages/npm/typescript@1.6.0-dev.20150825/lib/typescriptServices.d.ts",
         "./src/diContainerFactory.d.ts",
         "./src/diContainerFactory.ts",
         "./src/employeeOidcUserInfo.d.ts",
@@ -45,8 +38,9 @@
         "./test/e2e/index.spec.d.ts",
         "./test/e2e/index.spec.ts",
         "./typings/aurelia-http-client.d.ts",
-        "./typings/es6-promise/es6-promise.d.ts",
+        "./typings/core-js.d.ts",
         "./typings/jasmine/jasmine.d.ts",
+        "./typings/lib.es6.d.ts",
         "./typings/tsd.d.ts"
     ]
 }
