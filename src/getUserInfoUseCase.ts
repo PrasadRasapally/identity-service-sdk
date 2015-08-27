@@ -1,6 +1,8 @@
 /// <reference path="../typings/es6-promise/es6-promise.d.ts" />
+/// <reference path="../typings/aurelia-http-client.d.ts" />
 import {autoinject} from 'aurelia-dependency-injection';
 import {HttpClient} from 'aurelia-http-client';
+import {RequestBuilder} from 'aurelia-http-client/request-builder';
 import {IdentityServiceSdkConfig} from './identityServiceSdkConfig';
 import OidcUserInfo from './oidcUserInfo';
 
@@ -40,8 +42,8 @@ class GetUserInfoUseCase {
             throw 'accessToken required';
         }
 
-        return this._httpClient
-            .createRequest('oauth2/userinfo')
+        return (<RequestBuilder>this._httpClient
+            .createRequest('oauth2/userinfo'))
             .asGet()
             .withBaseUrl(this._config.baseUrl)
             .withHeader('Authorization', `Bearer ${accessToken}`)

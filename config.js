@@ -2,7 +2,8 @@ System.config({
   defaultJSExtensions: true,
   transpiler: "typescript",
   typescriptOptions: {
-    "emitDecoratorMetadata": true
+    "emitDecoratorMetadata": true,
+    "module": "system"
   },
   paths: {
     "github:*": "jspm_packages/github/*",
@@ -11,7 +12,9 @@ System.config({
 
   packages: {
     "src": {
-      "main": "index",
+      "defaultExtension": "ts"
+    },
+    "test": {
       "defaultExtension": "ts"
     }
   },

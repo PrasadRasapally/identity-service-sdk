@@ -8,6 +8,10 @@
     "type": "git",
     "url": "bitbucket:precorconnect/identity-service-javascript-sdk"
   },
+  "main": "src/index",
+  "directories": {
+    "lib": "src"
+  },
   "devDependencies": {
     "jasmine": "^2.3.2",
     "jspm": "^0.16.0",
