@@ -7,10 +7,10 @@ import OidcUserInfo from './oidcUserInfo';
 export default class EmployeeOidcUserInfo extends OidcUserInfo {
 
 
-    constructor(given_name:String,
-                family_name:String,
-                email:String,
-                type:String) {
+    constructor(given_name:string,
+                family_name:string,
+                email:string,
+                type:string) {
         super(given_name, family_name, email, type);
     }
 }

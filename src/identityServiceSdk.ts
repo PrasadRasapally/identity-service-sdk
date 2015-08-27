@@ -23,7 +23,7 @@ export class IdentityServiceSdk {
 
     }
 
-    getUserInfo(accessToken:String):Promise<OidcUserInfo> {
+    getUserInfo(accessToken:string):Promise<OidcUserInfo> {
 
         return this
             ._diContainer
@@ -32,7 +32,7 @@ export class IdentityServiceSdk {
 
     }
 
-    refreshAccessToken(accessToken:String):Promise<String> {
+    refreshAccessToken(accessToken:string):Promise<string> {
 
         return this
             ._diContainer

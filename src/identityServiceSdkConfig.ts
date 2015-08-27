@@ -4,9 +4,9 @@
  */
 export class IdentityServiceSdkConfig {
 
-    private _baseUrl:String;
+    private _baseUrl:string;
 
-    constructor(baseUrl:String) {
+    constructor(baseUrl:string) {
 
         if (!baseUrl) {
             throw 'baseUrl required';
@@ -15,7 +15,7 @@ export class IdentityServiceSdkConfig {
 
     }
 
-    get baseUrl():String {
+    get baseUrl():string {
         return this._baseUrl;
     }
 

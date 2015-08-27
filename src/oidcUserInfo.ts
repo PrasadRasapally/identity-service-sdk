@@ -3,15 +3,15 @@
  */
 export default class OidcUserInfo {
 
-    private _given_name:String;
-    private _family_name:String;
-    private _email:String;
-    private _type:String;
+    private _given_name:string;
+    private _family_name:string;
+    private _email:string;
+    private _type:string;
 
-    constructor(given_name:String,
-                family_name:String,
-                email:String,
-                type:String) {
+    constructor(given_name:string,
+                family_name:string,
+                email:string,
+                type:string) {
 
         if (!given_name) {
             throw 'given_name required';
@@ -35,19 +35,19 @@ export default class OidcUserInfo {
 
     }
 
-    get given_name():String {
+    get given_name():string {
         return this._given_name;
     }
 
-    get family_name():String {
+    get family_name():string {
         return this._family_name;
     }
 
-    get email():String {
+    get email():string {
         return this._email;
     }
 
-    get type():String {
+    get type():string {
         return this._type;
     }
 }

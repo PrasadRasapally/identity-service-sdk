@@ -33,10 +33,10 @@ class GetUserInfoUseCase {
 
     /**
      * Gets userInfo via the provided access token.
-     * @param {String} accessToken
+     * @param {string} accessToken
      * @returns {Promise<OidcUserInfo>}
      */
-    execute(accessToken:String):Promise<OidcUserInfo> {
+    execute(accessToken:string):Promise<OidcUserInfo> {
 
         if (!accessToken) {
             throw 'accessToken required';

@@ -14,7 +14,7 @@ declare module 'aurelia-http-client/request-builder' {
          * Adds a user-defined request transformer to the RequestBuilder.
          *
          * @method addHelper
-         * @param {String} name The name of the helper to add.
+         * @param {string} name The name of the helper to add.
          * @param {Function} fn The helper function.
          * @chainable
          */

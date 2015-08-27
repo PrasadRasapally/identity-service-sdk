@@ -33,10 +33,10 @@ class RefreshAccessTokenUseCase {
     /**
      * Refreshes the provided access token. Primarily used to refresh an access token for the
      * purposes of maintaining an active session without redirecting the client browser to re-authenticate.
-     * @param {String} accessToken
-     * @returns {Promise<String>}
+     * @param {string} accessToken
+     * @returns {Promise<string>}
      */
-    execute(accessToken:String):Promise<String> {
+    execute(accessToken:string):Promise<string> {
 
         if (!accessToken) {
             throw 'accessToken required';

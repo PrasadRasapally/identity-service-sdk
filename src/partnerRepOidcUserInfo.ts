@@ -6,16 +6,16 @@ import OidcUserInfo from './oidcUserInfo';
 export default class PartnerRepOidcUserInfo extends OidcUserInfo {
 
     private _sub:Number;
-    private _partner_sap_account_number:String;
-    private _sap_vendor_number:String;
+    private _partner_sap_account_number:string;
+    private _sap_vendor_number:string;
 
-    constructor(given_name:String,
-                family_name:String,
-                email:String,
-                type:String,
+    constructor(given_name:string,
+                family_name:string,
+                email:string,
+                type:string,
                 sub:Number,
-                partner_sap_account_number:String = null,
-                sap_vendor_number:String = null) {
+                partner_sap_account_number:string = null,
+                sap_vendor_number:string = null) {
 
         super(given_name, family_name, email, type);
 
