@@ -37,6 +37,7 @@
     "postversion": "git push && git push --tags"
   },
   "jspm": {
+    "main":"index",
     "directories": {
       "lib": "dist/src"
     },
