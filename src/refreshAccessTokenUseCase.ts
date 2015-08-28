@@ -1,6 +1,5 @@
 import {autoinject} from 'aurelia-dependency-injection';
 import {HttpClient} from 'aurelia-http-client';
-import {RequestBuilder} from 'aurelia-http-client/request-builder';
 import {IdentityServiceSdkConfig} from './identityServiceSdkConfig';
 
 /**
@@ -40,8 +39,8 @@ class RefreshAccessTokenUseCase {
             throw 'accessToken required';
         }
 
-        return (<RequestBuilder>this._httpClient
-            .createRequest('oauth2/token'))
+        return this._httpClient
+            .createRequest('oauth2/token')
             .asPost()
             .withBaseUrl(this._config.baseUrl)
             .withHeader('Content-Type', 'application/x-www-form-urlencoded')

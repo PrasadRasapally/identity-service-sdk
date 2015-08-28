@@ -8,9 +8,9 @@
     "type": "git",
     "url": "bitbucket:precorconnect/identity-service-javascript-sdk"
   },
-  "main": "dist/identity-service-sdk.js",
+  "main": "dist/src/index.js",
   "directories": {
-    "lib": "dist"
+    "lib": "dist/src"
   },
   "devDependencies": {
     "jasmine": "^2.3.2",
@@ -29,7 +29,7 @@
   },
   "scripts": {
     "install": "jspm install",
-    "pretest":"tsc",
+    "pretest": "tsc",
     "test": "karma start",
     "preversion": "npm test",
     "version": "git add -A",
@@ -43,6 +43,10 @@
       "aurelia-dependency-injection": "github:aurelia/dependency-injection@^0.9.2",
       "aurelia-http-client": "github:aurelia/http-client@^0.10.3"
     },
-    "devDependencies": {}
+    "devDependencies": {
+      "babel": "npm:babel-core@^5.8.22",
+      "babel-runtime": "npm:babel-runtime@^5.8.20",
+      "core-js": "npm:core-js@^1.1.0"
+    }
   }
 }
