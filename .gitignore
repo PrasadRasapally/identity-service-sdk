@@ -6,6 +6,3 @@ jspm_packages
 
 #junit
 test-reports
-
-#typescript
-dist
