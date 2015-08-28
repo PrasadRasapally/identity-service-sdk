@@ -10,7 +10,7 @@ import RefreshAccessTokenUseCase from './refreshAccessTokenUseCase';
  */
 export default class DiContainerFactory {
 
-    private _config:IdentityServiceSdkConfig;
+    _config:IdentityServiceSdkConfig;
 
     constructor(config:IdentityServiceSdkConfig) {
 
@@ -38,7 +38,7 @@ export default class DiContainerFactory {
 
     }
 
-    private static _registerUseCases(container) {
+    static _registerUseCases(container) {
 
         container.autoRegister(GetUserInfoUseCase);
         container.autoRegister(RefreshAccessTokenUseCase);

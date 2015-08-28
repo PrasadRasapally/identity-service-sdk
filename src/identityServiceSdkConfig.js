@@ -4,7 +4,7 @@
  */
 export class IdentityServiceSdkConfig {
 
-    private _baseUrl:string;
+    _baseUrl:string;
 
     constructor(baseUrl:string) {
 

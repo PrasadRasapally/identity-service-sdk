@@ -3,10 +3,10 @@
  */
 export default class OidcUserInfo {
 
-    private _given_name:string;
-    private _family_name:string;
-    private _email:string;
-    private _type:string;
+    _given_name:string;
+    _family_name:string;
+    _email:string;
+    _type:string;
 
     constructor(given_name:string,
                 family_name:string,

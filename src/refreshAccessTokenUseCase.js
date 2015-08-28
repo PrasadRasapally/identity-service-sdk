@@ -1,4 +1,4 @@
-import {autoinject} from 'aurelia-dependency-injection';
+import {inject} from 'aurelia-dependency-injection';
 import {HttpClient} from 'aurelia-http-client';
 import {IdentityServiceSdkConfig} from './identityServiceSdkConfig';
 
@@ -6,11 +6,11 @@ import {IdentityServiceSdkConfig} from './identityServiceSdkConfig';
  * @class RefreshAccessTokenUseCase
  * @constructor
  */
-@autoinject
+@inject(HttpClient,IdentityServiceSdkConfig)
 class RefreshAccessTokenUseCase {
 
-    private _httpClient:HttpClient;
-    private _config:IdentityServiceSdkConfig;
+    _httpClient:HttpClient;
+    _config:IdentityServiceSdkConfig;
 
     constructor(httpClient:HttpClient,
                 config:IdentityServiceSdkConfig) {

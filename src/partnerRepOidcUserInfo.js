@@ -5,9 +5,9 @@ import OidcUserInfo from './oidcUserInfo';
  */
 export default class PartnerRepOidcUserInfo extends OidcUserInfo {
 
-    private _sub:number;
-    private _partner_sap_account_number:string;
-    private _sap_vendor_number:string;
+    _sub:number;
+    _partner_sap_account_number:string;
+    _sap_vendor_number:string;
 
     constructor(given_name:string,
                 family_name:string,

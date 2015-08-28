@@ -11,7 +11,7 @@ import OidcUserInfo from './oidcUserInfo';
  */
 export class IdentityServiceSdk {
 
-    private _diContainer:Container;
+    _diContainer:Container;
 
     /**
      *
