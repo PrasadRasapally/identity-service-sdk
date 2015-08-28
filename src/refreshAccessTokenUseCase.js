@@ -36,7 +36,7 @@ class RefreshAccessTokenUseCase {
     execute(accessToken:string):Promise<string> {
 
         if (!accessToken) {
-            throw 'accessToken required';
+            return Promise.reject({statusCode: 401});
         }
 
         return this._httpClient

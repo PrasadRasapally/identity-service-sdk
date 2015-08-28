@@ -7,8 +7,7 @@ import OidcUserInfo from './oidcUserInfo';
  * @class GetUserInfoUseCase
  * @constructor
  */
-@inject(HttpClient,IdentityServiceSdkConfig)
-class GetUserInfoUseCase {
+@inject(HttpClient, IdentityServiceSdkConfig) class GetUserInfoUseCase {
 
     _httpClient:HttpClient;
     _config:IdentityServiceSdkConfig;
@@ -36,7 +35,7 @@ class GetUserInfoUseCase {
     execute(accessToken:string):Promise<OidcUserInfo> {
 
         if (!accessToken) {
-            throw 'accessToken required';
+            return Promise.reject({statusCode: 401});
         }
 
         return this._httpClient
