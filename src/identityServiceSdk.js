@@ -2,14 +2,14 @@ import {Container} from 'aurelia-dependency-injection';
 import DiContainerFactory from './diContainerFactory';
 import GetUserInfoUseCase from './getUserInfoUseCase';
 import RefreshAccessTokenUseCase from './refreshAccessTokenUseCase';
-import {IdentityServiceSdkConfig} from './identityServiceSdkConfig';
+import IdentityServiceSdkConfig from './identityServiceSdkConfig';
 import OidcUserInfo from './oidcUserInfo';
 
 /**
  * @class IdentityServiceSdk
  * @constructor
  */
-export class IdentityServiceSdk {
+export default class IdentityServiceSdk {
 
     _diContainer:Container;
 

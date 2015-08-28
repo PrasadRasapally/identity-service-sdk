@@ -1,5 +1,5 @@
 import {Container} from 'aurelia-dependency-injection';
-import {IdentityServiceSdkConfig} from './identityServiceSdkConfig';
+import IdentityServiceSdkConfig from './identityServiceSdkConfig';
 import {HttpClient} from 'aurelia-http-client';
 import GetUserInfoUseCase from './getUserInfoUseCase';
 import RefreshAccessTokenUseCase from './refreshAccessTokenUseCase';
