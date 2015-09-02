@@ -1,11 +1,13 @@
 /**
- * @class IdentityServiceSdkConfig
- * @constructor
+ * @class {IdentityServiceSdkConfig}
  */
 export default class IdentityServiceSdkConfig {
 
     _baseUrl:string;
 
+    /**
+     * @param {string} baseUrl
+     */
     constructor(baseUrl:string) {
 
         if (!baseUrl) {
@@ -15,6 +17,9 @@ export default class IdentityServiceSdkConfig {
 
     }
 
+    /**
+     * @returns {string}
+     */
     get baseUrl():string {
         return this._baseUrl;
     }

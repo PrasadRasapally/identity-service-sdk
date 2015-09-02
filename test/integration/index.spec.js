@@ -1,4 +1,3 @@
-/// <reference path="../../typings/jasmine/jasmine.d.ts" />
 import IdentityServiceSdk,{IdentityServiceSdkConfig} from '../../src/index';
 
 const identityServiceSdkConfig = new IdentityServiceSdkConfig('https://identity-service-dev.precorconnect.com');
@@ -57,7 +56,7 @@ describe('identity service sdk', () => {
                     done();
                 })
                 .catch((error)=> {
-                    expect(error).toBeUndefined();
+                    fail(error);
                     done();
                 });
 
@@ -90,7 +89,7 @@ describe('identity service sdk', () => {
                     done();
                 })
                 .catch((error)=> {
-                    expect(error).toBeUndefined();
+                    fail(error);
                     done();
                 });
 

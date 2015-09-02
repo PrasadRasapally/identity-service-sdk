@@ -1,5 +1,6 @@
 /**
  * OpenID Connect (OIDC) UserInfo
+ * @class {OidcUserInfo}
  */
 export default class OidcUserInfo {
 
@@ -8,6 +9,12 @@ export default class OidcUserInfo {
     _email:string;
     _type:string;
 
+    /**
+     * @param {string} given_name
+     * @param {string} family_name
+     * @param {string} email
+     * @param {string} type
+     */
     constructor(given_name:string,
                 family_name:string,
                 email:string,
@@ -35,18 +42,30 @@ export default class OidcUserInfo {
 
     }
 
+    /**
+     * @returns {string}
+     */
     get given_name():string {
         return this._given_name;
     }
 
+    /**
+     * @returns {string}
+     */
     get family_name():string {
         return this._family_name;
     }
 
+    /**
+     * @returns {string}
+     */
     get email():string {
         return this._email;
     }
 
+    /**
+     * @returns {string}
+     */
     get type():string {
         return this._type;
     }

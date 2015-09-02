@@ -4,14 +4,17 @@ import IdentityServiceSdkConfig from './identityServiceSdkConfig';
 import OidcUserInfo from './oidcUserInfo';
 
 /**
- * @class GetUserInfoUseCase
- * @constructor
+ * @class {GetUserInfoUseCase}
  */
 @inject(HttpClient, IdentityServiceSdkConfig) class GetUserInfoUseCase {
 
     _httpClient:HttpClient;
     _config:IdentityServiceSdkConfig;
 
+    /**
+     * @param {HttpClient} httpClient
+     * @param {IdentityServiceSdkConfig} config
+     */
     constructor(httpClient:HttpClient,
                 config:IdentityServiceSdkConfig) {
 
