@@ -19,8 +19,7 @@ jspm install identity-service-sdk=bitbucket:precorconnect/identity-service-javas
 
 **import**
 ```js
-import IdentityServiceSdkConfig from 'identity-service-sdk/IdentityServiceSdkConfig';
-import IdentityServiceSdk from 'identity-service-sdk';
+import IdentityServiceSdk,{IdentityServiceSdkConfig} from 'identity-service-sdk';
 
 const identityServiceSdkConfig = new IdentityServiceSdkConfig("https://identity-service-dev.precorconnect.com");
 const identityServiceSdk = new IdentityServiceSdk(identityServiceSdkConfig);
