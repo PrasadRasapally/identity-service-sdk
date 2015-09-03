@@ -2,20 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2fe9440f-b3fb-40b8-9565-a216581e412a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/identity_service_javascript_sdk_node_modules.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/diContainerFactory.js" afterPath="$PROJECT_DIR$/src/diContainer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/identity-service-javascript-sdk.iml" afterPath="$PROJECT_DIR$/.idea/identity-service-javascript-sdk.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/employeeOidcUserInfo.js" afterPath="$PROJECT_DIR$/src/employeeOidcUserInfo.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/getUserInfoUseCase.js" afterPath="$PROJECT_DIR$/src/getUserInfoUseCase.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/identityServiceSdk.js" afterPath="$PROJECT_DIR$/src/identityServiceSdk.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/identityServiceSdkConfig.js" afterPath="$PROJECT_DIR$/src/identityServiceSdkConfig.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/oidcUserInfo.js" afterPath="$PROJECT_DIR$/src/oidcUserInfo.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/partnerRepOidcUserInfo.js" afterPath="$PROJECT_DIR$/src/partnerRepOidcUserInfo.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/refreshAccessTokenUseCase.js" afterPath="$PROJECT_DIR$/src/refreshAccessTokenUseCase.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/e2e/index.spec.js" afterPath="$PROJECT_DIR$/test/e2e/index.spec.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/integration/index.spec.js" afterPath="$PROJECT_DIR$/test/integration/index.spec.js" />
     </list>
     <ignored path="identity-service-javascript-sdk.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,7 +29,7 @@
         <entry file="file://$PROJECT_DIR$/src/getUserInfoUseCase.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="45" column="20" selection-start-line="45" selection-start-column="20" selection-end-line="45" selection-end-column="20" />
+              <caret line="46" column="46" selection-start-line="46" selection-start-column="46" selection-end-line="47" selection-end-column="65" />
               <folding />
             </state>
           </provider>
@@ -61,7 +49,27 @@
         <entry file="file://$PROJECT_DIR$/src/diContainer.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+              <caret line="31" column="4" selection-start-line="31" selection-start-column="4" selection-end-line="31" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="karma.conf.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/karma.conf.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.spec.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test/integration/index.spec.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.55135137">
+              <caret line="18" column="75" selection-start-line="18" selection-start-column="75" selection-end-line="18" selection-end-column="75" />
               <folding />
             </state>
           </provider>
@@ -77,34 +85,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="identityServiceSdk.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="identityServiceSdk.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/identityServiceSdk.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.47927928">
-              <caret line="36" column="34" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.230769">
-              <caret line="41" column="62" selection-start-line="41" selection-start-column="62" selection-end-line="41" selection-end-column="62" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="identityServiceSdkConfig.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/identityServiceSdkConfig.js">
-          <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="19" column="7" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
-              <folding>
-                <marker date="1441235194913" expanded="true" signature="91:417" placeholder="{...}" />
-              </folding>
+              <caret line="29" column="19" selection-start-line="29" selection-start-column="19" selection-end-line="30" selection-end-column="12" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -133,7 +119,7 @@
         <entry file="file://$PROJECT_DIR$/src/refreshAccessTokenUseCase.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="13" column="37" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="37" />
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -158,7 +144,6 @@
         <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/src/diContainerFactory.js" />
         <option value="$PROJECT_DIR$/test/e2e/index.spec.js" />
-        <option value="$PROJECT_DIR$/src/diContainer.js" />
         <option value="$PROJECT_DIR$/src/getUserInfoUseCase.js" />
         <option value="$PROJECT_DIR$/src/identityServiceSdkConfig.js" />
         <option value="$PROJECT_DIR$/src/oidcUserInfo.js" />
@@ -166,6 +151,8 @@
         <option value="$PROJECT_DIR$/src/refreshAccessTokenUseCase.js" />
         <option value="$PROJECT_DIR$/src/employeeOidcUserInfo.js" />
         <option value="$PROJECT_DIR$/src/identityServiceSdk.js" />
+        <option value="$PROJECT_DIR$/src/diContainer.js" />
+        <option value="$PROJECT_DIR$/test/integration/index.spec.js" />
       </list>
     </option>
   </component>
@@ -234,7 +221,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="e2e" />
+              <option name="myItemId" value="integration" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -681,12 +668,12 @@
       <updated>1440729019665</updated>
       <workItem from="1440729021022" duration="2816000" />
       <workItem from="1440732803093" duration="8771000" />
-      <workItem from="1441228763826" duration="6161000" />
+      <workItem from="1441228763826" duration="9044000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17748000" />
+    <option name="totallyTimeSpent" value="20631000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-1032" width="1296" height="1000" extended-state="6" />
@@ -773,7 +760,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/e2e/index.spec.js">
+    <entry file="file://$PROJECT_DIR$/test/integration/index.spec.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -849,6 +836,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -899,25 +887,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/karma.conf.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="6" column="35" selection-start-line="6" selection-start-column="35" selection-end-line="9" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/e2e/index.spec.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="59" column="27" selection-start-line="59" selection-start-column="27" selection-end-line="59" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -961,14 +934,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/refreshAccessTokenUseCase.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="37" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/partnerRepOidcUserInfo.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -993,14 +958,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/getUserInfoUseCase.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="45" column="20" selection-start-line="45" selection-start-column="20" selection-end-line="45" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/employeeOidcUserInfo.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1012,15 +969,47 @@
     <entry file="file://$PROJECT_DIR$/src/diContainer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <caret line="31" column="4" selection-start-line="31" selection-start-column="4" selection-end-line="31" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/karma.conf.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/identityServiceSdk.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47927928">
-          <caret line="36" column="34" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="34" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="29" column="19" selection-start-line="29" selection-start-column="19" selection-end-line="30" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/refreshAccessTokenUseCase.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/getUserInfoUseCase.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="46" column="46" selection-start-line="46" selection-start-column="46" selection-end-line="47" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/integration/index.spec.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.55135137">
+          <caret line="18" column="75" selection-start-line="18" selection-start-column="75" selection-end-line="18" selection-end-column="75" />
           <folding />
         </state>
       </provider>
