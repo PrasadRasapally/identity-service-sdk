@@ -10,19 +10,26 @@ Gets userInfo via the provided access token.
 Refreshes the provided access token. Primarily used to refresh an access token for the
 purposes of maintaining an active session without redirecting the client browser to re-authenticate.
 
-## Installation  
+## Setup  
 
-**add jspm package dependency**  
+**install via jspm**  
 ```shell
 jspm install identity-service-sdk=bitbucket:precorconnect/identity-service-javascript-sdk
 ``` 
 
-**import**
+**import & instantiate**
 ```js
 import IdentityServiceSdk,{IdentityServiceSdkConfig} from 'identity-service-sdk';
 
-const identityServiceSdkConfig = new IdentityServiceSdkConfig("https://identity-service-dev.precorconnect.com");
-const identityServiceSdk = new IdentityServiceSdk(identityServiceSdkConfig);
+const identityServiceSdkConfig = 
+    new IdentityServiceSdkConfig(
+        "https://identity-service-dev.precorconnect.com"
+    );
+    
+const identityServiceSdk = 
+    new IdentityServiceSdk(
+        identityServiceSdkConfig
+    );
 ```
 
 ## Platform Support
