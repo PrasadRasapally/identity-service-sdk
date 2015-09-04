@@ -1,12 +1,12 @@
 {
   "name": "identity-service-sdk",
-  "description": "The precorconnect identity service javascript SDK.",
-  "homepage": "https://bitbucket.org/precorconnect/identity-service-javascript-sdk",
+  "description": "Precorconnect identity service SDK for javascript.",
+  "homepage": "https://bitbucket.org/precorconnect/identity-service-sdk-for-javascript",
   "private": true,
   "version": "0.0.105",
   "repository": {
     "type": "git",
-    "url": "bitbucket:precorconnect/identity-service-javascript-sdk"
+    "url": "bitbucket:precorconnect/identity-service-sdk-for-javascript"
   },
   "main": "src/index.js",
   "directories": {

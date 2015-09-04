@@ -1,5 +1,5 @@
 ## Description
-The precorconnect identity service javascript SDK.
+Precorconnect identity service SDK for javascript.
 
 ## Use Cases
 
@@ -14,7 +14,7 @@ purposes of maintaining an active session without redirecting the client browser
 
 **install via jspm**  
 ```shell
-jspm install identity-service-sdk=bitbucket:precorconnect/identity-service-javascript-sdk
+jspm install identity-service-sdk=bitbucket:precorconnect/identity-service-sdk-for-javascript
 ``` 
 
 **import & instantiate**

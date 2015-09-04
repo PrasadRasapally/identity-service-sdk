@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="TypeScriptCompiler">
-    <option name="typeScriptServiceDirectory" value="C:\Program Files (x86)\nodejs\node_modules\typescript\bin" />
-    <option name="typeScriptCompilerParams" value="--experimentalDecorators --target es5 --module system" />
-    <option name="versionType" value="SERVICE_DIRECTORY" />
-  </component>
-</project>
