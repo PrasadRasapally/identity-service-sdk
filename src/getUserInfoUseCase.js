@@ -2,6 +2,7 @@ import {inject} from 'aurelia-dependency-injection';
 import {HttpClient} from 'aurelia-http-client';
 import IdentityServiceSdkConfig from './identityServiceSdkConfig';
 import OidcUserInfo from './oidcUserInfo';
+import OidcUserInfoFactory from './oidcUserInfoFactory';
 
 /**
  * @class {GetUserInfoUseCase}
@@ -47,7 +48,7 @@ import OidcUserInfo from './oidcUserInfo';
             .withBaseUrl(this._config.baseUrl)
             .withHeader('Authorization', `Bearer ${accessToken}`)
             .send()
-            .then((response) => (response.content));
+            .then((response) => OidcUserInfoFactory.construct(response.content));
 
     }
 

@@ -1,8 +1,46 @@
-import IdentityServiceSdk,{IdentityServiceSdkConfig} from '../../src/index';
+import IdentityServiceSdk,
+{
+    EmployeeOidcUserInfo,
+    PartnerRepOidcUserInfo,
+    IdentityServiceSdkConfig
+} from '../../src/index';
+import jwt from 'jwt-simple';
 
+/*
+ config fields
+ */
 const identityServiceSdkConfig = new IdentityServiceSdkConfig('https://identity-service-dev.precorconnect.com');
-const accessTokenValidTill5138 = 'eyJhbGciOiJIUzI1NiJ9.eyJ0eXBlIjoicGFydG5lclJlcCIsImV4cCI6OTk5OTk5OTk5OTkuOTk5MDAwMDAwLCJhdWQiOiJodHRwczovL2lkZW50aXR5LXNlcnZpY2UtZGV2LnByZWNvcmNvbm5lY3QuY29tIiwiaXNzIjoiaHR0cHM6Ly9pZGVudGl0eS1zZXJ2aWNlLWRldi5wcmVjb3Jjb25uZWN0LmNvbSIsImdpdmVuX25hbWUiOiJ0ZXN0Z2l2ZW4iLCJmYW1pbHlfbmFtZSI6InRlc3RmYW1pbHkiLCJlbWFpbCI6InRlc3RAZW1haWwuY29tIiwic3ViIjoiMTIzNDU2Nzg5MCIsInBhcnRuZXJfc2FwX2FjY291bnRfbnVtYmVyIjoiMjM0MzI0MzIyMyIsInNhcF92ZW5kb3JfbnVtYmVyIjoiMzIxNDIzNDMzIn0.JyMC_H-M_YEWn8yj916lfj8SQboSrsttexmwceFP6-E';
+const identityServiceJwtSigningKey = 'nbho9k9vcv8r48xGQs4woyN8BJ6q9X1efj295KXfS9A9yHJSRm0oU21j3ickrScQ';
 
+/*
+ dummy data
+ */
+const validUrl = 'https://dummy-url.com';
+const validPartnerRepId = 1;
+const validEmailAddress = 'email@test.com';
+const validFirstName = 'firstName';
+const validLastName = 'lastName';
+const validSapAccountNumber = 'sapAccountNo';
+const validSapVendorNumber = 'sapVendorNo';
+const validPartnerRepOidcUserInfo =
+    new PartnerRepOidcUserInfo(
+        validFirstName,
+        validLastName,
+        validEmailAddress,
+        `${validPartnerRepId}`,
+        validSapAccountNumber,
+        validSapVendorNumber
+    );
+const validEmployeeOidcUserInfo =
+    new EmployeeOidcUserInfo(
+        validFirstName,
+        validLastName,
+        validEmailAddress
+    );
+
+/*
+ test methods
+ */
 describe('Index module', () => {
 
     describe('default export', () => {
@@ -22,24 +60,19 @@ describe('Index module', () => {
         });
     });
 
-    describe('instance of default export',() => {
+    describe('instance of default export', () => {
 
         describe('getUserInfo method', () => {
-            it('should return expected user info', (done) => {
+            it('returns PartnerRepOidcUserInfo', (done) => {
 
                 /*
                  arrange
                  */
 
-                const expectedUserInfo = {
-                    email: 'test@email.com',
-                    family_name: 'testfamily',
-                    given_name: 'testgiven',
-                    partner_sap_account_number: '2343243223',
-                    sap_vendor_number: '321423433',
-                    sub: '1234567890',
-                    type: 'partnerRep'
-                };
+                const expectedPartnerRepOidcUserInfo = validPartnerRepOidcUserInfo;
+
+
+                const accessToken = constructValidPartnerRepOAuth2AccessToken(expectedPartnerRepOidcUserInfo);
 
                 const objectUnderTest =
                     new IdentityServiceSdk(identityServiceSdkConfig);
@@ -48,15 +81,49 @@ describe('Index module', () => {
                 /*
                  act
                  */
-                const actualUserInfoPromise = objectUnderTest.getUserInfo(accessTokenValidTill5138);
+                const actualUserInfoPromise = objectUnderTest.getUserInfo(accessToken);
 
                 /*
                  assert
                  */
 
                 actualUserInfoPromise
-                    .then((actualUserInfo) => {
-                        expect(actualUserInfo).toEqual(expectedUserInfo);
+                    .then((actualPartnerRepOidcUserInfo) => {
+                        expect(actualPartnerRepOidcUserInfo).toEqual(expectedPartnerRepOidcUserInfo);
+                        done();
+                    })
+                    .catch((error)=> {
+                        fail(error);
+                        done();
+                    });
+
+            });
+            it('returns EmployeeOidcUserInfo', (done) => {
+
+                /*
+                 arrange
+                 */
+
+                const expectedEmployeeOidcUserInfo = validEmployeeOidcUserInfo;
+
+                const accessToken = constructValidEmployeeOAuth2AccessToken(expectedEmployeeOidcUserInfo);
+
+                const objectUnderTest =
+                    new IdentityServiceSdk(identityServiceSdkConfig);
+
+
+                /*
+                 act
+                 */
+                const actualUserInfoPromise = objectUnderTest.getUserInfo(accessToken);
+
+                /*
+                 assert
+                 */
+
+                actualUserInfoPromise
+                    .then((actualEmployeeOidcUserInfo) => {
+                        expect(actualEmployeeOidcUserInfo).toEqual(expectedEmployeeOidcUserInfo);
                         done();
                     })
                     .catch((error)=> {
@@ -77,11 +144,15 @@ describe('Index module', () => {
                 const objectUnderTest =
                     new IdentityServiceSdk(identityServiceSdkConfig);
 
-
                 /*
                  act
                  */
-                const accessTokenPromise = objectUnderTest.refreshAccessToken(accessTokenValidTill5138);
+                const accessTokenPromise =
+                    objectUnderTest.refreshAccessToken(
+                        constructValidPartnerRepOAuth2AccessToken(
+                            validPartnerRepOidcUserInfo
+                        )
+                    );
 
                 /*
                  assert
@@ -100,6 +171,46 @@ describe('Index module', () => {
             })
         });
 
+    }, 20000);
 
-    });
 });
+
+/*
+ factory methods
+ */
+function constructValidPartnerRepOAuth2AccessToken(partnerRepOidcUserInfo:PartnerRepOidcUserInfo):string {
+
+    const tenMinutesInMilliseconds = 10000 * 60;
+
+    const jwtPayload = {
+        "type": 'partnerRep',
+        "exp": Date.now() + tenMinutesInMilliseconds,
+        "aud": validUrl,
+        "iss": validUrl,
+        "given_name": partnerRepOidcUserInfo.given_name,
+        "family_name": partnerRepOidcUserInfo.family_name,
+        "email": partnerRepOidcUserInfo.email,
+        "sub": partnerRepOidcUserInfo.sub,
+        "partner_sap_account_number": partnerRepOidcUserInfo.partner_sap_account_number,
+        "sap_vendor_number": partnerRepOidcUserInfo.sap_vendor_number
+    };
+
+    return jwt.encode(jwtPayload, identityServiceJwtSigningKey);
+}
+
+function constructValidEmployeeOAuth2AccessToken(employeeOidcUserInfo:EmployeeOidcUserInfo):string {
+
+    const tenMinutesInMilliseconds = 10000 * 60;
+
+    const jwtPayload = {
+        "type": 'employee',
+        "exp": Date.now() + tenMinutesInMilliseconds,
+        "aud": validUrl,
+        "iss": validUrl,
+        "given_name": employeeOidcUserInfo.given_name,
+        "family_name": employeeOidcUserInfo.family_name,
+        "email": employeeOidcUserInfo.email
+    };
+
+    return jwt.encode(jwtPayload, identityServiceJwtSigningKey);
+}
