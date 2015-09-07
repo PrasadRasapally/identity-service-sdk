@@ -1,16 +1,7 @@
 import EmployeeOidcUserInfo from '../../src/employeeOidcUserInfo';
 import OidcUserInfoFactory from '../../src/oidcUserInfoFactory';
 import PartnerRepOidcUserInfo from '../../src/partnerRepOidcUserInfo';
-
-/*
- dummy data fields
- */
-const validFirstName = 'given_name';
-const validLastName = 'family_name';
-const validEmailAddress = 'test.email@email.com';
-const validSapAccountNumber = 'sapAccountNo';
-const validSapVendorNumber = 'sapVendorNo';
-const validPartnerRepId = 1;
+import dummy from '../dummy';
 
 /*
  test methods
@@ -22,12 +13,12 @@ describe('OidcUserInfoFactory class', () => {
              arrange
              */
             const partnerRepOidcUserInfoData = {
-                email: validEmailAddress,
-                family_name: validLastName,
-                given_name: validFirstName,
-                partner_sap_account_number: validSapAccountNumber,
-                sap_vendor_number: validSapVendorNumber,
-                sub: `${validPartnerRepId}`,
+                email: dummy.emailAddress,
+                family_name: dummy.lastName,
+                given_name: dummy.firstName,
+                partner_sap_account_number: dummy.sapAccountNumber,
+                sap_vendor_number: dummy.sapVendorNumber,
+                sub: `${dummy.partnerRepId}`,
                 type: 'partnerRep'
             };
 
@@ -58,9 +49,9 @@ describe('OidcUserInfoFactory class', () => {
              arrange
              */
             const employeeOidcUserInfoData = {
-                email: validEmailAddress,
-                family_name: validLastName,
-                given_name: validFirstName,
+                email: dummy.emailAddress,
+                family_name: dummy.lastName,
+                given_name: dummy.firstName,
                 type: 'employee'
             };
 

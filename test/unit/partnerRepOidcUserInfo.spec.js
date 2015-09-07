@@ -1,14 +1,5 @@
 import PartnerRepOidcUserInfo from '../../src/partnerRepOidcUserInfo';
-
-/*
- dummy data fields
- */
-const validFirstName = 'given_name';
-const validLastName = 'family_name';
-const validEmailAddress = 'test.email@email.com';
-const validSapAccountNumber = 'sapAccountNo';
-const validSapVendorNumber = 'sapVendorNo';
-const validPartnerRepId = 1;
+import dummy from '../dummy';
 
 /*
  test methods
@@ -23,11 +14,11 @@ describe('PartnerRepOidcUserInfo class', () => {
                     () =>
                         new PartnerRepOidcUserInfo(
                             null,
-                            validLastName,
-                            validEmailAddress,
-                            `${validPartnerRepId}`,
-                            validSapAccountNumber,
-                            validSapVendorNumber
+                            dummy.lastName,
+                            dummy.emailAddress,
+                            `${dummy.partnerRepId}`,
+                            dummy.sapAccountNumber,
+                            dummy.sapVendorNumber
                         );
 
                 /*
@@ -41,7 +32,7 @@ describe('PartnerRepOidcUserInfo class', () => {
             /*
              arrange
              */
-            const expectedGiven_name = validFirstName;
+            const expectedGiven_name = dummy.firstName;
 
             /*
              act
@@ -49,11 +40,11 @@ describe('PartnerRepOidcUserInfo class', () => {
             const objectUnderTest =
                 new PartnerRepOidcUserInfo(
                     expectedGiven_name,
-                    validLastName,
-                    validEmailAddress,
-                    `${validPartnerRepId}`,
-                    validSapAccountNumber,
-                    validSapVendorNumber
+                    dummy.lastName,
+                    dummy.emailAddress,
+                    `${dummy.partnerRepId}`,
+                    dummy.sapAccountNumber,
+                    dummy.sapVendorNumber
                 );
 
             /*
@@ -72,12 +63,12 @@ describe('PartnerRepOidcUserInfo class', () => {
             const constructor =
                 () =>
                     new PartnerRepOidcUserInfo(
-                        validFirstName,
+                        dummy.firstName,
                         null,
-                        validEmailAddress,
-                        `${validPartnerRepId}`,
-                        validSapAccountNumber,
-                        validSapVendorNumber
+                        dummy.emailAddress,
+                        `${dummy.partnerRepId}`,
+                        dummy.sapAccountNumber,
+                        dummy.sapVendorNumber
                     );
 
             /*
@@ -90,19 +81,19 @@ describe('PartnerRepOidcUserInfo class', () => {
             /*
              arrange
              */
-            const expectedFamily_name = validLastName;
+            const expectedFamily_name = dummy.lastName;
 
             /*
              act
              */
             const objectUnderTest =
                 new PartnerRepOidcUserInfo(
-                    validFirstName,
+                    dummy.firstName,
                     expectedFamily_name,
-                    validEmailAddress,
-                    `${validPartnerRepId}`,
-                    validSapAccountNumber,
-                    validSapVendorNumber
+                    dummy.emailAddress,
+                    `${dummy.partnerRepId}`,
+                    dummy.sapAccountNumber,
+                    dummy.sapVendorNumber
                 );
 
             /*
@@ -122,12 +113,12 @@ describe('PartnerRepOidcUserInfo class', () => {
             const constructor =
                 () =>
                     new PartnerRepOidcUserInfo(
-                        validFirstName,
-                        validLastName,
+                        dummy.firstName,
+                        dummy.lastName,
                         null,
-                        `${validPartnerRepId}`,
-                        validSapAccountNumber,
-                        validSapVendorNumber
+                        `${dummy.partnerRepId}`,
+                        dummy.sapAccountNumber,
+                        dummy.sapVendorNumber
                     );
 
             /*
@@ -140,19 +131,19 @@ describe('PartnerRepOidcUserInfo class', () => {
             /*
              arrange
              */
-            const expectedEmail = validEmailAddress;
+            const expectedEmail = dummy.emailAddress;
 
             /*
              act
              */
             const objectUnderTest =
                 new PartnerRepOidcUserInfo(
-                    validFirstName,
-                    validLastName,
+                    dummy.firstName,
+                    dummy.lastName,
                     expectedEmail,
-                    `${validPartnerRepId}`,
-                    validSapAccountNumber,
-                    validSapVendorNumber
+                    `${dummy.partnerRepId}`,
+                    dummy.sapAccountNumber,
+                    dummy.sapVendorNumber
                 );
 
             /*
@@ -172,12 +163,12 @@ describe('PartnerRepOidcUserInfo class', () => {
             const constructor =
                 () =>
                     new PartnerRepOidcUserInfo(
-                        validFirstName,
-                        validLastName,
-                        validEmailAddress,
+                        dummy.firstName,
+                        dummy.lastName,
+                        dummy.emailAddress,
                         null,
-                        validSapAccountNumber,
-                        validSapVendorNumber
+                        dummy.sapAccountNumber,
+                        dummy.sapVendorNumber
                     );
 
             /*
@@ -193,19 +184,19 @@ describe('PartnerRepOidcUserInfo class', () => {
             /*
              arrange
              */
-            const expectedSub = `${validPartnerRepId}`;
+            const expectedSub = `${dummy.partnerRepId}`;
 
             /*
              act
              */
             const objectUnderTest =
                 new PartnerRepOidcUserInfo(
-                    validFirstName,
-                    validLastName,
-                    validEmailAddress,
+                    dummy.firstName,
+                    dummy.lastName,
+                    dummy.emailAddress,
                     expectedSub,
-                    validSapAccountNumber,
-                    validSapVendorNumber
+                    dummy.sapAccountNumber,
+                    dummy.sapVendorNumber
                 );
 
             /*
@@ -224,12 +215,12 @@ describe('PartnerRepOidcUserInfo class', () => {
             const constructor =
                 () =>
                     new PartnerRepOidcUserInfo(
-                        validFirstName,
-                        validLastName,
-                        validEmailAddress,
-                        `${validPartnerRepId}`,
+                        dummy.firstName,
+                        dummy.lastName,
+                        dummy.emailAddress,
+                        `${dummy.partnerRepId}`,
                         null,
-                        validSapVendorNumber
+                        dummy.sapVendorNumber
                     );
 
             /*
@@ -242,19 +233,19 @@ describe('PartnerRepOidcUserInfo class', () => {
             /*
              arrange
              */
-            const expectedPartner_sap_account_number = validSapAccountNumber;
+            const expectedPartner_sap_account_number = dummy.sapAccountNumber;
 
             /*
              act
              */
             const objectUnderTest =
                 new PartnerRepOidcUserInfo(
-                    validFirstName,
-                    validLastName,
-                    validEmailAddress,
-                    `${validPartnerRepId}`,
+                    dummy.firstName,
+                    dummy.lastName,
+                    dummy.emailAddress,
+                    `${dummy.partnerRepId}`,
                     expectedPartner_sap_account_number,
-                    validSapVendorNumber
+                    dummy.sapVendorNumber
                 );
 
             /*
@@ -274,11 +265,11 @@ describe('PartnerRepOidcUserInfo class', () => {
             const constructor =
                 () =>
                     new PartnerRepOidcUserInfo(
-                        validFirstName,
-                        validLastName,
-                        validEmailAddress,
-                        `${validPartnerRepId}`,
-                        validSapAccountNumber,
+                        dummy.firstName,
+                        dummy.lastName,
+                        dummy.emailAddress,
+                        `${dummy.partnerRepId}`,
+                        dummy.sapAccountNumber,
                         null
                     );
 
@@ -292,18 +283,18 @@ describe('PartnerRepOidcUserInfo class', () => {
             /*
              arrange
              */
-            const expectedSap_vendor_number = validSapVendorNumber;
+            const expectedSap_vendor_number = dummy.sapVendorNumber;
 
             /*
              act
              */
             const objectUnderTest =
                 new PartnerRepOidcUserInfo(
-                    validFirstName,
-                    validLastName,
-                    validEmailAddress,
-                    `${validPartnerRepId}`,
-                    validSapAccountNumber,
+                    dummy.firstName,
+                    dummy.lastName,
+                    dummy.emailAddress,
+                    `${dummy.partnerRepId}`,
+                    dummy.sapAccountNumber,
                     expectedSap_vendor_number
                 );
 

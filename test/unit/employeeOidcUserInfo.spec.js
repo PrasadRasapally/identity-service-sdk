@@ -1,11 +1,5 @@
 import EmployeeOidcUserInfo from '../../src/employeeOidcUserInfo';
-
-/*
- dummy data fields
- */
-const validFirstName = 'given_name';
-const validLastName = 'family_name';
-const validEmailAddress = 'test.email@email.com';
+import dummy from '../dummy';
 
 /*
  test methods
@@ -20,8 +14,8 @@ describe('EmployeeOidcUserInfo class', () => {
                 () =>
                     new EmployeeOidcUserInfo(
                         null,
-                        validLastName,
-                        validEmailAddress
+                        dummy.lastName,
+                        dummy.emailAddress
                     );
 
             /*
@@ -34,7 +28,7 @@ describe('EmployeeOidcUserInfo class', () => {
             /*
              arrange
              */
-            const expectedGiven_name = validFirstName;
+            const expectedGiven_name = dummy.firstName;
 
             /*
              act
@@ -42,8 +36,8 @@ describe('EmployeeOidcUserInfo class', () => {
             const objectUnderTest =
                 new EmployeeOidcUserInfo(
                     expectedGiven_name,
-                    validLastName,
-                    validEmailAddress
+                    dummy.lastName,
+                    dummy.emailAddress
                 );
 
             /*
@@ -62,9 +56,9 @@ describe('EmployeeOidcUserInfo class', () => {
             const constructor =
                 () =>
                     new EmployeeOidcUserInfo(
-                        validFirstName,
+                        dummy.firstName,
                         null,
-                        validEmailAddress
+                        dummy.emailAddress
                     );
 
             /*
@@ -77,16 +71,16 @@ describe('EmployeeOidcUserInfo class', () => {
             /*
              arrange
              */
-            const expectedFamily_name = validLastName;
+            const expectedFamily_name = dummy.lastName;
 
             /*
              act
              */
             const objectUnderTest =
                 new EmployeeOidcUserInfo(
-                    validFirstName,
+                    dummy.firstName,
                     expectedFamily_name,
-                    validEmailAddress
+                    dummy.emailAddress
                 );
 
             /*
@@ -106,8 +100,8 @@ describe('EmployeeOidcUserInfo class', () => {
             const constructor =
                 () =>
                     new EmployeeOidcUserInfo(
-                        validFirstName,
-                        validLastName,
+                        dummy.firstName,
+                        dummy.lastName,
                         null
                     );
 
@@ -121,15 +115,15 @@ describe('EmployeeOidcUserInfo class', () => {
             /*
              arrange
              */
-            const expectedEmail = validEmailAddress;
+            const expectedEmail = dummy.emailAddress;
 
             /*
              act
              */
             const objectUnderTest =
                 new EmployeeOidcUserInfo(
-                    validFirstName,
-                    validLastName,
+                    dummy.firstName,
+                    dummy.lastName,
                     expectedEmail
                 );
 
