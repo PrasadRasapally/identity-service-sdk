@@ -17,7 +17,7 @@ describe('PartnerRepOidcUserInfo class', () => {
                             dummy.lastName,
                             dummy.emailAddress,
                             `${dummy.partnerRepId}`,
-                            dummy.sapAccountNumber,
+                            dummy.accountId,
                             dummy.sapVendorNumber
                         );
 
@@ -43,7 +43,7 @@ describe('PartnerRepOidcUserInfo class', () => {
                     dummy.lastName,
                     dummy.emailAddress,
                     `${dummy.partnerRepId}`,
-                    dummy.sapAccountNumber,
+                    dummy.accountId,
                     dummy.sapVendorNumber
                 );
 
@@ -67,7 +67,7 @@ describe('PartnerRepOidcUserInfo class', () => {
                         null,
                         dummy.emailAddress,
                         `${dummy.partnerRepId}`,
-                        dummy.sapAccountNumber,
+                        dummy.accountId,
                         dummy.sapVendorNumber
                     );
 
@@ -92,7 +92,7 @@ describe('PartnerRepOidcUserInfo class', () => {
                     expectedFamily_name,
                     dummy.emailAddress,
                     `${dummy.partnerRepId}`,
-                    dummy.sapAccountNumber,
+                    dummy.accountId,
                     dummy.sapVendorNumber
                 );
 
@@ -117,7 +117,7 @@ describe('PartnerRepOidcUserInfo class', () => {
                         dummy.lastName,
                         null,
                         `${dummy.partnerRepId}`,
-                        dummy.sapAccountNumber,
+                        dummy.accountId,
                         dummy.sapVendorNumber
                     );
 
@@ -142,7 +142,7 @@ describe('PartnerRepOidcUserInfo class', () => {
                     dummy.lastName,
                     expectedEmail,
                     `${dummy.partnerRepId}`,
-                    dummy.sapAccountNumber,
+                    dummy.accountId,
                     dummy.sapVendorNumber
                 );
 
@@ -167,7 +167,7 @@ describe('PartnerRepOidcUserInfo class', () => {
                         dummy.lastName,
                         dummy.emailAddress,
                         null,
-                        dummy.sapAccountNumber,
+                        dummy.accountId,
                         dummy.sapVendorNumber
                     );
 
@@ -195,7 +195,7 @@ describe('PartnerRepOidcUserInfo class', () => {
                     dummy.lastName,
                     dummy.emailAddress,
                     expectedSub,
-                    dummy.sapAccountNumber,
+                    dummy.accountId,
                     dummy.sapVendorNumber
                 );
 
@@ -208,7 +208,7 @@ describe('PartnerRepOidcUserInfo class', () => {
             expect(actualSub).toEqual(expectedSub);
 
         });
-        it('does not throw if partner_sap_account_number is null', () => {
+        it('throws if account_id is null', () => {
             /*
              arrange
              */
@@ -226,14 +226,17 @@ describe('PartnerRepOidcUserInfo class', () => {
             /*
              act/assert
              */
-            expect(constructor).not.toThrow();
+            expect(constructor).toThrowError(
+                TypeError,
+                'account_id required'
+            );
 
         });
-        it('sets partner_sap_account_number', () => {
+        it('sets account_id', () => {
             /*
              arrange
              */
-            const expectedPartner_sap_account_number = dummy.sapAccountNumber;
+            const expectedAccount_id = dummy.accountId;
 
             /*
              act
@@ -244,17 +247,17 @@ describe('PartnerRepOidcUserInfo class', () => {
                     dummy.lastName,
                     dummy.emailAddress,
                     `${dummy.partnerRepId}`,
-                    expectedPartner_sap_account_number,
+                    expectedAccount_id,
                     dummy.sapVendorNumber
                 );
 
             /*
              assert
              */
-            const actualPartner_sap_account_number =
-                objectUnderTest.partner_sap_account_number;
+            const actualAccount_id =
+                objectUnderTest.account_id;
 
-            expect(actualPartner_sap_account_number).toEqual(expectedPartner_sap_account_number);
+            expect(actualAccount_id).toEqual(expectedAccount_id);
 
         });
 
@@ -269,7 +272,7 @@ describe('PartnerRepOidcUserInfo class', () => {
                         dummy.lastName,
                         dummy.emailAddress,
                         `${dummy.partnerRepId}`,
-                        dummy.sapAccountNumber,
+                        dummy.accountId,
                         null
                     );
 
@@ -294,7 +297,7 @@ describe('PartnerRepOidcUserInfo class', () => {
                     dummy.lastName,
                     dummy.emailAddress,
                     `${dummy.partnerRepId}`,
-                    dummy.sapAccountNumber,
+                    dummy.accountId,
                     expectedSap_vendor_number
                 );
 

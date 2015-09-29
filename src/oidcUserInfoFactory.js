@@ -6,12 +6,13 @@ export default class OidcUserInfoFactory {
 
     static construct(data):OidcUserInfo {
         if (data.type == 'partnerRep') {
+            console.log(data);
             return new PartnerRepOidcUserInfo(
                 data.given_name,
                 data.family_name,
                 data.email,
                 data.sub,
-                data.partner_sap_account_number,
+                data.account_id,
                 data.sap_vendor_number
             );
         }

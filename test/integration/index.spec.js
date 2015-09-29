@@ -160,7 +160,7 @@ function constructValidPartnerRepOAuth2AccessToken(partnerRepOidcUserInfo:Partne
         "family_name": partnerRepOidcUserInfo.family_name,
         "email": partnerRepOidcUserInfo.email,
         "sub": partnerRepOidcUserInfo.sub,
-        "partner_sap_account_number": partnerRepOidcUserInfo.partner_sap_account_number,
+        "account_id": partnerRepOidcUserInfo.account_id,
         "sap_vendor_number": partnerRepOidcUserInfo.sap_vendor_number
     };
 

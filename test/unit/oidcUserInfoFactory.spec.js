@@ -16,7 +16,7 @@ describe('OidcUserInfoFactory class', () => {
                 email: dummy.emailAddress,
                 family_name: dummy.lastName,
                 given_name: dummy.firstName,
-                partner_sap_account_number: dummy.sapAccountNumber,
+                account_id: dummy.accountId,
                 sap_vendor_number: dummy.sapVendorNumber,
                 sub: `${dummy.partnerRepId}`,
                 type: 'partnerRep'
@@ -28,7 +28,7 @@ describe('OidcUserInfoFactory class', () => {
                     partnerRepOidcUserInfoData.family_name,
                     partnerRepOidcUserInfoData.email,
                     partnerRepOidcUserInfoData.sub,
-                    partnerRepOidcUserInfoData.partner_sap_account_number,
+                    partnerRepOidcUserInfoData.account_id,
                     partnerRepOidcUserInfoData.sap_vendor_number
                 );
 

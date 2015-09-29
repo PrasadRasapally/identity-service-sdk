@@ -8,7 +8,7 @@ const dummy = {
     emailAddress: 'fake-email@test.com',
     countryCode: 'US',
     url: 'https://test-url.com',
-    sapAccountNumber: 'sapAccountNo',
+    accountId: '000000000000000000',
     sapVendorNumber: 'sapVendorNo',
     partnerRepId: 1,
     facilityId: '000000000000000000',
@@ -29,7 +29,7 @@ dummy.partnerRepOidcUserInfo =
         dummy.lastName,
         dummy.emailAddress,
         `${dummy.partnerRepId}`,
-        dummy.sapAccountNumber,
+        dummy.accountId,
         dummy.sapVendorNumber
     );
 

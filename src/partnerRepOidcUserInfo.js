@@ -8,7 +8,7 @@ export default class PartnerRepOidcUserInfo extends OidcUserInfo {
 
     _sub:string;
 
-    _partner_sap_account_number:string;
+    _account_id:string;
 
     _sap_vendor_number:string;
 
@@ -17,14 +17,14 @@ export default class PartnerRepOidcUserInfo extends OidcUserInfo {
      * @param {string} family_name
      * @param {string} email
      * @param {string} sub
-     * @param {string|null} [partner_sap_account_number]
+     * @param {string} [account_id]
      * @param {string|null} [sap_vendor_number]
      */
     constructor(given_name:string,
                 family_name:string,
                 email:string,
                 sub:string,
-                partner_sap_account_number:string = null,
+                account_id:string,
                 sap_vendor_number:string = null) {
 
         super(given_name, family_name, email);
@@ -34,14 +34,17 @@ export default class PartnerRepOidcUserInfo extends OidcUserInfo {
         }
         this._sub = sub;
 
-        this._partner_sap_account_number = partner_sap_account_number;
+        if (!account_id) {
+            throw new TypeError('account_id required');
+        }
+        this._account_id = account_id;
 
         this._sap_vendor_number = sap_vendor_number;
 
     }
 
     /**
-     * @returns {number}
+     * @returns {string}
      */
     get sub() {
         return this._sub;
@@ -50,8 +53,8 @@ export default class PartnerRepOidcUserInfo extends OidcUserInfo {
     /**
      * @returns {string}
      */
-    get partner_sap_account_number() {
-        return this._partner_sap_account_number;
+    get account_id() {
+        return this._account_id;
     }
 
     /**
