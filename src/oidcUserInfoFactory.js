@@ -6,7 +6,6 @@ export default class OidcUserInfoFactory {
 
     static construct(data):OidcUserInfo {
         if (data.type == 'partnerRep') {
-            console.log(data);
             return new PartnerRepOidcUserInfo(
                 data.given_name,
                 data.family_name,
