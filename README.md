@@ -1,14 +1,13 @@
 ## Description
-Precorconnect identity service SDK for javascript.
+Precor Connect identity service SDK for javascript.
 
-## Use Cases
+## Features
 
-#####Get User Info
-Gets userInfo via the provided access token.
+##### Get User Info
+* [documentation](features/GetUserInfo.feature)
 
-#####Refresh Access Token  
-Refreshes the provided access token. Primarily used to refresh an access token for the
-purposes of maintaining an active session without redirecting the client browser to re-authenticate.
+##### Refresh Access Token  
+* [documentation](features/RefreshAccessToken.feature)
 
 ## Setup  
 

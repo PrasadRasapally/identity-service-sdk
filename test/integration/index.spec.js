@@ -1,10 +1,6 @@
-import IdentityServiceSdk,
-{
-    EmployeeOidcUserInfo,
-    PartnerRepOidcUserInfo,
-} from '../../src/index';
-import jwt from 'jwt-simple';
+import IdentityServiceSdk from '../../src/index';
 import config from './config';
+import factory from './factory';
 import dummy from '../dummy';
 
 /*
@@ -41,7 +37,10 @@ describe('Index module', () => {
                 const expectedPartnerRepOidcUserInfo = dummy.partnerRepOidcUserInfo;
 
 
-                const accessToken = constructValidPartnerRepOAuth2AccessToken(expectedPartnerRepOidcUserInfo);
+                const accessToken =
+                    factory.constructValidPartnerRepOAuth2AccessToken(
+                        expectedPartnerRepOidcUserInfo
+                    );
 
                 const objectUnderTest =
                     new IdentityServiceSdk(config.identityServiceSdkConfig);
@@ -61,10 +60,7 @@ describe('Index module', () => {
                         expect(actualPartnerRepOidcUserInfo).toEqual(expectedPartnerRepOidcUserInfo);
                         done();
                     })
-                    .catch((error)=> {
-                        fail(error);
-                        done();
-                    });
+                    .catch(error=> done.fail(JSON.stringify(error)));
 
             });
             it('returns EmployeeOidcUserInfo', (done) => {
@@ -75,7 +71,10 @@ describe('Index module', () => {
 
                 const expectedEmployeeOidcUserInfo = dummy.employeeOidcUserInfo;
 
-                const accessToken = constructValidEmployeeOAuth2AccessToken(expectedEmployeeOidcUserInfo);
+                const accessToken =
+                    factory.constructValidEmployeeOAuth2AccessToken(
+                        expectedEmployeeOidcUserInfo
+                    );
 
                 const objectUnderTest =
                     new IdentityServiceSdk(config.identityServiceSdkConfig);
@@ -95,10 +94,7 @@ describe('Index module', () => {
                         expect(actualEmployeeOidcUserInfo).toEqual(expectedEmployeeOidcUserInfo);
                         done();
                     })
-                    .catch((error)=> {
-                        fail(error);
-                        done();
-                    });
+                    .catch(error=> done.fail(JSON.stringify(error)));
 
             })
         });
@@ -118,7 +114,7 @@ describe('Index module', () => {
                  */
                 const accessTokenPromise =
                     objectUnderTest.refreshAccessToken(
-                        constructValidPartnerRepOAuth2AccessToken(
+                        factory.constructValidPartnerRepOAuth2AccessToken(
                             dummy.partnerRepOidcUserInfo
                         )
                     );
@@ -132,54 +128,11 @@ describe('Index module', () => {
                         expect(accessToken).not.toBeNull();
                         done();
                     })
-                    .catch((error)=> {
-                        fail(error);
-                        done();
-                    });
+                    .catch(error=> done.fail(JSON.stringify(error)));
 
             })
         });
 
-    }, 20000);
+    });
 
 });
-
-/*
- factory methods
- */
-function constructValidPartnerRepOAuth2AccessToken(partnerRepOidcUserInfo:PartnerRepOidcUserInfo):string {
-
-    const tenMinutesInMilliseconds = 10000 * 60;
-
-    const jwtPayload = {
-        "type": 'partnerRep',
-        "exp": Date.now() + tenMinutesInMilliseconds,
-        "aud": dummy.url,
-        "iss": dummy.url,
-        "given_name": partnerRepOidcUserInfo.given_name,
-        "family_name": partnerRepOidcUserInfo.family_name,
-        "email": partnerRepOidcUserInfo.email,
-        "sub": partnerRepOidcUserInfo.sub,
-        "account_id": partnerRepOidcUserInfo.account_id,
-        "sap_vendor_number": partnerRepOidcUserInfo.sap_vendor_number
-    };
-
-    return jwt.encode(jwtPayload, config.identityServiceJwtSigningKey);
-}
-
-function constructValidEmployeeOAuth2AccessToken(employeeOidcUserInfo:EmployeeOidcUserInfo):string {
-
-    const tenMinutesInMilliseconds = 10000 * 60;
-
-    const jwtPayload = {
-        "type": 'employee',
-        "exp": Date.now() + tenMinutesInMilliseconds,
-        "aud": dummy.url,
-        "iss": dummy.url,
-        "given_name": employeeOidcUserInfo.given_name,
-        "family_name": employeeOidcUserInfo.family_name,
-        "email": employeeOidcUserInfo.email
-    };
-
-    return jwt.encode(jwtPayload, config.identityServiceJwtSigningKey);
-}

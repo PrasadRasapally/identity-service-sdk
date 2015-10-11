@@ -1,7 +1,7 @@
 import {Container} from 'aurelia-dependency-injection';
 import DiContainer from './diContainer';
-import GetUserInfoUseCase from './getUserInfoUseCase';
-import RefreshAccessTokenUseCase from './refreshAccessTokenUseCase';
+import GetUserInfoFeature from './getUserInfoFeature';
+import RefreshAccessTokenFeature from './refreshAccessTokenFeature';
 import IdentityServiceSdkConfig from './identityServiceSdkConfig';
 import OidcUserInfo from './oidcUserInfo';
 
@@ -29,7 +29,7 @@ export default class IdentityServiceSdk {
 
         return this
             ._diContainer
-            .get(GetUserInfoUseCase)
+            .get(GetUserInfoFeature)
             .execute(accessToken);
 
     }
@@ -42,7 +42,7 @@ export default class IdentityServiceSdk {
 
         return this
             ._diContainer
-            .get(RefreshAccessTokenUseCase)
+            .get(RefreshAccessTokenFeature)
             .execute(accessToken);
 
     }

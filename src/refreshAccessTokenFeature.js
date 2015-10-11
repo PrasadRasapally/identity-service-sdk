@@ -3,11 +3,12 @@ import {HttpClient} from 'aurelia-http-client';
 import IdentityServiceSdkConfig from './identityServiceSdkConfig';
 
 /**
- * @class {RefreshAccessTokenUseCase}
+ * @class {RefreshAccessTokenFeature}
  */
-@inject(HttpClient, IdentityServiceSdkConfig) class RefreshAccessTokenUseCase {
+@inject(HttpClient, IdentityServiceSdkConfig) class RefreshAccessTokenFeature {
 
     _httpClient:HttpClient;
+
     _config:IdentityServiceSdkConfig;
 
     /**
@@ -57,4 +58,4 @@ import IdentityServiceSdkConfig from './identityServiceSdkConfig';
 
 }
 
-export default RefreshAccessTokenUseCase;
+export default RefreshAccessTokenFeature;

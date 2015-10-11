@@ -5,11 +5,12 @@ import OidcUserInfo from './oidcUserInfo';
 import OidcUserInfoFactory from './oidcUserInfoFactory';
 
 /**
- * @class {GetUserInfoUseCase}
+ * @class {GetUserInfoFeature}
  */
-@inject(HttpClient, IdentityServiceSdkConfig) class GetUserInfoUseCase {
+@inject(HttpClient, IdentityServiceSdkConfig) class GetUserInfoFeature {
 
     _httpClient:HttpClient;
+
     _config:IdentityServiceSdkConfig;
 
     /**
@@ -54,4 +55,4 @@ import OidcUserInfoFactory from './oidcUserInfoFactory';
 
 }
 
-export default GetUserInfoUseCase;
+export default GetUserInfoFeature;

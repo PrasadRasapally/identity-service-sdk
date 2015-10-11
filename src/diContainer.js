@@ -1,8 +1,8 @@
 import {Container} from 'aurelia-dependency-injection';
 import IdentityServiceSdkConfig from './identityServiceSdkConfig';
 import {HttpClient} from 'aurelia-http-client';
-import GetUserInfoUseCase from './getUserInfoUseCase';
-import RefreshAccessTokenUseCase from './refreshAccessTokenUseCase';
+import GetUserInfoFeature from './getUserInfoFeature';
+import RefreshAccessTokenFeature from './refreshAccessTokenFeature';
 
 /**
  * @class {DiContainer}
@@ -25,7 +25,7 @@ export default class DiContainer {
         this._container.registerInstance(IdentityServiceSdkConfig, config);
         this._container.autoRegister(HttpClient);
 
-        this._registerUseCases();
+        this._registerFeatures();
 
     }
 
@@ -38,10 +38,10 @@ export default class DiContainer {
         return this._container.get(key);
     }
 
-    _registerUseCases() {
+    _registerFeatures() {
 
-        this._container.autoRegister(GetUserInfoUseCase);
-        this._container.autoRegister(RefreshAccessTokenUseCase);
+        this._container.autoRegister(GetUserInfoFeature);
+        this._container.autoRegister(RefreshAccessTokenFeature);
 
     }
 
