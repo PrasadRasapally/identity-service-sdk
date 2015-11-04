@@ -34,3 +34,24 @@ const identityServiceSdk =
 ## Platform Support
 
 This library can be used in the **browser**.
+
+## Develop
+
+#### Software
+- git
+- npm
+
+#### Scripts
+
+install dependencies (perform prior to running or testing locally)
+```PowerShell
+npm install
+```
+
+unit & integration test in multiple browsers/platforms
+```PowerShell
+# note: following environment variables must be present:
+# SAUCE_USERNAME
+# SAUCE_ACCESS_KEY
+npm test
+```

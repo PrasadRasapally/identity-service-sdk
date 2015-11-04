@@ -46,7 +46,7 @@ import OidcUserInfoFactory from './oidcUserInfoFactory';
         return this._httpClient
             .createRequest('oauth2/userinfo')
             .asGet()
-            .withBaseUrl(this._config.baseUrl)
+            .withBaseUrl(this._config.precorConnectApiBaseUrl)
             .withHeader('Authorization', `Bearer ${accessToken}`)
             .send()
             .then((response) => OidcUserInfoFactory.construct(response.content));

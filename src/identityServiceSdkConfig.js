@@ -3,25 +3,25 @@
  */
 export default class IdentityServiceSdkConfig {
 
-    _baseUrl:string;
+    _precorConnectApiBaseUrl:string;
 
     /**
-     * @param {string} baseUrl
+     * @param {string} precorConnectApiBaseUrl
      */
-    constructor(baseUrl:string) {
+    constructor(precorConnectApiBaseUrl:string) {
 
-        if (!baseUrl) {
-            throw 'baseUrl required';
+        if (!precorConnectApiBaseUrl) {
+            throw 'precorConnectApiBaseUrl required';
         }
-        this._baseUrl = baseUrl;
+        this._precorConnectApiBaseUrl = precorConnectApiBaseUrl;
 
     }
 
     /**
      * @returns {string}
      */
-    get baseUrl():string {
-        return this._baseUrl;
+    get precorConnectApiBaseUrl():string {
+        return this._precorConnectApiBaseUrl;
     }
 
 }

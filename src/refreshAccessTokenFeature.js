@@ -45,7 +45,7 @@ import IdentityServiceSdkConfig from './identityServiceSdkConfig';
         return this._httpClient
             .createRequest('oauth2/token')
             .asPost()
-            .withBaseUrl(this._config.baseUrl)
+            .withBaseUrl(this._config.precorConnectApiBaseUrl)
             .withHeader('Content-Type', 'application/x-www-form-urlencoded')
             .withParams({
                 grant_type: 'urn:ietf:params:oauth:grant-type:jwt-bearer',
