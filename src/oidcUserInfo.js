@@ -6,16 +6,15 @@ export default class OidcUserInfo {
 
     _given_name:string;
     _family_name:string;
-    _email:string;
 
     /**
      * @param {string} given_name
      * @param {string} family_name
-     * @param {string} email
+     * @param {string} sub
      */
     constructor(given_name:string,
                 family_name:string,
-                email:string) {
+                sub:string) {
 
         if (!given_name) {
             throw new TypeError('given_name required');
@@ -27,10 +26,10 @@ export default class OidcUserInfo {
         }
         this._family_name = family_name;
 
-        if (!email) {
-            throw new TypeError('email required');
+        if (!sub) {
+            throw new TypeError('sub required');
         }
-        this._email = email;
+        this._sub = sub;
 
     }
 
@@ -51,8 +50,8 @@ export default class OidcUserInfo {
     /**
      * @returns {string}
      */
-    get email():string {
-        return this._email;
+    get sub():string {
+        return this._sub;
     }
 
 }

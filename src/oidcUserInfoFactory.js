@@ -9,7 +9,6 @@ export default class OidcUserInfoFactory {
             return new PartnerRepOidcUserInfo(
                 data.given_name,
                 data.family_name,
-                data.email,
                 data.sub,
                 data.account_id,
                 data.sap_vendor_number
@@ -19,7 +18,7 @@ export default class OidcUserInfoFactory {
             return new EmployeeUserInfo(
                 data.given_name,
                 data.family_name,
-                data.email
+                data.sub
             );
         }
         else throw new TypeError('received unsupported type');

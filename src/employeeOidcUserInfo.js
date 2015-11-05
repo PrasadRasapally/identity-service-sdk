@@ -9,13 +9,13 @@ export default class EmployeeOidcUserInfo extends OidcUserInfo {
     /**
      * @param {string} given_name
      * @param {string} family_name
-     * @param {string} email
+     * @param {string} sub
      */
     constructor(given_name:string,
                 family_name:string,
-                email:string) {
+                sub:string) {
 
-        super(given_name, family_name, email);
+        super(given_name, family_name, sub);
 
     }
 }

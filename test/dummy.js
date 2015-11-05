@@ -5,12 +5,11 @@ const dummy = {
     firstName: 'firstName',
     lastName: 'lastName',
     phoneNumber: '0000000000',
-    emailAddress: 'fake-email@test.com',
+    userId: 'fake-email@test.com',
     countryCode: 'US',
     url: 'https://test-url.com',
     accountId: '000000000000000000',
-    sapVendorNumber: 'sapVendorNo',
-    partnerRepId: 1,
+    sapVendorNumber: '0000000000',
     facilityId: '000000000000000000',
     facilityContactId: '000000000000000000'
 };
@@ -20,15 +19,14 @@ dummy.employeeOidcUserInfo =
     new EmployeeOidcUserInfo(
         dummy.firstName,
         dummy.lastName,
-        dummy.emailAddress
+        dummy.userId
     );
 
 dummy.partnerRepOidcUserInfo =
     new PartnerRepOidcUserInfo(
         dummy.firstName,
         dummy.lastName,
-        dummy.emailAddress,
-        `${dummy.partnerRepId}`,
+        dummy.userId,
         dummy.accountId,
         dummy.sapVendorNumber
     );

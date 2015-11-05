@@ -13,12 +13,11 @@ describe('OidcUserInfoFactory class', () => {
              arrange
              */
             const partnerRepOidcUserInfoData = {
-                email: dummy.emailAddress,
                 family_name: dummy.lastName,
                 given_name: dummy.firstName,
                 account_id: dummy.accountId,
                 sap_vendor_number: dummy.sapVendorNumber,
-                sub: `${dummy.partnerRepId}`,
+                sub: dummy.userId,
                 type: 'partnerRep'
             };
 
@@ -26,7 +25,6 @@ describe('OidcUserInfoFactory class', () => {
                 new PartnerRepOidcUserInfo(
                     partnerRepOidcUserInfoData.given_name,
                     partnerRepOidcUserInfoData.family_name,
-                    partnerRepOidcUserInfoData.email,
                     partnerRepOidcUserInfoData.sub,
                     partnerRepOidcUserInfoData.account_id,
                     partnerRepOidcUserInfoData.sap_vendor_number
@@ -49,7 +47,7 @@ describe('OidcUserInfoFactory class', () => {
              arrange
              */
             const employeeOidcUserInfoData = {
-                email: dummy.emailAddress,
+                sub: dummy.userId,
                 family_name: dummy.lastName,
                 given_name: dummy.firstName,
                 type: 'employee'
@@ -59,7 +57,7 @@ describe('OidcUserInfoFactory class', () => {
                 new EmployeeOidcUserInfo(
                     employeeOidcUserInfoData.given_name,
                     employeeOidcUserInfoData.family_name,
-                    employeeOidcUserInfoData.email
+                    employeeOidcUserInfoData.sub
                 );
 
             /*

@@ -23,7 +23,6 @@ function constructValidPartnerRepOAuth2AccessToken(partnerRepOidcUserInfo:Partne
         "iss": dummy.url,
         "given_name": partnerRepOidcUserInfo.given_name,
         "family_name": partnerRepOidcUserInfo.family_name,
-        "email": partnerRepOidcUserInfo.email,
         "sub": partnerRepOidcUserInfo.sub,
         "account_id": partnerRepOidcUserInfo.account_id,
         "sap_vendor_number": partnerRepOidcUserInfo.sap_vendor_number
@@ -43,7 +42,7 @@ function constructValidEmployeeOAuth2AccessToken(employeeOidcUserInfo:EmployeeOi
         "iss": dummy.url,
         "given_name": employeeOidcUserInfo.given_name,
         "family_name": employeeOidcUserInfo.family_name,
-        "email": employeeOidcUserInfo.email
+        "sub": employeeOidcUserInfo.sub
     };
 
     return jwt.encode(jwtPayload, config.identityServiceJwtSigningKey);

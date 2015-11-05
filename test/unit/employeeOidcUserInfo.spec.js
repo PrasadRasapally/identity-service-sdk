@@ -15,7 +15,7 @@ describe('EmployeeOidcUserInfo class', () => {
                     new EmployeeOidcUserInfo(
                         null,
                         dummy.lastName,
-                        dummy.emailAddress
+                        dummy.userId
                     );
 
             /*
@@ -37,7 +37,7 @@ describe('EmployeeOidcUserInfo class', () => {
                 new EmployeeOidcUserInfo(
                     expectedGiven_name,
                     dummy.lastName,
-                    dummy.emailAddress
+                    dummy.userId
                 );
 
             /*
@@ -58,7 +58,7 @@ describe('EmployeeOidcUserInfo class', () => {
                     new EmployeeOidcUserInfo(
                         dummy.firstName,
                         null,
-                        dummy.emailAddress
+                        dummy.userId
                     );
 
             /*
@@ -80,7 +80,7 @@ describe('EmployeeOidcUserInfo class', () => {
                 new EmployeeOidcUserInfo(
                     dummy.firstName,
                     expectedFamily_name,
-                    dummy.emailAddress
+                    dummy.userId
                 );
 
             /*
@@ -93,7 +93,7 @@ describe('EmployeeOidcUserInfo class', () => {
 
         });
 
-        it('throws if email is null', () => {
+        it('throws if sub is null', () => {
             /*
              arrange
              */
@@ -108,14 +108,14 @@ describe('EmployeeOidcUserInfo class', () => {
             /*
              act/assert
              */
-            expect(constructor).toThrowError(TypeError, 'email required');
+            expect(constructor).toThrowError(TypeError, 'sub required');
 
         });
-        it('sets email', () => {
+        it('sets sub', () => {
             /*
              arrange
              */
-            const expectedEmail = dummy.emailAddress;
+            const expectedSub = dummy.userId;
 
             /*
              act
@@ -124,16 +124,16 @@ describe('EmployeeOidcUserInfo class', () => {
                 new EmployeeOidcUserInfo(
                     dummy.firstName,
                     dummy.lastName,
-                    expectedEmail
+                    expectedSub
                 );
 
             /*
              assert
              */
-            const actualEmail =
-                objectUnderTest.email;
+            const actualSub =
+                objectUnderTest.sub;
 
-            expect(actualEmail).toEqual(expectedEmail);
+            expect(actualSub).toEqual(expectedSub);
 
         });
     });

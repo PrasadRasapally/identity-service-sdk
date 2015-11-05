@@ -15,8 +15,7 @@ describe('PartnerRepOidcUserInfo class', () => {
                         new PartnerRepOidcUserInfo(
                             null,
                             dummy.lastName,
-                            dummy.emailAddress,
-                            `${dummy.partnerRepId}`,
+                            dummy.userId,
                             dummy.accountId,
                             dummy.sapVendorNumber
                         );
@@ -41,8 +40,7 @@ describe('PartnerRepOidcUserInfo class', () => {
                 new PartnerRepOidcUserInfo(
                     expectedGiven_name,
                     dummy.lastName,
-                    dummy.emailAddress,
-                    `${dummy.partnerRepId}`,
+                    dummy.userId,
                     dummy.accountId,
                     dummy.sapVendorNumber
                 );
@@ -65,8 +63,7 @@ describe('PartnerRepOidcUserInfo class', () => {
                     new PartnerRepOidcUserInfo(
                         dummy.firstName,
                         null,
-                        dummy.emailAddress,
-                        `${dummy.partnerRepId}`,
+                        dummy.userId,
                         dummy.accountId,
                         dummy.sapVendorNumber
                     );
@@ -90,8 +87,7 @@ describe('PartnerRepOidcUserInfo class', () => {
                 new PartnerRepOidcUserInfo(
                     dummy.firstName,
                     expectedFamily_name,
-                    dummy.emailAddress,
-                    `${dummy.partnerRepId}`,
+                    dummy.userId,
                     dummy.accountId,
                     dummy.sapVendorNumber
                 );
@@ -106,56 +102,6 @@ describe('PartnerRepOidcUserInfo class', () => {
 
         });
 
-        it('throws if email is null', () => {
-            /*
-             arrange
-             */
-            const constructor =
-                () =>
-                    new PartnerRepOidcUserInfo(
-                        dummy.firstName,
-                        dummy.lastName,
-                        null,
-                        `${dummy.partnerRepId}`,
-                        dummy.accountId,
-                        dummy.sapVendorNumber
-                    );
-
-            /*
-             act/assert
-             */
-            expect(constructor).toThrowError(TypeError, 'email required');
-
-        });
-        it('sets email', () => {
-            /*
-             arrange
-             */
-            const expectedEmail = dummy.emailAddress;
-
-            /*
-             act
-             */
-            const objectUnderTest =
-                new PartnerRepOidcUserInfo(
-                    dummy.firstName,
-                    dummy.lastName,
-                    expectedEmail,
-                    `${dummy.partnerRepId}`,
-                    dummy.accountId,
-                    dummy.sapVendorNumber
-                );
-
-            /*
-             assert
-             */
-            const actualEmail =
-                objectUnderTest.email;
-
-            expect(actualEmail).toEqual(expectedEmail);
-
-        });
-
         it('throws if sub is null', () => {
             /*
              arrange
@@ -165,7 +111,6 @@ describe('PartnerRepOidcUserInfo class', () => {
                     new PartnerRepOidcUserInfo(
                         dummy.firstName,
                         dummy.lastName,
-                        dummy.emailAddress,
                         null,
                         dummy.accountId,
                         dummy.sapVendorNumber
@@ -184,7 +129,7 @@ describe('PartnerRepOidcUserInfo class', () => {
             /*
              arrange
              */
-            const expectedSub = `${dummy.partnerRepId}`;
+            const expectedSub = dummy.userId;
 
             /*
              act
@@ -193,7 +138,6 @@ describe('PartnerRepOidcUserInfo class', () => {
                 new PartnerRepOidcUserInfo(
                     dummy.firstName,
                     dummy.lastName,
-                    dummy.emailAddress,
                     expectedSub,
                     dummy.accountId,
                     dummy.sapVendorNumber
@@ -217,8 +161,7 @@ describe('PartnerRepOidcUserInfo class', () => {
                     new PartnerRepOidcUserInfo(
                         dummy.firstName,
                         dummy.lastName,
-                        dummy.emailAddress,
-                        `${dummy.partnerRepId}`,
+                        dummy.userId,
                         null,
                         dummy.sapVendorNumber
                     );
@@ -245,8 +188,7 @@ describe('PartnerRepOidcUserInfo class', () => {
                 new PartnerRepOidcUserInfo(
                     dummy.firstName,
                     dummy.lastName,
-                    dummy.emailAddress,
-                    `${dummy.partnerRepId}`,
+                    dummy.userId,
                     expectedAccount_id,
                     dummy.sapVendorNumber
                 );
@@ -270,8 +212,7 @@ describe('PartnerRepOidcUserInfo class', () => {
                     new PartnerRepOidcUserInfo(
                         dummy.firstName,
                         dummy.lastName,
-                        dummy.emailAddress,
-                        `${dummy.partnerRepId}`,
+                        dummy.userId,
                         dummy.accountId,
                         null
                     );
@@ -295,8 +236,7 @@ describe('PartnerRepOidcUserInfo class', () => {
                 new PartnerRepOidcUserInfo(
                     dummy.firstName,
                     dummy.lastName,
-                    dummy.emailAddress,
-                    `${dummy.partnerRepId}`,
+                    dummy.userId,
                     dummy.accountId,
                     expectedSap_vendor_number
                 );
