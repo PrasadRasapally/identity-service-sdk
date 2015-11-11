@@ -22,7 +22,7 @@ import IdentityServiceSdk,{IdentityServiceSdkConfig} from 'identity-service-sdk'
 
 const identityServiceSdkConfig = 
     new IdentityServiceSdkConfig(
-        "https://identity-service-dev.precorconnect.com"
+        "https://api-dev.precorconnect.com"
     );
     
 const identityServiceSdk = 
