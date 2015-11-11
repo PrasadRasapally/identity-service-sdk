@@ -6,7 +6,6 @@ Feature: Get User Info
       | attribute       | validation              | type   |
       | givenName       | required                | string |
       | familyName      | required                | string |
-      | email           | required                | string |
       | sub             | required                | string |
       | accountId       | required                | string |
       | sapVendorNumber | optional                | string |
@@ -15,7 +14,7 @@ Feature: Get User Info
       | attribute  | validation            | type   |
       | givenName  | required              | string |
       | familyName | required              | string |
-      | email      | required              | string |
+      | sub        | required              | string |
       | type       | must equal "employee" | string |
 
   Scenario Template: Success
@@ -25,4 +24,4 @@ Feature: Get User Info
     Examples:
       | accessToken type      | oidcUserInfo type      |
       | partnerRepAccessToken | partnerRepOidcUserInfo |
-      | employeeAccessToken   | employeeOidcUserInfo |
+      | employeeAccessToken   | employeeOidcUserInfo   |
