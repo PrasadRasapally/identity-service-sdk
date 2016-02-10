@@ -17,18 +17,14 @@ System.config({
 
   map: {
     "aurelia-dependency-injection": "github:aurelia/dependency-injection@0.9.2",
-    "aurelia-http-client": "github:aurelia/http-client@0.11.0",
-    "babel": "npm:babel-core@5.8.23",
-    "babel-runtime": "npm:babel-runtime@5.8.20",
-    "core-js": "npm:core-js@1.1.1",
+    "aurelia-http-client": "npm:aurelia-http-client@1.0.0-beta.1.1.1",
+    "babel": "npm:babel-core@5.8.35",
+    "babel-runtime": "npm:babel-runtime@5.8.35",
+    "core-js": "npm:core-js@1.2.6",
     "jwt-simple": "npm:jwt-simple@0.3.1",
     "github:aurelia/dependency-injection@0.9.2": {
       "aurelia-logging": "github:aurelia/logging@0.6.4",
       "aurelia-metadata": "github:aurelia/metadata@0.7.3",
-      "core-js": "npm:core-js@0.9.18"
-    },
-    "github:aurelia/http-client@0.11.0": {
-      "aurelia-path": "github:aurelia/path@0.9.0",
       "core-js": "npm:core-js@0.9.18"
     },
     "github:aurelia/metadata@0.7.3": {
@@ -75,7 +71,12 @@ System.config({
     "npm:assert@1.3.0": {
       "util": "npm:util@0.10.3"
     },
-    "npm:babel-runtime@5.8.20": {
+    "npm:aurelia-http-client@1.0.0-beta.1.1.1": {
+      "aurelia-pal": "npm:aurelia-pal@1.0.0-beta.1.1.1",
+      "aurelia-path": "npm:aurelia-path@1.0.0-beta.1.1.0",
+      "core-js": "npm:core-js@2.1.0"
+    },
+    "npm:babel-runtime@5.8.35": {
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:browserify-aes@1.0.3": {
@@ -124,8 +125,15 @@ System.config({
       "process": "github:jspm/nodelibs-process@0.1.2",
       "systemjs-json": "github:systemjs/plugin-json@0.1.0"
     },
-    "npm:core-js@1.1.1": {
+    "npm:core-js@1.2.6": {
       "fs": "github:jspm/nodelibs-fs@0.1.2",
+      "path": "github:jspm/nodelibs-path@0.1.0",
+      "process": "github:jspm/nodelibs-process@0.1.2",
+      "systemjs-json": "github:systemjs/plugin-json@0.1.0"
+    },
+    "npm:core-js@2.1.0": {
+      "fs": "github:jspm/nodelibs-fs@0.1.2",
+      "path": "github:jspm/nodelibs-path@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.2",
       "systemjs-json": "github:systemjs/plugin-json@0.1.0"
     },
